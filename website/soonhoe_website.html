@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soon Hoe Business Management Co., Ltd. | 顺和商务管理有限公司</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Serif+SC:wght@300;400;600&family=Shippori+Mincho:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0c1f3f; --gold:#c4a047; --gold-light:#d4b56a;
+    --cream:#faf8f3; --white:#ffffff;
+    --text-dark:#1a1a2e; --text-mid:#3d4a5c; --text-muted:#7a8a9e;
+    --border:rgba(196,160,71,0.22); --radius-lg:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
+
+  /* LANG */
+  .zh{display:none;} .en{display:block;}
+  span.zh{display:none;} span.en{display:inline;}
+  
+  
+
+  /* NAV */
+  nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(12,31,63,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,160,71,0.28);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:70px;}
+  .nav-brand{display:flex;align-items:center;gap:8px;}
+  
+  .nav-brand-name{font-family:'Cormorant Garamond',serif;font-size:11.5px;font-weight:600;color:var(--gold-light);letter-spacing:0.8px;white-space:nowrap;line-height:1.2;}
+  .nav-brand-sub{display:none;}
+  .nav-right{display:flex;align-items:center;gap:1.5rem;}
+  .nav-links{display:flex;align-items:center;gap:1.5rem;}
+  .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--gold-light);}
+  .lang-toggle{position:relative;}
+  
+  
+  
+  .nav-gaia-btn{display:flex;align-items:center;gap:8px;background:rgba(10,22,40,0.8);border:1px solid var(--gold);color:var(--gold)!important;padding:7px 16px;border-radius:50px;font-size:12px!important;font-weight:500!important;cursor:pointer;transition:all 0.25s!important;white-space:nowrap;}
+  .nav-gaia-btn:hover{background:var(--gold)!important;color:var(--navy)!important;}
+  .gaia-dot{width:6px;height:6px;background:#00ff88;border-radius:50%;animation:pulse-dot 2s infinite;flex-shrink:0;}
+  @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+  @media(max-width:860px){.nav-links{display:none;}nav{padding:0 1.25rem;}}
+
+  /* HERO */
+  .hero{background:var(--navy);min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:70px;}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,71,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,71,0.04) 1px,transparent 1px);background-size:48px 48px;}
+  .hero-glow{position:absolute;width:650px;height:650px;background:radial-gradient(circle,rgba(196,160,71,0.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+  .hero-content{position:relative;z-index:1;text-align:center;max-width:800px;padding:0 2rem;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,160,71,0.1);border:1px solid rgba(196,160,71,0.3);color:var(--gold-light);padding:6px 18px;border-radius:50px;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:2.5rem;}
+  .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:0.6rem;}
+  .hero-sub-en{font-size:clamp(0.8rem,1.4vw,0.95rem);color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem;}
+  .hero-sub-zh{font-family:'Noto Serif SC',serif;font-size:clamp(0.85rem,1.5vw,1.1rem);color:var(--gold);letter-spacing:2px;margin-bottom:2rem;}
+  .hero-rule{width:50px;height:1px;background:var(--gold);margin:0 auto 2rem;opacity:0.6;}
+  .hero-tagline{font-size:15px;font-weight:300;color:rgba(255,255,255,0.65);line-height:1.85;max-width:580px;margin:0 auto 1.5rem;font-style:italic;}
+  .hero-tagline-zh{font-family:'Noto Serif SC',serif;font-size:13px;color:rgba(196,160,71,0.65);letter-spacing:2px;line-height:2;max-width:540px;margin:0 auto 2.5rem;}
+  .hero-desc{font-size:14.5px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.9;max-width:580px;margin:0 auto 3rem;}
+  .hero-contacts{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
+  .hero-contact-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.45);font-size:13px;}
+  .hero-contact-item strong{color:var(--gold-light);}
+  .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .hero-scroll span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.22);}
+  .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(196,160,71,0.6),transparent);animation:sfade 2s infinite;}
+  @keyframes sfade{0%{opacity:1}100%{opacity:0;transform:translateY(8px)}}
+
+  /* SECTION */
+  section{padding:6rem 2rem;}
+  .section-header{text-align:center;margin-bottom:4rem;}
+  .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.9rem;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;color:var(--navy);line-height:1.2;}
+  .section-sub{font-family:'Noto Serif SC',serif;font-size:0.95rem;font-weight:300;color:var(--text-muted);letter-spacing:3px;margin-top:0.5rem;}
+  .section-title-zh{font-family:'Noto Serif SC',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--navy);line-height:1.3;}
+  .section-sub-en{font-size:0.9rem;color:var(--text-muted);letter-spacing:2px;margin-top:0.5rem;}
+
+  /* ABOUT */
+  .about-section{background:var(--white);border-top:1px solid var(--border);}
+  .about-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.65fr;gap:4.5rem;align-items:start;}
+  @media(max-width:720px){.about-inner{grid-template-columns:1fr;gap:2.5rem;}}
+  .about-pillars{display:flex;flex-direction:column;gap:1rem;}
+  .about-pillar{display:flex;align-items:flex-start;gap:14px;padding:1.25rem;background:var(--cream);border-radius:var(--radius-lg);border:1px solid var(--border);transition:all 0.2s;}
+  .about-pillar:hover{background:var(--navy);border-color:var(--navy);}
+  .about-pillar:hover .ap-en,.about-pillar:hover .ap-desc-en{color:#fff;}.about-pillar:hover .ap-icon{background:rgba(196,160,71,0.2);}
+  .about-pillar:hover .ap-zh,.about-pillar:hover .ap-desc-zh{color:rgba(196,160,71,0.75);}
+  .ap-icon{width:44px;height:44px;min-width:44px;background:rgba(196,160,71,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s;}
+  .ap-en{font-size:14px;font-weight:500;color:var(--navy);transition:color 0.2s;}
+  .ap-zh{font-family:'Noto Serif SC',serif;font-size:11px;color:var(--text-muted);letter-spacing:1px;margin-top:2px;transition:color 0.2s;}
+  .ap-desc-en{font-size:12.5px;color:#6a7a8e;line-height:1.6;margin-top:6px;transition:color 0.2s;}
+  .ap-desc-zh{font-family:'Noto Serif SC',serif;font-size:11.5px;color:#8a9aae;line-height:1.8;margin-top:6px;transition:color 0.2s;}
+  .about-body{font-size:14.5px;color:var(--text-mid);line-height:1.95;}
+  .about-body p+p{margin-top:1.4rem;}
+  .about-body strong{color:var(--navy);font-weight:500;}
+  .about-quote{margin-top:2rem;padding:1.5rem 1.75rem;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 var(--radius-lg) var(--radius-lg) 0;}
+  .about-quote p{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:var(--navy);line-height:1.65;font-style:italic;}
+
+  /* PHOTO CARD SYSTEM — shared by Why / Services / Modules */
+  .photo-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.28s,box-shadow 0.28s;}
+  .photo-card:hover{transform:translateY(-5px);box-shadow:0 18px 50px rgba(12,31,63,0.13);}
+  .pc-img{width:100%;background-size:cover;background-position:center;position:relative;flex-shrink:0;}
+  .pc-img-sm{height:150px;}
+  .pc-img-md{height:185px;}
+  .pc-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(12,31,63,0.08) 0%,rgba(12,31,63,0.58) 100%);transition:background 0.28s;}
+  .photo-card:hover .pc-overlay{background:linear-gradient(160deg,rgba(12,31,63,0.2) 0%,rgba(12,31,63,0.75) 100%);}
+  .pc-num{position:absolute;top:14px;left:18px;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:rgba(255,255,255,0.65);line-height:1;}
+  .pc-body{padding:1.5rem 1.75rem;flex:1;}
+  .pc-title-en{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:4px;transition:color 0.25s;}
+  .photo-card:hover .pc-title-en{color:var(--gold);}
+  .pc-title-zh{font-family:'Noto Serif SC',serif;font-size:11px;color:var(--gold);letter-spacing:1.5px;margin-bottom:0.9rem;}
+  .pc-desc-en{font-size:13px;color:#5a6a7e;line-height:1.75;margin-bottom:0.85rem;}
+  .pc-desc-zh{font-family:'Noto Serif SC',serif;font-size:12px;color:#7a8a9e;line-height:1.9;margin-bottom:0.85rem;}
+  .pc-items{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .pc-items li{font-size:12.5px;color:#6a7a8e;padding-left:14px;position:relative;line-height:1.5;}
+  .pc-items li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:11px;top:1px;}
+  .pc-items li .zh{font-family:'Noto Serif SC',serif;font-size:11.5px;}
+
+  /* WHY grid */
+  .whyus-section{background:var(--cream);border-top:1px solid var(--border);}
+  .photo-grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+
+  /* MODULES */
+  .modules-section{background:var(--navy);padding:6rem 2rem;}
+  .modules-section .section-label{color:var(--gold);}
+  .modules-section .section-title,.modules-section .section-title-zh{color:#fff;}
+  .modules-section .section-sub,.modules-section .section-sub-en{color:rgba(255,255,255,0.32);}
+  .mod-card{background:rgba(255,255,255,0.05);border:1px solid rgba(196,160,71,0.18);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:all 0.28s;}
+  .mod-card:hover{border-color:rgba(196,160,71,0.5);transform:translateY(-4px);background:rgba(255,255,255,0.08);}
+  .mod-card .pc-overlay{background:linear-gradient(160deg,rgba(12,31,63,0.25) 0%,rgba(12,31,63,0.72) 100%);}
+  .mod-card:hover .pc-overlay{background:linear-gradient(160deg,rgba(12,31,63,0.35) 0%,rgba(12,31,63,0.85) 100%);}
+  .mod-body{padding:1.5rem 1.75rem;flex:1;}
+  .mod-title-en{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px;}
+  .mod-card:hover .mod-title-en{color:var(--gold-light);}
+  .mod-title-zh{font-family:'Noto Serif SC',serif;font-size:11px;color:var(--gold-light);letter-spacing:1.5px;margin-bottom:1rem;}
+  .mod-items{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .mod-items li{font-size:12.5px;color:rgba(255,255,255,0.5);padding-left:14px;position:relative;line-height:1.55;}
+  .mod-items li::before{content:'—';position:absolute;left:0;color:rgba(196,160,71,0.5);font-size:11px;top:1px;}
+  .mod-items li .zh{font-family:'Noto Serif SC',serif;font-size:11.5px;}
+
+  /* SERVICES */
+  .services-section{background:var(--white);border-top:1px solid var(--border);}
+
+  /* GAIAGenX */
+  .gaia-teaser{background:#030c18;padding:7rem 2rem;position:relative;overflow:hidden;}
+  .gaia-teaser-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.03) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
+  .gaia-glow-l{position:absolute;top:-80px;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(0,200,100,0.07) 0%,transparent 70%);}
+  .gaia-glow-r{position:absolute;bottom:-80px;right:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(0,100,200,0.07) 0%,transparent 70%);}
+  .gaia-teaser-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+  @media(max-width:700px){.gaia-teaser-inner{grid-template-columns:1fr;gap:3rem;}}
+  .gaia-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);padding:5px 14px;border-radius:50px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#00ff88;margin-bottom:1.75rem;}
+  .gaia-t-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff;line-height:1.2;margin-bottom:0.75rem;}
+  .gaia-t-title em{font-style:normal;color:#00ff88;}
+  .gaia-t-sub{font-family:'Noto Serif SC',serif;font-size:1rem;color:rgba(0,255,136,0.45);letter-spacing:4px;margin-bottom:1.75rem;}
+  .gaia-t-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.9;margin-bottom:2.5rem;}
+  .gaia-cta{display:inline-flex;align-items:center;gap:10px;background:#00ff88;color:#030c18;padding:14px 28px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all 0.25s;font-family:'DM Sans',sans-serif;}
+  .gaia-cta:hover{background:#fff;box-shadow:0 0 30px rgba(0,255,136,0.4);transform:translateY(-2px);}
+  .gaia-features{display:flex;flex-direction:column;gap:1rem;}
+  .gaia-feature{background:rgba(255,255,255,0.03);border:1px solid rgba(0,255,136,0.1);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:all 0.2s;}
+  .gaia-feature:hover{border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.04);}.gaia-feature:hover .gaia-feat-icon{background:rgba(0,255,136,0.15);border-color:rgba(0,255,136,0.4);}
+  .gaia-feat-icon{width:44px;height:44px;min-width:44px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+  .gaia-feat-title-en{font-size:13px;font-weight:500;color:rgba(255,255,255,0.9);}
+  .gaia-feat-title-zh{font-family:'Noto Serif SC',serif;font-size:10px;color:rgba(0,255,136,0.4);letter-spacing:1px;margin-top:2px;margin-bottom:4px;}
+  .gaia-feat-desc-en{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;}
+  .gaia-feat-desc-zh{font-family:'Noto Serif SC',serif;font-size:11.5px;color:rgba(255,255,255,0.35);line-height:1.7;}
+
+  /* CONTACT */
+  .contact-section{background:var(--white);border-top:1px solid var(--border);padding:6rem 2rem;}
+  .contact-inner{max-width:1060px;margin:0 auto;}
+  .offices-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3.5rem;}
+  .office-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem 1.5rem;transition:all 0.25s;}
+  .office-card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-3px);}
+  .office-card:hover .oc-city-en,.office-card:hover .oc-company,.office-card:hover .oc-tel{color:#fff;}
+  .office-card:hover .oc-city-zh{color:var(--gold-light);}
+  .office-card:hover .oc-addr{color:rgba(255,255,255,0.45);}
+  .office-card:hover .oc-tel-label{color:var(--gold);}
+  .office-card:hover .oc-tel{color:rgba(255,255,255,0.75);}
+  .oc-flag{font-size:22px;margin-bottom:1rem;}
+  .oc-city-en{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--navy);transition:color 0.25s;}
+  .oc-city-zh{font-family:'Noto Serif SC',serif;font-size:11px;color:var(--text-muted);letter-spacing:2px;margin-bottom:1rem;transition:color 0.25s;}
+  .oc-company{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:0.6rem;line-height:1.45;transition:color 0.25s;}
+  .oc-addr{font-size:12px;color:var(--text-muted);line-height:1.75;transition:color 0.25s;}
+  .oc-tel-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:0.75rem;transition:color 0.25s;}
+  .oc-tel{font-size:13px;color:var(--navy);margin-top:2px;transition:color 0.25s;}
+  .contact-cta{text-align:center;margin-top:3.5rem;padding:2.75rem 2rem;background:var(--navy);border-radius:var(--radius-lg);}
+  .contact-cta p{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:1.25rem;line-height:1.85;}
+  .clink{color:var(--gold-light);font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(196,160,71,0.35);padding-bottom:3px;transition:border-color 0.2s;}
+  .clink:hover{border-color:var(--gold);}
+
+  footer{background:var(--navy);padding:2rem;text-align:center;border-top:1px solid rgba(196,160,71,0.18);}
+  .footer-text{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.9;}
+  .footer-gold{color:var(--gold-light);}
+
+  /* GAIAGenX OVERLAY */
+  #gaiaPage{display:none;position:fixed;inset:0;z-index:9999;background:#030c18;overflow-y:auto;}
+  #gaiaPage.active{display:block;animation:gfade 0.3s ease;}
+  @keyframes gfade{from{opacity:0;transform:scale(0.98)}to{opacity:1;transform:scale(1)}}
+  .gaia-page-nav{position:sticky;top:0;background:rgba(3,12,24,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,255,136,0.1);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:65px;z-index:1000;}
+  .gaia-nav-brand{display:flex;align-items:center;gap:12px;}
+  .gaia-nav-mark{width:36px;height:36px;background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+  .gaia-nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;letter-spacing:1px;}
+  .gaia-nav-name span{color:#00ff88;}
+  .gaia-nav-sub{font-size:10px;color:rgba(0,255,136,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:1px;}
+  .gaia-back-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.65);padding:8px 20px;border-radius:50px;font-size:13px;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
+  .gaia-back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
+  .gaia-hero{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+  .gaia-hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.025) 1px,transparent 1px);background-size:40px 40px;}
+  .gaia-hero-content{position:relative;z-index:1;text-align:center;max-width:780px;}
+  .gaia-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);padding:6px 18px;border-radius:50px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00ff88;margin-bottom:2.5rem;}
+  .gaia-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:0.75rem;}
+  .gaia-hero-title .hl{color:#00ff88;}
+  .gaia-hero-zh{font-family:'Noto Serif SC',serif;font-size:1.1rem;color:rgba(0,255,136,0.4);letter-spacing:5px;margin-bottom:2rem;}
+  .gaia-hero-p{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.9;max-width:580px;margin:0 auto 3rem;}
+  .gaia-hero-ctas{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
+  .btn-green{display:inline-flex;align-items:center;gap:8px;background:#00ff88;color:#030c18;padding:14px 32px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.25s;font-family:'DM Sans',sans-serif;text-decoration:none;}
+  .btn-green:hover{background:#fff;box-shadow:0 0 40px rgba(0,255,136,0.4);transform:translateY(-2px);}
+  .btn-outline-green{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(0,255,136,0.3);color:rgba(255,255,255,0.65);padding:14px 28px;border-radius:50px;font-size:14px;cursor:pointer;transition:all 0.25s;text-decoration:none;}
+  .btn-outline-green:hover{border-color:#00ff88;color:#00ff88;}
+  .gaia-svcs-section{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
+  .g-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00ff88;text-align:center;margin-bottom:1rem;}
+  .g-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:#fff;text-align:center;margin-bottom:0.5rem;}
+  .g-zh{font-family:'Noto Serif SC',serif;font-size:0.95rem;color:rgba(255,255,255,0.28);letter-spacing:3px;text-align:center;margin-bottom:3.5rem;}
+  .g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+  .g-card{background:rgba(255,255,255,0.03);border:1px solid rgba(0,255,136,0.1);border-radius:var(--radius-lg);padding:2rem;transition:all 0.25s;}
+  .g-card:hover{border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.04);transform:translateY(-4px);}.g-card:hover .g-card-icon{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.35);}
+  .g-card-icon{width:52px;height:52px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all 0.25s;}
+  .g-card-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px;}
+  .g-card-zh{font-family:'Noto Serif SC',serif;font-size:11px;color:rgba(0,255,136,0.4);letter-spacing:1.5px;margin-bottom:1rem;}
+  .g-card-desc{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.75;}
+  .gaia-contact-band{background:rgba(0,255,136,0.03);border-top:1px solid rgba(0,255,136,0.1);padding:5rem 2rem;text-align:center;}
+  .gaia-cbox{background:rgba(255,255,255,0.04);border:1px solid rgba(0,255,136,0.18);border-radius:var(--radius-lg);padding:3rem 2rem;max-width:600px;margin:2rem auto 0;}
+  .gaia-cbox-p{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.9;margin-bottom:2rem;}
+  .gaia-email-link{font-size:16px;color:#00ff88;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,255,136,0.3);padding-bottom:3px;transition:border-color 0.2s;}
+  .gaia-email-link:hover{border-color:#00ff88;}
+  .gaia-page-footer{background:rgba(0,0,0,0.4);border-top:1px solid rgba(0,255,136,0.07);padding:2rem;text-align:center;font-size:12px;color:rgba(255,255,255,0.2);}
+  .gaia-page-footer span{color:rgba(0,255,136,0.45);}
+
+  /* ── HORIZONTAL MODULE STRIPS ── */
+  .mod-strips { display:flex; flex-direction:column; gap:0; max-width:1100px; margin:0 auto; border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(196,160,71,0.18); }
+  .mod-strip { display:grid; grid-template-columns:380px 1fr; min-height:220px; }
+  .mod-strip.reverse { grid-template-columns:1fr 380px; }
+  @media(max-width:750px){ .mod-strip,.mod-strip.reverse { grid-template-columns:1fr; } }
+  .mod-strip-photo { background-size:cover; background-position:center; position:relative; min-height:200px; }
+  .mod-strip-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(12,31,63,0.45) 0%,rgba(12,31,63,0.15) 100%); transition:background 0.3s; }
+  .mod-strip:hover .mod-strip-overlay { background:linear-gradient(135deg,rgba(12,31,63,0.6) 0%,rgba(12,31,63,0.25) 100%); }
+  .mod-strip.reverse .mod-strip-photo { order:2; }
+  @media(max-width:750px){ .mod-strip.reverse .mod-strip-photo { order:0; } }
+  .mod-strip-num { position:absolute; top:18px; left:22px; font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:300; color:rgba(255,255,255,0.2); line-height:1; }
+  .mod-strip-tag { position:absolute; bottom:18px; left:22px; font-family:'Noto Serif SC',serif; font-size:11px; color:rgba(196,160,71,0.8); letter-spacing:2px; }
+  .mod-strip-body { background:rgba(255,255,255,0.04); padding:2rem 2.25rem; display:flex; flex-direction:column; justify-content:center; border-left:1px solid rgba(196,160,71,0.12); transition:background 0.3s; }
+  .mod-strip.reverse .mod-strip-body { border-left:none; border-right:1px solid rgba(196,160,71,0.12); }
+  .mod-strip:hover .mod-strip-body { background:rgba(255,255,255,0.07); }
+  .mod-strip-title-en { font-size:16px; font-weight:500; color:#fff; margin-bottom:4px; }
+  .mod-strip-title-zh { font-family:'Noto Serif SC',serif; font-size:11px; color:var(--gold-light); letter-spacing:2px; margin-bottom:1.1rem; }
+  .mod-strip-items { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:5px 1.5rem; }
+  @media(max-width:600px){ .mod-strip-items { grid-template-columns:1fr; } }
+  .mod-strip-items li { font-size:12.5px; color:rgba(255,255,255,0.52); padding-left:14px; position:relative; line-height:1.5; }
+  .mod-strip-items li::before { content:'—'; position:absolute; left:0; color:rgba(196,160,71,0.5); font-size:11px; top:1px; }
+  .mod-strip-items li .zh { font-family:'Noto Serif SC',serif; font-size:11.5px; }
+  .mod-strip-badge { display:inline-flex; align-items:center; gap:6px; margin-top:1rem; background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2); color:#00ff88; padding:4px 12px; border-radius:50px; font-size:11px; letter-spacing:1px; }
+  /* divider between strips */
+  .mod-strip + .mod-strip { border-top:1px solid rgba(196,160,71,0.12); }
+
+  /* ══ JAPANESE DESIGN SYSTEM ══ */
+
+  /* Base refinements */
+  :root {
+    --jp-serif: 'Shippori Mincho', 'Noto Serif SC', serif;
+    --radius-lg: 4px;   /* JP: very subtle radius, almost square */
+    --radius: 2px;
+  }
+
+  /* Body — refined tracking */
+  body { letter-spacing: 0.01em; }
+
+  /* ── NAV: harmonious typography ── */
+  .nav-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 2.5px;
+    white-space: nowrap;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  body.lang-zh .nav-brand-name {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+  }
+
+  /* ── SECTION LABELS: Japanese style ── */
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  /* ── SECTION TITLES: JP calligraphic ── */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .section-title-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+  }
+  .section-sub {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* ── HERO: more refined ── */
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  .hero-sub-en {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero-sub-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 5px;
+    margin-bottom: 2rem;
+  }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+  }
+  .hero-rule {
+    width: 1px;
+    height: 50px;
+    background: var(--gold);
+    margin: 0 auto 2rem;
+    opacity: 0.5;
+  }
+
+  /* ── ABOUT PILLARS: refined ── */
+  .about-pillar {
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--border);
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    transition: all 0.3s;
+  }
+  .about-pillar:hover {
+    background: rgba(196,160,71,0.04);
+    border-left-color: var(--gold);
+  }
+  .about-pillar:hover .ap-en,
+  .about-pillar:hover .ap-desc-en { color: var(--navy); }
+  .about-pillar:hover .ap-zh { color: var(--gold) !important; }
+  .ap-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .ap-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  .ap-desc-en {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    color: #7a8a9e;
+    line-height: 1.7;
+  }
+
+  /* ── ABOUT QUOTE: JP style ── */
+  .about-quote {
+    border-left: 1px solid var(--gold);
+    border-radius: 0;
+    background: transparent;
+    padding: 1.25rem 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .about-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+
+  /* ── WHY CARDS: cleaner ── */
+  .wpc { border-radius: 4px; }
+  .wpc-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .wpc-title-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    letter-spacing: 2px;
+  }
+  .wpc-desc-en { font-size: 13px; line-height: 1.8; }
+
+  /* ── MODULES: strip refinement ── */
+  .mod-strip-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .mod-strip-title-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  /* ── PHOTO CARDS: service section ── */
+  .pc-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .pc-title-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    letter-spacing: 2px;
+  }
+
+  /* ── CONTACT OFFICE CARDS ── */
+  .office-card { border-radius: 4px; }
+  .oc-city-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  .oc-city-zh {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    letter-spacing: 3px;
+  }
+
+  /* ── NAV LINKS: refined ── */
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'DM Sans', sans-serif;
+  }
+  body.lang-zh .nav-links a {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    text-transform: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* ── FOOTER ── */
+  .footer-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.28);
+    line-height: 2;
+  }
+  body.lang-zh .footer-text {
+    font-family: 'Shippori Mincho', 'Noto Serif SC', serif;
+    letter-spacing: 1px;
+  }
+
+  /* ── GAIAGenX page: refined ── */
+  .gaia-nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 300;
+  }
+
+  /* ── Scroll behaviour ── */
+  html { scroll-behavior: smooth; }
+
+  /* ── Fade-in animation for sections ── */
+  @keyframes jp-fadein {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  section { animation: jp-fadein 0.7s ease both; }
+
+
+  /* ── LANGUAGE DROPDOWN ── */
+  .lang-toggle { position:relative; }
+  .lang-select-btn {
+    display:flex; align-items:center; gap:7px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:4px;
+    color:rgba(255,255,255,0.85);
+    padding:6px 12px;
+    font-size:11px; font-weight:500; letter-spacing:1.5px;
+    cursor:pointer; white-space:nowrap;
+    font-family:'DM Sans',sans-serif;
+    transition:all 0.2s;
+    text-transform:uppercase;
+  }
+  .lang-select-btn:hover { background:rgba(196,160,71,0.15); border-color:rgba(196,160,71,0.4); color:var(--gold-light); }
+  .lang-select-btn .chevron { font-size:9px; opacity:0.6; transition:transform 0.2s; }
+  .lang-toggle.open .chevron { transform:rotate(180deg); }
+  .lang-dropdown {
+    display:none; position:absolute; top:calc(100% + 8px); right:0;
+    background:rgba(12,24,48,0.98); backdrop-filter:blur(16px);
+    border:1px solid rgba(196,160,71,0.25);
+    border-radius:6px; overflow:hidden;
+    min-width:160px; z-index:1000;
+    box-shadow:0 16px 48px rgba(0,0,0,0.5);
+  }
+  .lang-toggle.open .lang-dropdown { display:block; animation:dd-fade 0.18s ease; }
+  @keyframes dd-fade { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+  .lang-option {
+    display:flex; align-items:center; gap:10px;
+    padding:10px 16px;
+    font-size:12px; letter-spacing:0.5px;
+    color:rgba(255,255,255,0.65);
+    cursor:pointer; transition:all 0.15s;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    font-family:'DM Sans',sans-serif;
+  }
+  .lang-option:last-child { border-bottom:none; }
+  .lang-option:hover { background:rgba(196,160,71,0.12); color:var(--gold-light); padding-left:20px; }
+  .lang-option.active { color:var(--gold); background:rgba(196,160,71,0.08); }
+  .lang-option .lang-flag { font-size:15px; }
+  .lang-option .lang-native { font-weight:500; }
+  .lang-option .lang-english { font-size:10px; opacity:0.5; margin-left:auto; }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <img src="data:image/png;base64,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" alt="Soon Hoe" style="height:40px;width:40px;object-fit:cover;flex-shrink:0;border-radius:4px;">
+    <div>
+      <div class="nav-brand-name"><span class="en">SOON HOE MANAGEMENT PTE LTD</span><span class="zh">顺和商务管理有限公司</span></div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about"><span id="nav-link-about">About</span></a>
+      <a href="#modules"><span id="nav-link-services">Services</span></a>
+      <a href="#contact"><span id="nav-link-contact">Contact</span></a>
+    </div>
+    <div class="lang-toggle" id="langToggle">
+      <button class="lang-select-btn" onclick="toggleLangDD()" id="langBtn">
+        <span id="langCurrent">EN · English</span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="lang-dropdown" id="langDD">
+        <div class="lang-option active" onclick="setLang('en')" data-lang="en">
+          <span class="lang-flag">🇸🇬</span>
+          <span class="lang-native">English</span>
+          <span class="lang-english">EN</span>
+        </div>
+        <div class="lang-option" onclick="setLang('zh')" data-lang="zh">
+          <span class="lang-flag">🇨🇳</span>
+          <span class="lang-native">中文</span>
+          <span class="lang-english">ZH</span>
+        </div>
+        <div class="lang-option" onclick="setLang('ms')" data-lang="ms">
+          <span class="lang-flag">🇲🇾</span>
+          <span class="lang-native">Melayu</span>
+          <span class="lang-english">MS</span>
+        </div>
+        <div class="lang-option" onclick="setLang('ja')" data-lang="ja">
+          <span class="lang-flag">🇯🇵</span>
+          <span class="lang-native">日本語</span>
+          <span class="lang-english">JA</span>
+        </div>
+        <div class="lang-option" onclick="setLang('th')" data-lang="th">
+          <span class="lang-flag">🇹🇭</span>
+          <span class="lang-native">ภาษาไทย</span>
+          <span class="lang-english">TH</span>
+        </div>
+        <div class="lang-option" onclick="setLang('vi')" data-lang="vi">
+          <span class="lang-flag">🇻🇳</span>
+          <span class="lang-native">Tiếng Việt</span>
+          <span class="lang-english">VI</span>
+        </div>
+        <div class="lang-option" onclick="setLang('fil')" data-lang="fil">
+          <span class="lang-flag">🇵🇭</span>
+          <span class="lang-native">Filipino</span>
+          <span class="lang-english">FIL</span>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="nav-gaia-btn" onclick="openGaia(event)">
+      <div class="gaia-dot"></div>
+      <span data-i18n="nav_ai">AI Services · GAIAGenX</span>
+    </a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-grid"></div><div class="hero-glow"></div>
+  <div class="hero-content">
+    <div style="margin-bottom:2rem;">
+      <img src="data:image/png;base64,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" alt="Soon Hoe 顺和" style="height:120px;width:auto;object-fit:contain;display:inline-block;">
+    </div>
+    <div class="hero-badge"><span id="hero-badge-text" data-i18n="hero_badge">★ Investment Immigration Advisory · Singapore</span></div>
+    <h1 class="hero-title" id="hero-tagline-text">Your privacy, we will protect —<br>your interests, we will strive.</h1>
+    <p class="hero-sub-en en">SOON HOE MANAGEMENT PTE LTD · SINGAPORE</p>
+    <p class="hero-sub-zh zh">顺和商务管理有限公司</p>
+    <div class="hero-rule"></div>
+    <p class="hero-desc" id="hero-desc-text">Professional guidance on identity planning and shaping a new start in life. Pursuing financial freedom, time freedom, and peace of mind — for you and your family across Asia and beyond.</p>
+    
+    <div class="hero-contacts">
+      <div class="hero-contact-item">✉ <strong><span id="hero-email-display"></span></strong></div>
+      <div class="hero-contact-item">🌐 <strong>www.soonhoe.com.sg</strong></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span id="hero-scroll-text">Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="section-header">
+    <div class="section-label"><span id="sec-about-label">Who We Are</span></div>
+    <h2 class="section-title" id="sec-about-title">Company Introduction</h2>
+    <p class="section-sub">SOON HOE MANAGEMENT PTE LTD</p>
+  </div>
+  <div class="about-inner">
+    <div>
+      <div class="about-pillars">
+        <div class="about-pillar"><div class="ap-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="14" r="12" stroke="#c4a047" stroke-width="1.5"/>
+  <path d="M14 7v14M11 10.5c0-1.1.9-2 2-2h2.5a2 2 0 0 1 0 4H12a2 2 0 0 0 0 4H14.5a2 2 0 0 0 2-2" stroke="#c4a047" stroke-width="1.5" stroke-linecap="round"/>
+</svg></div><div><div class="ap-en" data-i18n="ap_title_1">Financial Freedom</div><div class="ap-desc-en" data-i18n="ap_desc_1">Strategic asset allocation and wealth management across global markets.</div></div></div>
+        <div class="about-pillar"><div class="ap-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="14" r="12" stroke="#c4a047" stroke-width="1.5"/>
+  <path d="M14 8v6l4 2.5" stroke="#c4a047" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div><div class="ap-en" data-i18n="ap_title_2">Time Freedom</div><div class="ap-desc-en" data-i18n="ap_desc_2">Streamlined processes and dedicated support so you focus on what matters.</div></div></div>
+        <div class="about-pillar"><div class="ap-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 3L5 7v7c0 5 4 9 9 10 5-1 9-5 9-10V7L14 3z" stroke="#c4a047" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M10 14l3 3 5-5" stroke="#c4a047" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div><div class="ap-en" data-i18n="ap_title_3">Peace of Mind</div><div class="ap-desc-en" data-i18n="ap_desc_3">Full compliance, privacy protection, and trusted advisory at every step.</div></div></div>
+        <div class="about-pillar"><div class="ap-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 22h20" stroke="#c4a047" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M4 22l5-7 5 3 5-9 5-3" stroke="#c4a047" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24" cy="6" r="2" stroke="#c4a047" stroke-width="1.5"/>
+</svg></div><div><div class="ap-en" data-i18n="ap_title_4">Asset Growth</div><div class="ap-desc-en" data-i18n="ap_desc_4">Preserving and growing your wealth through prudent, diversified strategies.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="about-body" id="about-body"><p><strong>Soon Hoe Management Group</strong> is a leading professional consulting management company committed to providing comprehensive financial, tax, operational management and corporate secretarial services. Backed by an experienced team and extensive industry resources, we deliver efficient, tailored solutions that optimise business processes, improve management effectiveness and ensure compliant operations.</p><p>With Singapore as our financial hub, we specialise in offering bespoke overseas living and investment services to high-net-worth individuals and families across Southeast Asia and Greater China. Our services span overseas asset allocation, identity planning, children's education, family office management and premium concierge services — helping clients steadily achieve their wealth management and global lifestyle goals.</p></div>
+      
+      <div class="about-quote" id="about-quote"><p>"Professional guidance on identity planning — shaping a new start in life."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE — each card has a unique real photo -->
+<section class="whyus-section" id="why">
+  <div class="section-header">
+    <div class="section-label"><span id="sec-why-label">Our Advantage</span></div>
+    <h2 class="section-title" id="sec-why-title">Why Choose Soon Hoe</h2>
+    
+  </div>
+  <div class="photo-grid-3">
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-md" style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">01</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_1">Singapore-Based Financial Hub</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_1">Operating in Asia's most trusted financial centre — giving clients direct access to regional banking, legal, and regulatory frameworks.</div>
+        
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-md" style="background-image:url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">02</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_2">One-Stop Bespoke Solutions</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_2">From company incorporation and tax compliance to residency planning and family office setup — every aspect customised to your goals.</div>
+        
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-md" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">03</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_3">Privacy &amp; Compliance First</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_3">All engagements handled with strict confidentiality, full regulatory compliance, and the highest standards of professional ethics.</div>
+        
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-md" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">04</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_4">Multi-Country Presence</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_4">With offices in Singapore, Malaysia, China and Japan, we offer truly cross-border support for clients navigating complex international environments.</div>
+        
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-md" style="background-image:url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">05</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_5">Certified, Multi-Disciplinary Team</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_5">Singapore CPAs, auditors, licensed lawyers and international specialists — working together to deliver integrated, expert-led advisory.</div>
+        
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-md" style="background-image:url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">06</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_6">High-Net-Worth Expertise</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_6">Decades of experience serving HNW individuals and family offices from Greater China and Southeast Asia.</div>
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BUSINESS MODULES -->
+<section class="modules-section" id="modules">
+  <div class="section-header">
+    <div class="section-label"><span id="sec-mod-label">Service Scope</span></div>
+    <h2 class="section-title" id="sec-mod-title">What We Help You Achieve</h2>
+    
+  </div>
+    <div class="mod-strips">
+
+    <!-- Strip 1: Investment Immigration -->
+    <div class="mod-strip">
+      <div class="mod-strip-photo" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=500&fit=crop&q=80')">
+        <div class="mod-strip-overlay"></div>
+        <div class="mod-strip-num">01</div>
+        <div class="mod-strip-tag en">Investment · Identity · Wealth</div>
+        <div class="mod-strip-tag zh">投资 · 身份 · 财富</div>
+      </div>
+      <div class="mod-strip-body">
+        <div class="mod-strip-title-en" data-i18n="mod_title_1">Investment Immigration &amp; Residency</div>
+        
+        <ul class="mod-strip-items">
+          <li data-i18n="li_1">Singapore PR &amp; Global Investor Programme (GIP)</li>
+          <li data-i18n="li_2">MM2H — Malaysia My Second Home</li>
+          <li data-i18n="li_3">Identity &amp; residency planning advisory</li>
+          <li data-i18n="li_4">Family office structuring &amp; setup</li>
+          <li data-i18n="li_5">Singapore bank account opening</li>
+          <li data-i18n="li_6">High-net-worth asset allocation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Strip 2: Business Setup (reversed) -->
+    <div class="mod-strip reverse">
+      <div class="mod-strip-body">
+        <div class="mod-strip-title-en" data-i18n="mod_title_2">Business Setup &amp; Overseas Expansion</div>
+        
+        <ul class="mod-strip-items">
+          <li data-i18n="li_7">Company incorporation &amp; corporate structuring</li>
+          <li data-i18n="li_8">Work pass applications (EP, DP, S Pass)</li>
+          <li data-i18n="li_9">Shareholder agreements &amp; legal advisory</li>
+          <li data-i18n="li_10">Business inspection tours &amp; enterprise visits</li>
+          <li data-i18n="li_11">Cross-border HR &amp; payroll management</li>
+          <li data-i18n="li_12">Enterprise overseas training programmes</li>
+        </ul>
+      </div>
+      <div class="mod-strip-photo" style="background-image:url('https://images.unsplash.com/photo-1503945438517-f65904a52ce6?w=800&h=500&fit=crop&q=80')">
+        <div class="mod-strip-overlay"></div>
+        <div class="mod-strip-num">02</div>
+        <div class="mod-strip-tag en">Setup · Expand · Operate</div>
+        <div class="mod-strip-tag zh">设立 · 拓展 · 运营</div>
+      </div>
+    </div>
+
+    <!-- Strip 3: Lifestyle & Education -->
+    <div class="mod-strip">
+      <div class="mod-strip-photo" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop&q=80')">
+        <div class="mod-strip-overlay"></div>
+        <div class="mod-strip-num">03</div>
+        <div class="mod-strip-tag en">Education · Property · Lifestyle</div>
+        <div class="mod-strip-tag zh">教育 · 地产 · 生活</div>
+      </div>
+      <div class="mod-strip-body">
+        <div class="mod-strip-title-en" data-i18n="mod_title_3">Lifestyle, Education &amp; Real Estate</div>
+        
+        <ul class="mod-strip-items">
+          <li data-i18n="li_13">International study placements &amp; campus visits</li>
+          <li data-i18n="li_14">Academic profile enhancement &amp; GPA management</li>
+          <li data-i18n="li_15">Career planning &amp; professional development</li>
+          <li data-i18n="li_16">Premium overseas property investment</li>
+          <li data-i18n="li_17">End-to-end property management &amp; rental</li>
+          <li data-i18n="li_18">Premium concierge &amp; lifestyle services</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Strip 4: Data Intelligence (reversed) — from DOCX template -->
+    <div class="mod-strip reverse">
+      <div class="mod-strip-body">
+        <div class="mod-strip-title-en" data-i18n="mod_title_4">Enterprise Data Intelligence Services</div>
+        
+        <ul class="mod-strip-items">
+          <li data-i18n="li_19">Enterprise background investigation reports</li>
+          <li data-i18n="li_20">Enterprise profiling &amp; risk labelling</li>
+          <li data-i18n="li_21">Southeast Asia partner screening &amp; matching</li>
+          <li data-i18n="li_22">Compliance checks &amp; due diligence</li>
+          <li data-i18n="li_23">Supplier &amp; channel partner vetting</li>
+          <li data-i18n="li_24">Single-project, retainer &amp; annual membership plans</li>
+        </ul>
+        <div class="mod-strip-badge"><div class="gaia-dot"></div> GAIAGenX × Cross-Border Data Intelligence</div>
+      </div>
+      <div class="mod-strip-photo" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=500&fit=crop&q=80')">
+        <div class="mod-strip-overlay"></div>
+        <div class="mod-strip-num">04</div>
+        <div class="mod-strip-tag en">Data · Risk · Intelligence</div>
+        <div class="mod-strip-tag zh">数据 · 风控 · 情报</div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CORE SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-header">
+    <div class="section-label"><span id="sec-svc-label">Professional Services</span></div>
+    <h2 class="section-title" id="sec-svc-title">Professional Services</h2>
+    
+  </div>
+  <div class="photo-grid-3" style="max-width:1100px;margin:0 auto;">
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-sm" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">01</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_7">Accounting &amp; Compilation</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_7">Full-cycle bookkeeping, GST filing, and financial statement preparation to keep your books compliant and board-ready.</div>
+        
+        <ul class="pc-items">
+          <li data-i18n="li_25">Monthly accounting &amp; bookkeeping</li>
+          <li data-i18n="li_26">GST submission (quarterly)</li>
+          <li data-i18n="li_27">Financial statement compilation</li>
+          <li data-i18n="li_28">Management accounts &amp; reporting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-sm" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">02</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_8">Audit Services</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_8">Independent, rigorous audit engagements conducted in full compliance with Singapore Standards on Auditing (SSA).</div>
+        
+        <ul class="pc-items">
+          <li data-i18n="li_29">Statutory audit (ACRA-compliant)</li>
+          <li data-i18n="li_30">Special purpose audit</li>
+          <li data-i18n="li_31">Internal audit advisory</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-sm" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">03</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_9">Corporate &amp; Individual Tax</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_9">End-to-end Singapore tax compliance and advisory — minimising exposure while staying fully compliant.</div>
+        
+        <ul class="pc-items">
+          <li data-i18n="li_32">Corporate income tax (ECI &amp; Form C/CS)</li>
+          <li data-i18n="li_33">Individual income tax filing</li>
+          <li data-i18n="li_34">Tax planning &amp; advisory</li>
+          <li data-i18n="li_35">IR8A &amp; IR21 submissions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-sm" style="background-image:url('https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">04</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_10">Corporate Secretarial Services</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_10">Keeping your company fully compliant with ACRA requirements throughout its entire lifecycle — from registration to strike-off.</div>
+        
+        <ul class="pc-items">
+          <li data-i18n="li_36">Annual AGM, resolutions &amp; XBRL filing</li>
+          <li data-i18n="li_37">Nominee director &amp; secretary</li>
+          <li data-i18n="li_38">Registered office address</li>
+          <li data-i18n="li_39">Company strike-off &amp; winding-up</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-sm" style="background-image:url('https://images.unsplash.com/photo-1542744095-291d1f67b221?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">05</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_11">HR &amp; Administration</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_11">Comprehensive day-to-day HR and administrative operations support — so you can focus on growing your business.</div>
+        
+        <ul class="pc-items">
+          <li data-i18n="li_40">Payroll processing &amp; CPF contributions</li>
+          <li data-i18n="li_41">CorpPass, SinPass &amp; MOM account setup</li>
+          <li data-i18n="li_42">GST registration / de-registration</li>
+          <li data-i18n="li_43">Corporate &amp; individual bank account opening</li>
+          <li data-i18n="li_44">Recruitment &amp; talent sourcing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="pc-img pc-img-sm" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=420&fit=crop&q=80')"><div class="pc-overlay"></div><div class="pc-num">06</div></div>
+      <div class="pc-body">
+        <div class="pc-title-en" data-i18n="pc_title_12">Strategic Consulting &amp; Operations</div>
+        <div class="pc-desc-en" data-i18n="pc_desc_12">Business strategy, operational efficiency, and project management advisory — helping companies scale and optimise with confidence.</div>
+        
+        <ul class="pc-items">
+          <li data-i18n="li_45">Market entry &amp; business strategy</li>
+          <li data-i18n="li_46">Process optimisation &amp; cost management</li>
+          <li data-i18n="li_47">Project planning, execution &amp; monitoring</li>
+          <li data-i18n="li_48">Cross-border operations advisory</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  </section>
+
+<!-- GAIAGenX -->
+<section class="gaia-teaser" id="ai-services">
+  <div class="gaia-teaser-bg"></div><div class="gaia-glow-l"></div><div class="gaia-glow-r"></div>
+  <div class="gaia-teaser-inner">
+    <div>
+      <div class="gaia-eyebrow"><div class="gaia-dot"></div>AI Enterprise Solutions</div>
+      <h2 class="gaia-t-title">Powered by<br><em>GAIAGenX</em></h2>
+      <p class="gaia-t-sub en">AI Enterprise Deployment Services</p>
+      <p class="gaia-t-sub zh">AI 企业落地服务</p>
+      <p class="gaia-t-desc" data-i18n="gaia_teaser_desc">Beyond traditional corporate services, we partner with GAIAGenX to bring intelligent AI Agent deployment and automation solutions to your enterprise — purpose-built, securely configured, and ready to scale.</p>
+      <button class="gaia-cta" onclick="openGaia(event)"><span class="en">Explore AI Services →</span><span class="zh">探索 AI 服务 →</span></button>
+    </div>
+    <div class="gaia-features">
+      <div class="gaia-feature"><div class="gaia-feat-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="7" y="7" width="8" height="8" rx="2" stroke="#00ff88" stroke-width="1.4"/>
+  <path d="M11 1v3M11 18v3M1 11h3M18 11h3M3.5 3.5l2 2M16.5 16.5l2 2M3.5 18.5l2-2M16.5 5.5l2-2" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/>
+  <circle cx="11" cy="11" r="1.5" fill="#00ff88"/>
+</svg></div><div><div class="gaia-feat-title-en" data-i18n="gfeat_title_1">AI Agent Deployment</div><div class="gaia-feat-desc-en" data-i18n="gfeat_desc_1">Remote configuration and rollout of custom AI agents for your workflows.</div></div></div>
+      <div class="gaia-feature"><div class="gaia-feat-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="11" cy="11" r="9.5" stroke="#00ff88" stroke-width="1.4"/>
+  <path d="M12.5 4L7 12h5l-2.5 6L16 10h-5l1.5-6z" stroke="#00ff88" stroke-width="1.3" stroke-linejoin="round"/>
+</svg></div><div><div class="gaia-feat-title-en" data-i18n="gfeat_title_2">Process Automation</div><div class="gaia-feat-desc-en" data-i18n="gfeat_desc_2">Eliminate bottlenecks with intelligent automation across your organisation.</div></div></div>
+      <div class="gaia-feature"><div class="gaia-feat-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1.5" y="7.5" width="7" height="7" rx="2" stroke="#00ff88" stroke-width="1.4"/>
+  <rect x="13.5" y="7.5" width="7" height="7" rx="2" stroke="#00ff88" stroke-width="1.4"/>
+  <path d="M8.5 11h5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M11 8.5v5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1.5 2"/>
+</svg></div><div><div class="gaia-feat-title-en" data-i18n="gfeat_title_3">Enterprise Integration</div><div class="gaia-feat-desc-en" data-i18n="gfeat_desc_3">Connect AI seamlessly into your existing ERP, CRM, and back-office systems.</div></div></div>
+      <div class="gaia-feature"><div class="gaia-feat-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 2L3 5.5v6c0 4.5 3.5 8 8 8.5 4.5-.5 8-4 8-8.5v-6L11 2z" stroke="#00ff88" stroke-width="1.4" stroke-linejoin="round"/>
+  <rect x="8.5" y="10" width="5" height="4" rx="1" stroke="#00ff88" stroke-width="1.3"/>
+  <path d="M9.5 10V8.5a1.5 1.5 0 0 1 3 0V10" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round"/>
+</svg></div><div><div class="gaia-feat-title-en" data-i18n="gfeat_title_4">Secure &amp; Compliant</div><div class="gaia-feat-desc-en" data-i18n="gfeat_desc_4">Enterprise-grade security aligned with Singapore PDPA and international standards.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-header">
+      <div class="section-label"><span id="sec-contact-label">Find Us</span></div>
+      <h2 class="section-title en">Global Presence</h2>
+      <h2 class="section-title-zh zh">全球布局</h2>
+      <p class="section-sub en">Based in Singapore, serving Asia</p><p class="section-sub-en zh">立足新加坡，服务亚洲市场</p>
+    </div>
+    <div class="offices-grid">
+      <div class="office-card"><div class="oc-flag">🇸🇬</div><div class="oc-city-en en">Singapore</div><div class="oc-city-en zh">新 加 坡</div><div class="oc-city-zh en">新 加 坡</div><div class="oc-city-zh zh">Singapore</div><div class="oc-company">Soon Hoe Management Pte Ltd</div><div class="oc-addr">3 Benoi Road #02-209<br>Singapore 629877<br><span class="en">(In COSL Yard)</span><span class="zh">（COSL Yard内）</span></div></div>
+      <div class="office-card"><div class="oc-flag">🇲🇾</div><div class="oc-city-en en">Malaysia</div><div class="oc-city-en zh">马 来 西 亚</div><div class="oc-city-zh en">马 来 西 亚</div><div class="oc-city-zh zh">Malaysia</div><div class="oc-company">Soon Hoe Import &amp; Export SDN. BHD.</div><div class="oc-addr">No. 10, Jalan Ekoperniagaan 2/8,<br>Taman Ekoperniagaan,<br>81100 Johor Bahru, Johor</div></div>
+      <div class="office-card"><div class="oc-flag">🇨🇳</div><div class="oc-city-en en">China</div><div class="oc-city-en zh">中 国</div><div class="oc-city-zh en">中 国</div><div class="oc-city-zh zh">China</div><div class="oc-company">易舜和（北京）国际管理咨询有限公司</div><div class="oc-addr"><span class="en">16th Bldg, Room 513, Nord Center Phase 3, Fengtai District, Beijing</span><span class="zh">北京市丰台区诺德中心三期16号楼513室</span></div><div class="oc-tel-label" data-i18n="hotline">Hotline</div><div class="oc-tel">400 668 0819</div></div>
+      <div class="office-card"><div class="oc-flag">🇯🇵</div><div class="oc-city-en en">Japan</div><div class="oc-city-en zh">日 本</div><div class="oc-city-zh en">日 本</div><div class="oc-city-zh zh">Japan</div><div class="oc-company">易田株式会社</div><div class="oc-addr"><span class="en">Maison Dai-3 Shin-Osaka 803,<br>7-2-3 Nishinakajima, Yodogawa-ku, Osaka</span><span class="zh">大阪市淀川区西中島7丁目2番地3<br>メゾン第3新大阪803号</span></div></div>
+    </div>
+    <div class="contact-cta">
+      <p class="contact-p" data-i18n="contact_cta_p">For general enquiries, package pricing, or to schedule a consultation — reach out directly.</p>
+      <span id="contact-email-display" class="clink"></span> &nbsp;·&nbsp; <a href="https://www.soonhoe.com.sg" class="clink" target="_blank">www.soonhoe.com.sg</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-text" id="footer-copy" data-i18n="footer_copy">Copyright &copy; 2026 <span class="footer-gold">SOON HOE GROUP</span>. All Rights Reserved.<br><span style="font-size:11px;opacity:0.6;letter-spacing:1px;">Singapore &nbsp;&middot;&nbsp; Malaysia &nbsp;&middot;&nbsp; China &nbsp;&middot;&nbsp; Japan</span></div>
+</footer>
+
+<div id="gaiaPage">
+  <nav class="gaia-page-nav">
+    <div class="gaia-nav-brand"><div class="gaia-nav-mark" style="background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.25);padding:4px;"><img src="data:image/png;base64,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" alt="GAIAGenX" style="width:28px;height:28px;object-fit:contain;display:block;filter:brightness(0) invert(1);"></div><div><div class="gaia-nav-name">GAIA<span>Gen</span>X</div><div class="gaia-nav-sub"><span class="en">AI Enterprise Solutions</span><span class="zh">企业AI落地服务</span></div></div></div>
+    <button class="gaia-back-btn" onclick="closeGaia()"><span data-i18n="gaia_back">← Back to Soon Hoe</span></button>
+  </nav>
+  <div class="gaia-hero">
+    <div class="gaia-hero-bg"></div>
+    <div class="gaia-hero-content">
+      <div class="gaia-hero-badge"><div class="gaia-dot"></div><span class="en">Now Available in Singapore</span><span class="zh">现已在新加坡提供服务</span></div>
+      <h1 class="gaia-hero-title" data-i18n="gaia_hero_title">Enterprise AI,<br><span class="hl">Deployed Right.</span></h1>
+      <p class="gaia-hero-zh" data-i18n="gaia_hero_sub">AI Agents · Enterprise Deployment</p>
+      <p class="gaia-hero-p" data-i18n="gaia_hero_desc">GAIAGenX delivers intelligent AI Agent deployment and configuration services remotely — embedding cutting-edge AI capabilities directly into your enterprise workflows, seamlessly, securely, and at scale.</p>
+      <div class="gaia-hero-ctas">
+        <button class="btn-green" id="gaia-consult-btn" onclick="(function(){var u='admin',d='soonhoe.com.sg';window.location.href='mailto:'+u+'@'+d+'?subject=GAIAGenX AI Services Enquiry';})()"><span class="en">Request a Consultation →</span><span class="zh">预约咋询 →</span></button>
+        <a href="#gaia-svcs" class="btn-outline-green"><span data-i18n="cta_view">View Services</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="gaia-svcs-section" id="gaia-svcs">
+    <div class="g-label" data-i18n="g_label_what_we_deliver">What We Deliver</div>
+    <h2 class="g-title" data-i18n="g_title_ai_enterprise_services">AI Enterprise Services</h2>
+    
+    <div class="g-grid">
+      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="3" stroke="#00ff88" stroke-width="1.4"/><circle cx="13" cy="13" r="2.5" stroke="#00ff88" stroke-width="1.2"/><path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M4.5 4.5l2.5 2.5M19 19l2.5 2.5M4.5 21.5l2.5-2.5M19 7l2.5-2.5" stroke="#00ff88" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_1">AI Agent Deployment</div><div class="g-card-zh zh">AI 智能体部署</div><div class="g-card-desc en">Remote configuration, testing, and deployment of custom AI agents purpose-built for your business processes.</div>
+        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">远程配置、测试并部署专为您业务流程定制的 AI 智能体。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">远程配置、测试并部署专为您业务流程定制的 AI 智能体。</div></div>
+      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 13h6M16 13h6" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><rect x="7" y="7" width="12" height="12" rx="3" stroke="#00ff88" stroke-width="1.4"/><path d="M10 13l2 2 4-4" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_2">Workflow Automation</div><div class="g-card-zh zh">工作流自动化</div><div class="g-card-desc en">Identify high-volume repetitive tasks and automate them to free your team for higher-value work.</div>
+        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">识别高频重复任务并智能自动化，让团队专注于更高价值的工作。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">识别高频重复任务并智能自动化，让团队专注于更高价值的工作。</div></div>
+      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 20h20" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M3 20l5-6 5 3 5-7 5-4" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="14" r="1.5" fill="#00ff88"/><circle cx="13" cy="17" r="1.5" fill="#00ff88"/><circle cx="18" cy="10" r="1.5" fill="#00ff88"/><circle cx="23" cy="6" r="1.5" fill="#00ff88"/></svg></div><div class="g-card-title" data-i18n="gcard_title_3">AI Analytics &amp; Insights</div><div class="g-card-zh zh">AI 数据分析与洞察</div><div class="g-card-desc en">Predictive analytics, anomaly detection, and intelligent reporting tailored to your KPIs.</div>
+        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">预测分析、异常检测及针对您KPI定制的智能报告。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">预测分析、异常检测及针对您 KPI 定制的智能报告。</div></div>
+      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="1.5" y="8" width="8" height="10" rx="2" stroke="#00ff88" stroke-width="1.4"/><rect x="16.5" y="8" width="8" height="10" rx="2" stroke="#00ff88" stroke-width="1.4"/><path d="M9.5 13h7" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M13 10.5v5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1.5 2"/></svg></div><div class="g-card-title" data-i18n="gcard_title_4">System Integration</div><div class="g-card-zh zh">企业系统集成</div><div class="g-card-desc en">Connect AI to your existing ERP, CRM, accounting, and HR platforms with minimal disruption.</div>
+        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">将 AI 接入现有 ERP、CRM 及后台系统，最大限度减少运营干扰。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">将 AI 接入现有系统，最大限度减少运营干扰。</div></div>
+      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="8" r="3.5" stroke="#00ff88" stroke-width="1.4"/><path d="M6 21c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M17 13l2 1.5-2 1.5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 14.5h3.5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_5">AI Training &amp; Enablement</div><div class="g-card-zh zh">AI 培训与人员赋能</div><div class="g-card-desc en">From executive briefings to hands-on workshops — equip your team to work confidently alongside AI.</div>
+        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">从高管简报到实操工作坊，为您的团队赋能，自信与 AI 协作。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">从高管简报到实操工作坊，为您的团队赋能。</div></div>
+      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 2L3 6.5v8c0 5.5 4.5 10 10 10.5 5.5-.5 10-5 10-10.5v-8L13 2z" stroke="#00ff88" stroke-width="1.4" stroke-linejoin="round"/><rect x="9.5" y="12" width="7" height="5.5" rx="1.5" stroke="#00ff88" stroke-width="1.3"/><path d="M11 12V9.5a2 2 0 0 1 4 0V12" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_6">Governance &amp; Compliance</div><div class="g-card-zh zh">AI 治理与合规</div><div class="g-card-desc en">Responsible AI aligned with Singapore's PDPA, MAS guidelines, and international data governance frameworks.</div>
+        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">遵循新加坡 PDPA、MAS 指引及国际数据治理框架的负责任 AI 部署。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">遵循新加坡 PDPA、MAS 指引及国际数据治理框架的负责任 AI 部署。</div></div>
+    </div>
+  </div>
+  <div class="gaia-contact-band">
+    <div class="g-label" data-i18n="g_label_get_started">Get Started</div>
+    <h2 class="g-title" data-i18n="g_title_ready_to_deploy_ai">Ready to Deploy AI?</h2>
+    
+    <div class="gaia-cbox">
+      <p class="gaia-cbox-p" data-i18n="gaia_cbox_p">Connect with us through Soon Hoe Management to explore how GAIAGenX can transform your enterprise with a tailored AI deployment plan.</p>
+      <p class="gaia-cbox-p zh" style="font-family:'Noto Serif SC',serif;font-size:13px;">通过顺和管理与我们联系，探索 GAIAGenX 如何为您的企业制定专属 AI 部署方案。</p>
+      <span id="gaia-email-display" class="gaia-email-link"></span>
+    </div>
+  </div>
+  <div class="gaia-page-footer"><span class="en">GAIAGenX AI Enterprise Solutions · In partnership with <span>Soon Hoe Business Management Co., Ltd.</span> · Singapore 2026</span><span class="zh" style="font-family:'Noto Serif SC',serif;">GAIAGenX 企业AI落地服务 · 顺和集团 · 新加坡 2026</span></div>
+</div>
+
+
+
+<script>
+  // ── Email render ──
+  (function(){
+    var u='admin',d='soonhoe'+'.'+'com'+'.'+'sg',e=u+'@'+d,ml='mailto:'+e;
+    var els=[
+      ['contact-email-display','<a href="'+ml+'" class="clink">'+e+'</a>'],
+      ['gaia-email-display','<a href="'+ml+'" class="gaia-email-link">'+e+'</a>'],
+      ['hero-email-display',e],
+      ['contact-email-display2','<a href="'+ml+'" class="clink">'+e+'</a>'],
+    ];
+    document.addEventListener('DOMContentLoaded',function(){
+      els.forEach(function(i){var el=document.getElementById(i[0]);if(el)el.innerHTML=i[1];});
+    });
+  })();
+
+  // ── 7-Language Translation System ──
+  var T = {"en": {"nav_about": "About", "nav_services": "Services", "nav_contact": "Contact", "nav_ai": "AI Services · GAIAGenX", "hero_badge": "★ Investment Immigration Advisory · Singapore", "hero_tagline": "Your privacy, we will protect — your interests, we will strive.", "hero_desc": "Professional guidance on identity planning and shaping a new start in life. Pursuing financial freedom, time freedom, and peace of mind — for you and your family across Asia.", "hero_scroll": "Scroll", "sec_about_label": "Who We Are", "sec_about_title": "Company Introduction", "sec_why_label": "Our Advantage", "sec_why_title": "Why Choose Soon Hoe", "sec_mod_label": "Service Scope", "sec_mod_title": "What We Help You Achieve", "sec_svc_label": "Professional Services", "sec_svc_title": "Professional Services", "sec_contact_label": "Find Us", "sec_contact_title": "Global Presence", "sec_contact_sub": "Based in Singapore, serving Asia", "lang_label": "EN · English", "ap_title_1": "Financial Freedom", "ap_desc_1": "Strategic asset allocation and wealth management across global markets.", "ap_title_2": "Time Freedom", "ap_desc_2": "Streamlined processes and dedicated support so you focus on what matters.", "ap_title_3": "Peace of Mind", "ap_desc_3": "Full compliance, privacy protection, and trusted advisory at every step.", "ap_title_4": "Asset Growth", "ap_desc_4": "Preserving and growing your wealth through prudent, diversified strategies.", "about_body": "<p><strong>Soon Hoe Business Management Group</strong> is a leading professional consulting management company committed to providing comprehensive financial, tax, operational management and corporate secretarial services. Backed by an experienced team and extensive industry resources, we deliver efficient, tailored solutions that optimise business processes, improve management effectiveness and ensure compliant operations.</p><p>With Singapore as our financial hub, we specialise in offering bespoke overseas living and investment services to high-net-worth individuals and families across Southeast Asia and Greater China. Our services span overseas asset allocation, identity planning, children's education, family office management and premium concierge services.</p>", "about_quote": "Professional guidance on identity planning — shaping a new start in life.", "pc_title_1": "Singapore-Based Financial Hub", "pc_desc_1": "Operating in Asia's most trusted financial centre — giving clients direct access to regional banking, legal, and regulatory frameworks.", "pc_title_2": "One-Stop Bespoke Solutions", "pc_desc_2": "From company incorporation and tax compliance to residency planning and family office setup — every aspect customised to your goals.", "pc_title_3": "Privacy & Compliance First", "pc_desc_3": "All engagements handled with strict confidentiality, full regulatory compliance, and the highest standards of professional ethics.", "pc_title_4": "Multi-Country Presence", "pc_desc_4": "With offices in Singapore, Malaysia, China and Japan, we offer truly cross-border support for clients in complex international environments.", "pc_title_5": "Certified, Multi-Disciplinary Team", "pc_desc_5": "Singapore CPAs, auditors, licensed lawyers and international specialists — delivering integrated, expert-led advisory.", "pc_title_6": "High-Net-Worth Expertise", "pc_desc_6": "Decades of experience serving HNW individuals and family offices from Greater China and Southeast Asia.", "pc_title_7": "Accounting & Compilation", "pc_desc_7": "Full-cycle bookkeeping, GST filing, and financial statement preparation to keep your books compliant and board-ready.", "pc_title_8": "Audit Services", "pc_desc_8": "Independent, rigorous audit engagements conducted in full compliance with Singapore Standards on Auditing (SSA).", "pc_title_9": "Corporate & Individual Tax", "pc_desc_9": "End-to-end Singapore tax compliance and advisory — minimising exposure while staying fully compliant.", "pc_title_10": "Corporate Secretarial Services", "pc_desc_10": "Keeping your company fully compliant with ACRA requirements throughout its entire lifecycle — from registration to strike-off.", "pc_title_11": "HR & Administration", "pc_desc_11": "Comprehensive day-to-day HR and administrative operations support — so you can focus on growing your business.", "pc_title_12": "Strategic Consulting & Operations", "pc_desc_12": "Business strategy, operational efficiency, and project management advisory — helping companies scale with confidence.", "mod_title_1": "Investment Immigration & Residency", "mod_title_2": "Business Setup & Overseas Expansion", "mod_title_3": "Lifestyle, Education & Real Estate", "mod_title_4": "Enterprise Data Intelligence Services", "li_1": "Singapore PR & Global Investor Programme (GIP)", "li_2": "MM2H — Malaysia My Second Home", "li_3": "Identity & residency planning advisory", "li_4": "Family office structuring & setup", "li_5": "Singapore bank account opening", "li_6": "High-net-worth asset allocation", "li_7": "Company incorporation & corporate structuring", "li_8": "Work pass applications (EP, DP, S Pass)", "li_9": "Shareholder agreements & legal advisory", "li_10": "Business inspection tours & enterprise visits", "li_11": "Cross-border HR & payroll management", "li_12": "Enterprise overseas training programmes", "li_13": "International study placements & campus visits", "li_14": "Academic profile enhancement & GPA management", "li_15": "Career planning & professional development", "li_16": "Premium overseas property investment", "li_17": "End-to-end property management & rental", "li_18": "Premium concierge & lifestyle services", "li_19": "Enterprise background investigation reports", "li_20": "Enterprise profiling & risk labelling", "li_21": "Southeast Asia partner screening & matching", "li_22": "Compliance checks & due diligence", "li_23": "Supplier & channel partner vetting", "li_24": "Single-project, retainer & annual membership plans", "li_25": "Monthly accounting & bookkeeping", "li_26": "GST submission (quarterly)", "li_27": "Financial statement compilation", "li_28": "Management accounts & reporting", "li_29": "Statutory audit (ACRA-compliant)", "li_30": "Special purpose audit", "li_31": "Internal audit advisory", "li_32": "Corporate income tax (ECI & Form C/CS)", "li_33": "Individual income tax filing", "li_34": "Tax planning & advisory", "li_35": "IR8A & IR21 submissions", "li_36": "Annual AGM, resolutions & XBRL filing", "li_37": "Nominee director & secretary", "li_38": "Registered office address", "li_39": "Company strike-off & winding-up", "li_40": "Payroll processing & CPF contributions", "li_41": "CorpPass, SinPass & MOM account setup", "li_42": "GST registration / de-registration", "li_43": "Corporate & individual bank account opening", "li_44": "Recruitment & talent sourcing", "li_45": "Market entry & business strategy", "li_46": "Process optimisation & cost management", "li_47": "Project planning, execution & monitoring", "li_48": "Cross-border operations advisory", "gaia_teaser_desc": "Beyond traditional corporate services, we partner with GAIAGenX to bring intelligent AI Agent deployment and automation solutions to your enterprise — purpose-built, securely configured, and ready to scale.", "gfeat_title_1": "AI Agent Deployment", "gfeat_desc_1": "Remote configuration and rollout of custom AI agents for your workflows.", "gfeat_title_2": "Process Automation", "gfeat_desc_2": "Eliminate bottlenecks with intelligent automation across your organisation.", "gfeat_title_3": "Enterprise Integration", "gfeat_desc_3": "Connect AI seamlessly into your existing ERP, CRM, and back-office systems.", "gfeat_title_4": "Secure & Compliant", "gfeat_desc_4": "Enterprise-grade security aligned with Singapore PDPA and international standards.", "gaia_hero_title": "Enterprise AI,<br><span class='hl'>Deployed Right.</span>", "gaia_hero_sub": "AI Agents · Enterprise Deployment", "gaia_hero_desc": "GAIAGenX delivers intelligent AI Agent deployment and configuration services remotely. We embed cutting-edge AI capabilities directly into your enterprise workflows — seamlessly, securely, and at scale.", "gaia_back": "← Back to Soon Hoe", "cta_consult": "Request a Consultation →", "cta_view": "View Services", "g_label_what_we_deliver": "What We Deliver", "g_title_ai_enterprise_services": "AI Enterprise Services", "gcard_title_1": "AI Agent Deployment", "gcard_title_2": "Workflow Automation", "gcard_title_3": "AI Analytics & Insights", "gcard_title_4": "System Integration", "gcard_title_5": "AI Training & Enablement", "gcard_title_6": "Governance & Compliance", "gcard_desc_1": "Remote configuration, testing, and deployment of custom AI agents purpose-built for your specific business processes.", "gcard_desc_2": "Identify high-volume repetitive tasks and automate them to free your team for higher-value work.", "gcard_desc_3": "Predictive analytics, anomaly detection, and intelligent reporting tailored to your KPIs.", "gcard_desc_4": "Connect AI to your existing ERP, CRM, accounting, and HR platforms with minimal disruption.", "gcard_desc_5": "From executive briefings to hands-on workshops — equip your team to work confidently alongside AI.", "gcard_desc_6": "Responsible AI deployment aligned with Singapore's PDPA, MAS guidelines, and international data governance frameworks.", "g_label_get_started": "Get Started", "g_title_ready_to_deploy_ai": "Ready to Deploy AI?", "gaia_cbox_p": "Connect with us through Soon Hoe Management to explore how GAIAGenX can transform your enterprise with a tailored AI deployment plan.", "gaia_footer": "GAIAGenX AI Enterprise Solutions · In partnership with SOON HOE MANAGEMENT PTE LTD · Singapore 2026", "contact_cta_p": "For general enquiries, package pricing, or to schedule a consultation — reach out directly.", "hotline": "Hotline", "office_sg_city": "Singapore", "office_sg_city_zh": "新 加 坡", "office_my_city": "Malaysia", "office_my_city_zh": "马 来 西 亚", "office_cn_city": "China", "office_cn_city_zh": "中 国", "office_jp_city": "Japan", "office_jp_city_zh": "日 本", "footer_copy": "Copyright &copy; 2026 <span class='footer-gold'>SOON HOE GROUP</span>. All Rights Reserved.<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>Singapore &nbsp;&middot;&nbsp; Malaysia &nbsp;&middot;&nbsp; China &nbsp;&middot;&nbsp; Japan</span>"}, "zh": {"nav_about": "公司简介", "nav_services": "业务模块", "nav_contact": "联系我们", "nav_ai": "AI 服务 · GAIAGenX", "hero_badge": "★ 顺和投资移民咨询顾问 · 新加坡", "hero_tagline": "您的隐私，我们保护，您的利益，我们努力", "hero_desc": "专业指导身份规划，塑造新的生活起点。追寻财务自由、时间自由与心灵自由——为您和家人在亚洲及全球实现目标。", "hero_scroll": "向下", "sec_about_label": "关于我们", "sec_about_title": "公司简介", "sec_why_label": "我们的优势", "sec_why_title": "为何选择顺和", "sec_mod_label": "服务范围", "sec_mod_title": "我们为您实现目标", "sec_svc_label": "专业服务", "sec_svc_title": "专业技术服务", "sec_contact_label": "联系我们", "sec_contact_title": "全球布局", "sec_contact_sub": "立足新加坡，服务亚洲市场", "lang_label": "中文", "ap_title_1": "财务自由", "ap_desc_1": "通过全球市场的战略资产配置与财富管理，实现财务自由。", "ap_title_2": "时间自由", "ap_desc_2": "简化流程，专业支持，让您专注于最重要的事。", "ap_title_3": "心灵自由", "ap_desc_3": "全程合规、隐私保护，每一步都有值得信赖的专业顾问陪伴。", "ap_title_4": "资产增值", "ap_desc_4": "通过稳健、多元化的策略，保护并增值您的财富。", "about_body": "<p><strong>顺和商务管理集团</strong>是一家领先的专业咨询管理公司，致力于为客户提供全面的财务、税务、运营管理及企业秘书服务。我们凭借经验丰富的团队和广泛的行业资源，为客户提供高效、定制化的解决方案，帮助企业优化业务流程、提升管理效率，确保合规运营。</p><p>与此同时，我们以新加坡为金融中心，专注于为东南亚及大中华地区的高净值个人与家庭提供一站式的海外生活与投资定制服务，帮助客户稳健实现其财富管理与全球生活规划目标。</p>", "about_quote": "专业指导身份规划，塑造新的生活起点。", "pc_title_1": "以新加坡为核心金融平台", "pc_desc_1": "在亚洲最可信赖的金融中心运营，让客户直接享有区域银行、法律及监管体系的便利。", "pc_title_2": "一站式定制解决方案", "pc_desc_2": "从公司注册、税务合规到居留规划、家族办公室，由综合团队全程承办，根据您的目标量身定制。", "pc_title_3": "隐私保护与合规优先", "pc_desc_3": "所有业务均严格保密，完全合规，坚守最高职业道德标准。", "pc_title_4": "多国布局网络", "pc_desc_4": "在新加坡、马来西亚、中国及日本均设有办事处，为国际客户提供真正的跨境支持。", "pc_title_5": "持牌专业跨学科团队", "pc_desc_5": "团队由新加坡注册会计师、审计师、持牌律师及国际专家组成，协同提供专业综合顾问服务。", "pc_title_6": "高净值客户专属经验", "pc_desc_6": "数十年服务大中华区及东南亚高净值个人与家族办公室的丰富经验。", "pc_title_7": "专业记账与财务报告", "pc_desc_7": "全程记账、消费税申报及财务报表编制，确保账册合规，随时可供董事会查阅。", "pc_title_8": "审计服务", "pc_desc_8": "严格按照新加坡审计准则（SSA）开展独立审计，专业、合规、有公信力。", "pc_title_9": "企业及个人所得税", "pc_desc_9": "为企业和个人提供全程新加坡税务合规及顾问服务，在合规前提下合理降低税务风险。", "pc_title_10": "公司秘书服务", "pc_desc_10": "贯穿企业全生命周期的ACRA合规支持，从注册到注销，全程无忧。", "pc_title_11": "人事与行政服务", "pc_desc_11": "全面的日常人事与行政运营支持，让您专注于业务增长。", "pc_title_12": "战略咨询与运营管理", "pc_desc_12": "商业战略、运营效率与项目管理咨询，助力企业信心满满地扩张与优化。", "mod_title_1": "投资移民与居留身份", "mod_title_2": "企业出海与海外布局", "mod_title_3": "生活、教育与地产", "mod_title_4": "企业数据情报服务", "li_1": "新加坡PR及全球投资者计划（GIP）", "li_2": "MM2H马来西亚第二家园", "li_3": "身份规划与居留顾问咨询", "li_4": "家族办公室架构与设立", "li_5": "新加坡银行开户", "li_6": "高净值资产配置", "li_7": "公司注册与企业架构搭建", "li_8": "工作准证申请（EP、DP、S Pass）", "li_9": "股东协议与法律顾问", "li_10": "商务考察与企业访问", "li_11": "跨境人事与薪资管理", "li_12": "企业出海培训计划", "li_13": "海外留学与游学访校", "li_14": "学术背景提升与GPA管理", "li_15": "职业规划与专业发展", "li_16": "高端海外地产投资", "li_17": "一站式物业管理与租赁", "li_18": "高端管家与生活服务", "li_19": "企业背景调查报告", "li_20": "企业画像与风险标签分析", "li_21": "东南亚合作伙伴筛选与适配", "li_22": "合规检查与尽职调查", "li_23": "供应商与渠道商筛选评估", "li_24": "单次项目、套餐及年度会员制方案", "li_25": "月度记账", "li_26": "季度消费税呈报", "li_27": "财务报表编制", "li_28": "管理账目与财务报告", "li_29": "法定审计（符合ACRA要求）", "li_30": "专项审计", "li_31": "内部审计咨询", "li_32": "企业所得税（ECI及C/CS表格）", "li_33": "个人所得税申报", "li_34": "税务规划与咨询", "li_35": "IR8A及IR21申报", "li_36": "年度股东大会、决议及XBRL申报", "li_37": "挂名董事及秘书服务", "li_38": "注册办公室地址", "li_39": "公司注销与清算", "li_40": "薪资计算与公积金缴纳", "li_41": "CorpPass、SinPass及人力部账户注册", "li_42": "消费税注册/注销", "li_43": "公司及个人银行开户", "li_44": "招聘与人才寻访", "li_45": "市场进入与商业战略", "li_46": "流程优化与成本管理", "li_47": "项目规划、执行与监控", "li_48": "跨境运营顾问", "gaia_teaser_desc": "超越传统企业服务，携手 GAIAGenX 为企业提供智能 AI 智能体部署与自动化解决方案——专属定制，安全配置，随需扩展。", "gfeat_title_1": "AI 智能体部署", "gfeat_desc_1": "远程配置并部署专为您工作流程定制的 AI 智能体。", "gfeat_title_2": "流程自动化", "gfeat_desc_2": "通过智能自动化消除组织内部的流程瓶颈。", "gfeat_title_3": "企业系统集成", "gfeat_desc_3": "将 AI 无缝接入您现有的 ERP、CRM 及后台系统。", "gfeat_title_4": "安全合规", "gfeat_desc_4": "符合新加坡 PDPA 及国际标准的企业级安全部署。", "gaia_hero_title": "企业AI，<br><span class='hl'>精准落地。</span>", "gaia_hero_sub": "AI 智能体 · 企业落地服务", "gaia_hero_desc": "GAIAGenX 提供远程 AI 智能体部署与配置服务，将最先进的人工智能能力无缝、安全、大规模地嵌入您的企业业务流程。", "gaia_back": "← 返回顺和", "cta_consult": "预约咨询 →", "cta_view": "查看服务", "g_label_what_we_deliver": "服务内容", "g_title_ai_enterprise_services": "企业 AI 服务方案", "gcard_title_1": "AI 智能体部署", "gcard_title_2": "工作流自动化", "gcard_title_3": "AI 数据分析与洞察", "gcard_title_4": "企业系统集成", "gcard_title_5": "AI 培训与人员赋能", "gcard_title_6": "AI 治理与合规", "gcard_desc_1": "远程配置、测试并部署专为您业务流程定制的 AI 智能体。", "gcard_desc_2": "识别高频重复任务并智能自动化，让团队专注于更高价值的工作。", "gcard_desc_3": "预测分析、异常检测及针对您KPI定制的智能报告。", "gcard_desc_4": "将 AI 接入现有系统，最大限度减少运营干扰。", "gcard_desc_5": "从高管简报到实操工作坊，为您的团队赋能，自信与 AI 协作。", "gcard_desc_6": "遵循新加坡 PDPA、MAS 指引及国际数据治理框架的负责任 AI 部署。", "g_label_get_started": "立即开始", "g_title_ready_to_deploy_ai": "准备好启动 AI 落地了吗？", "gaia_cbox_p": "通过顺和管理与我们联系，探索 GAIAGenX 如何为您的企业制定专属 AI 部署方案。", "gaia_footer": "GAIAGenX 企业AI落地服务 · 顺和集团 · 新加坡 2026", "contact_cta_p": "如需一般咨询、套餐报价或预约顾问服务，请直接与我们联系。", "hotline": "热线", "office_sg_city": "新 加 坡", "office_sg_city_zh": "Singapore", "office_my_city": "马 来 西 亚", "office_my_city_zh": "Malaysia", "office_cn_city": "中 国", "office_cn_city_zh": "China", "office_jp_city": "日 本", "office_jp_city_zh": "Japan", "footer_copy": "版权所有 &copy; 2026 <span class='footer-gold'>顺和集团</span>。保留所有权利。<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>新加坡 &nbsp;&middot;&nbsp; 马来西亚 &nbsp;&middot;&nbsp; 中国 &nbsp;&middot;&nbsp; 日本</span>"}, "ms": {"nav_about": "Tentang", "nav_services": "Perkhidmatan", "nav_contact": "Hubungi", "nav_ai": "Perkhidmatan AI · GAIAGenX", "hero_badge": "★ Penasihat Imigresen Pelaburan · Singapura", "hero_tagline": "Privasi anda kami lindungi — kepentingan anda kami perjuangkan.", "hero_desc": "Panduan profesional untuk perancangan identiti dan permulaan kehidupan baharu. Mengejar kebebasan kewangan, kebebasan masa dan ketenangan fikiran — untuk anda dan keluarga di seluruh Asia.", "hero_scroll": "Tatal", "sec_about_label": "Tentang Kami", "sec_about_title": "Pengenalan Syarikat", "sec_why_label": "Kelebihan Kami", "sec_why_title": "Mengapa Pilih Soon Hoe", "sec_mod_label": "Skop Perkhidmatan", "sec_mod_title": "Matlamat Yang Kami Bantu Capai", "sec_svc_label": "Perkhidmatan Profesional", "sec_svc_title": "Perkhidmatan Profesional", "sec_contact_label": "Lokasi Kami", "sec_contact_title": "Kehadiran Global", "sec_contact_sub": "Berpusat di Singapura, melayani Asia", "lang_label": "MS · Melayu", "ap_title_1": "Kebebasan Kewangan", "ap_desc_1": "Peruntukan aset strategik dan pengurusan kekayaan merentasi pasaran global.", "ap_title_2": "Kebebasan Masa", "ap_desc_2": "Proses yang dipermudah dan sokongan berdedikasi supaya anda fokus pada perkara penting.", "ap_title_3": "Ketenangan Fikiran", "ap_desc_3": "Pematuhan penuh, perlindungan privasi, dan nasihat dipercayai di setiap langkah.", "ap_title_4": "Pertumbuhan Aset", "ap_desc_4": "Memelihara dan menumbuhkan kekayaan anda melalui strategi yang bijaksana dan pelbagai.", "about_body": "<p><strong>Soon Hoe Business Management Group</strong> adalah syarikat perunding pengurusan profesional terkemuka yang komited untuk menyediakan perkhidmatan kewangan, cukai, pengurusan operasi dan sekretariat korporat yang komprehensif. Disokong oleh pasukan berpengalaman dan sumber industri yang luas, kami memberikan penyelesaian yang cekap dan disesuaikan untuk mengoptimumkan proses perniagaan.</p><p>Dengan Singapura sebagai pusat kewangan kami, kami mengkhusus dalam menawarkan perkhidmatan kehidupan dan pelaburan luar negara yang disesuaikan kepada individu dan keluarga berpendapatan tinggi di seluruh Asia Tenggara dan Greater China.</p>", "about_quote": "Panduan profesional untuk perancangan identiti — membentuk permulaan baharu dalam kehidupan.", "pc_title_1": "Pusat Kewangan Berasaskan Singapura", "pc_desc_1": "Beroperasi di pusat kewangan paling dipercayai di Asia — memberikan akses langsung kepada rangka kerja perbankan, undang-undang dan kawal selia serantau.", "pc_title_2": "Penyelesaian Sehenti Disesuaikan", "pc_desc_2": "Daripada penubuhan syarikat dan pematuhan cukai hingga perancangan kediaman dan persediaan pejabat keluarga — setiap aspek disesuaikan dengan matlamat anda.", "pc_title_3": "Privasi & Pematuhan Diutamakan", "pc_desc_3": "Semua urusan dikendalikan dengan kerahsiaan ketat, pematuhan kawal selia penuh, dan standard etika profesional tertinggi.", "pc_title_4": "Kehadiran Pelbagai Negara", "pc_desc_4": "Dengan pejabat di Singapura, Malaysia, China dan Jepun, kami menawarkan sokongan rentas sempadan yang benar-benar untuk pelanggan.", "pc_title_5": "Pasukan Pelbagai Disiplin Bertauliah", "pc_desc_5": "CPA Singapura, juruaudit, peguam berlesen dan pakar antarabangsa — memberikan nasihat bersepadu.", "pc_title_6": "Kepakaran Pelanggan Berpendapatan Tinggi", "pc_desc_6": "Dekad pengalaman melayani individu HNW dan pejabat keluarga dari Greater China dan Asia Tenggara.", "pc_title_7": "Perakaunan & Penyusunan", "pc_desc_7": "Perakaunan kitaran penuh, pemfailan GST, dan penyediaan penyata kewangan untuk memastikan buku anda patuh.", "pc_title_8": "Perkhidmatan Audit", "pc_desc_8": "Penglibatan audit bebas yang ketat dan mematuhi Piawaian Pengauditan Singapura (SSA).", "pc_title_9": "Cukai Korporat & Individu", "pc_desc_9": "Pematuhan cukai Singapura hujung ke hujung dan nasihat — meminimumkan pendedahan sambil kekal patuh.", "pc_title_10": "Perkhidmatan Sekretariat Korporat", "pc_desc_10": "Memastikan syarikat anda mematuhi sepenuhnya keperluan ACRA sepanjang kitaran hayatnya.", "pc_title_11": "HR & Pentadbiran", "pc_desc_11": "Sokongan operasi HR dan pentadbiran harian yang komprehensif — supaya anda fokus mengembangkan perniagaan.", "pc_title_12": "Perundingan Strategik & Operasi", "pc_desc_12": "Nasihat strategi perniagaan, kecekapan operasi, dan pengurusan projek — membantu syarikat berkembang dengan yakin.", "mod_title_1": "Imigresen Pelaburan & Kediaman", "mod_title_2": "Penubuhan Perniagaan & Pengembangan Luar Negara", "mod_title_3": "Gaya Hidup, Pendidikan & Hartanah", "mod_title_4": "Perkhidmatan Perisikan Data Perusahaan", "li_1": "PR Singapura & Program Pelabur Global (GIP)", "li_2": "MM2H — Malaysia My Second Home", "li_3": "Nasihat perancangan identiti & kediaman", "li_4": "Penstrukturan & penubuhan pejabat keluarga", "li_5": "Pembukaan akaun bank Singapura", "li_6": "Peruntukan aset berpendapatan tinggi", "li_7": "Penubuhan syarikat & penstrukturan korporat", "li_8": "Permohonan pas kerja (EP, DP, S Pass)", "li_9": "Perjanjian pemegang saham & nasihat undang-undang", "li_10": "Lawatan pemeriksaan perniagaan", "li_11": "Pengurusan HR & gaji rentas sempadan", "li_12": "Program latihan pengembangan syarikat luar negara", "li_13": "Penempatan pengajian antarabangsa & lawatan kampus", "li_14": "Peningkatan profil akademik & pengurusan GPA", "li_15": "Perancangan kerjaya & pembangunan profesional", "li_16": "Pelaburan hartanah luar negara premium", "li_17": "Pengurusan & penyewaan hartanah hujung ke hujung", "li_18": "Perkhidmatan konsiaj & gaya hidup premium", "li_19": "Laporan penyiasatan latar belakang perusahaan", "li_20": "Pemprofilan perusahaan & pelabelan risiko", "li_21": "Penyaringan & pemadanan rakan kongsi Asia Tenggara", "li_22": "Semakan pematuhan & usaha wajar", "li_23": "Penyemakan pembekal & rakan kongsi saluran", "li_24": "Pelan projek tunggal, penahan & keahlian tahunan", "li_25": "Perakaunan & pembukiran bulanan", "li_26": "Penghantaran GST (suku tahunan)", "li_27": "Penyusunan penyata kewangan", "li_28": "Akaun pengurusan & pelaporan", "li_29": "Audit berkanun (mematuhi ACRA)", "li_30": "Audit tujuan khas", "li_31": "Nasihat audit dalaman", "li_32": "Cukai pendapatan korporat (ECI & Borang C/CS)", "li_33": "Pemfailan cukai pendapatan individu", "li_34": "Perancangan & nasihat cukai", "li_35": "Penghantaran IR8A & IR21", "li_36": "AGM tahunan, resolusi & pemfailan XBRL", "li_37": "Pengarah & setiausaha calon", "li_38": "Alamat pejabat berdaftar", "li_39": "Penghapusan & pembubaran syarikat", "li_40": "Pemprosesan gaji & caruman CPF", "li_41": "Persediaan akaun CorpPass, SinPass & MOM", "li_42": "Pendaftaran / pembatalan pendaftaran GST", "li_43": "Pembukaan akaun bank korporat & individu", "li_44": "Pengambilan & penyumberan bakat", "li_45": "Kemasukan pasaran & strategi perniagaan", "li_46": "Pengoptimuman proses & pengurusan kos", "li_47": "Perancangan, pelaksanaan & pemantauan projek", "li_48": "Nasihat operasi rentas sempadan", "gaia_teaser_desc": "Di luar perkhidmatan korporat tradisional, kami bekerjasama dengan GAIAGenX untuk membawa penyelesaian penggunaan Ejen AI yang pintar kepada perusahaan anda — dibina khusus, dikonfigurasikan dengan selamat, dan bersedia untuk berskala.", "gfeat_title_1": "Penggunaan Ejen AI", "gfeat_desc_1": "Konfigurasi jauh dan pengendalian Ejen AI tersuai untuk aliran kerja anda.", "gfeat_title_2": "Automasi Proses", "gfeat_desc_2": "Hapuskan kesesakan dengan automasi pintar merentasi organisasi anda.", "gfeat_title_3": "Integrasi Perusahaan", "gfeat_desc_3": "Sambungkan AI dengan lancar ke dalam ERP, CRM dan sistem back-office sedia ada anda.", "gfeat_title_4": "Selamat & Patuh", "gfeat_desc_4": "Keselamatan gred perusahaan sejajar dengan PDPA Singapura dan standard antarabangsa.", "gaia_hero_title": "AI Perusahaan,<br><span class='hl'>Digunakan Dengan Tepat.</span>", "gaia_hero_sub": "Ejen AI · Penggunaan Perusahaan", "gaia_hero_desc": "GAIAGenX menyampaikan perkhidmatan penggunaan dan konfigurasi Ejen AI pintar dari jauh. Kami membenamkan keupayaan AI canggih terus ke dalam aliran kerja perusahaan anda — dengan lancar, selamat dan berskala.", "gaia_back": "← Kembali ke Soon Hoe", "cta_consult": "Minta Perundingan →", "cta_view": "Lihat Perkhidmatan", "g_label_what_we_deliver": "Apa Yang Kami Berikan", "g_title_ai_enterprise_services": "Perkhidmatan AI Perusahaan", "gcard_title_1": "Penggunaan Ejen AI", "gcard_title_2": "Automasi Aliran Kerja", "gcard_title_3": "Analitik & Wawasan AI", "gcard_title_4": "Integrasi Sistem", "gcard_title_5": "Latihan & Pemupukan AI", "gcard_title_6": "Tadbir Urus & Pematuhan", "gcard_desc_1": "Konfigurasi, ujian dan penggunaan Ejen AI tersuai untuk proses perniagaan spesifik anda.", "gcard_desc_2": "Kenal pasti tugas berulang berjumlah besar dan automatikkan dengan pintar untuk membebaskan pasukan anda.", "gcard_desc_3": "Analitik ramalan, pengesanan anomali dan pelaporan pintar disesuaikan dengan KPI anda.", "gcard_desc_4": "Sambungkan AI ke platform ERP, CRM, perakaunan dan HR sedia ada anda dengan gangguan minimum.", "gcard_desc_5": "Dari taklimat eksekutif hingga bengkel hands-on — lengkapkan pasukan anda untuk bekerja dengan keyakinan bersama AI.", "gcard_desc_6": "Penggunaan AI yang bertanggungjawab sejajar dengan PDPA, garis panduan MAS dan rangka kerja tadbir urus data antarabangsa.", "g_label_get_started": "Mula Sekarang", "g_title_ready_to_deploy_ai": "Bersedia untuk Menggunakan AI?", "gaia_cbox_p": "Hubungi kami melalui Soon Hoe Management untuk meneroka bagaimana GAIAGenX boleh mengubah perusahaan anda dengan pelan penggunaan AI yang disesuaikan.", "gaia_footer": "Penyelesaian AI Perusahaan GAIAGenX · Rakan kongsi SOON HOE MANAGEMENT PTE LTD · Singapura 2026", "contact_cta_p": "Untuk pertanyaan umum, harga pakej, atau untuk menjadualkan perundingan — hubungi kami terus.", "hotline": "Talian Panas", "office_sg_city": "Singapura", "office_sg_city_zh": "新 加 坡", "office_my_city": "Malaysia", "office_my_city_zh": "马 来 西 亚", "office_cn_city": "China", "office_cn_city_zh": "中 国", "office_jp_city": "Jepun", "office_jp_city_zh": "日 本", "footer_copy": "Hak Cipta &copy; 2026 <span class='footer-gold'>SOON HOE GROUP</span>. Hak Terpelihara.<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>Singapura &nbsp;&middot;&nbsp; Malaysia &nbsp;&middot;&nbsp; China &nbsp;&middot;&nbsp; Jepun</span>"}, "ja": {"nav_about": "会社概要", "nav_services": "サービス", "nav_contact": "お問い合わせ", "nav_ai": "AIサービス · GAIAGenX", "hero_badge": "★ 投資移民コンサルタント · シンガポール", "hero_tagline": "お客様のプライバシーを守り、利益のために全力を尽くします。", "hero_desc": "アイデンティティプランニングの専門的なガイダンスで、新しい人生のスタートを支援します。財務の自由、時間の自由、心の平和を追求する — アジアとその先でご家族のために。", "hero_scroll": "スクロール", "sec_about_label": "私たちについて", "sec_about_title": "会社概要", "sec_why_label": "選ばれる理由", "sec_why_title": "Soon Hoeを選ぶ理由", "sec_mod_label": "サービス範囲", "sec_mod_title": "実現できること", "sec_svc_label": "専門サービス", "sec_svc_title": "専門サービス", "sec_contact_label": "所在地", "sec_contact_title": "グローバル展開", "sec_contact_sub": "シンガポールを拠点に、アジア全域でサービスを提供", "lang_label": "JA · 日本語", "ap_title_1": "経済的自由", "ap_desc_1": "グローバル市場における戦略的資産配分と資産管理。", "ap_title_2": "時間的自由", "ap_desc_2": "プロセスを合理化し、重要なことに集中できる専任サポート。", "ap_title_3": "心の平和", "ap_desc_3": "完全なコンプライアンス、プライバシー保護、そして信頼できるアドバイス。", "ap_title_4": "資産成長", "ap_desc_4": "堅実で多様化された戦略による資産の保全と増加。", "about_body": "<p><strong>顺和商务管理グループ（Soon Hoe Business Management Group）</strong>は、包括的な財務、税務、業務管理、企業秘書サービスを提供する大手プロフェッショナルコンサルティング会社です。経験豊富なチームと広範な業界リソースにより、ビジネスプロセスを最適化し、経営効率を向上させ、コンプライアンスを確保する効率的なソリューションを提供します。</p><p>シンガポールを金融ハブとして、東南アジアと華人圏全域の富裕層の個人・家族に対し、海外生活・投資のカスタマイズサービスを専門的に提供しています。</p>", "about_quote": "アイデンティティプランニングの専門的なガイダンス — 新しい人生のスタートを形成する。", "pc_title_1": "シンガポール拠点の金融ハブ", "pc_desc_1": "アジアで最も信頼される金融センターで運営 — 地域の銀行、法律、規制フレームワークへの直接アクセス。", "pc_title_2": "ワンストップオーダーメイドソリューション", "pc_desc_2": "会社設立から税務コンプライアンス、居留権計画、ファミリーオフィス設立まで — すべてお客様の目標に合わせて対応。", "pc_title_3": "プライバシーとコンプライアンス優先", "pc_desc_3": "厳格な守秘義務、完全な規制遵守、最高水準の職業倫理で対応。", "pc_title_4": "多国間プレゼンス", "pc_desc_4": "シンガポール、マレーシア、中国、日本にオフィスを持ち、複雑な国際環境でのクロスボーダー支援を提供。", "pc_title_5": "認定多分野チーム", "pc_desc_5": "シンガポールCPA、監査人、弁護士、国際専門家が連携し、統合的な専門家主導のアドバイスを提供。", "pc_title_6": "富裕層クライアントの専門知識", "pc_desc_6": "Greater Chinaと東南アジアの富裕層とファミリーオフィスに数十年の経験。", "pc_title_7": "会計・財務諸表作成", "pc_desc_7": "フルサイクルの記帳、GST申告、財務諸表作成でコンプライアンスを確保。", "pc_title_8": "監査サービス", "pc_desc_8": "シンガポール監査基準（SSA）に完全準拠した独立した厳格な監査。", "pc_title_9": "法人・個人税務", "pc_desc_9": "完全なコンプライアンスを維持しながらリスクを最小化するシンガポール税務コンプライアンスとアドバイス。", "pc_title_10": "コーポレートセクレタリーサービス", "pc_desc_10": "登記から解散まで、企業のライフサイクル全体を通じてACRA要件への完全準拠を確保。", "pc_title_11": "人事・管理", "pc_desc_11": "ビジネス成長に集中できるよう、日常的な人事・管理業務を包括的にサポート。", "pc_title_12": "戦略コンサルティング・オペレーション", "pc_desc_12": "ビジネス戦略、業務効率、プロジェクト管理のアドバイス — 確信を持って拡張できるよう支援。", "mod_title_1": "投資移民・居留権", "mod_title_2": "海外進出・事業設立", "mod_title_3": "ライフスタイル・教育・不動産", "mod_title_4": "企業データインテリジェンスサービス", "li_1": "シンガポールPR・グローバル投資家プログラム（GIP）", "li_2": "MM2H — マレーシア第二の故郷", "li_3": "アイデンティティ・居留権計画アドバイス", "li_4": "ファミリーオフィス構築・設立", "li_5": "シンガポール銀行口座開設", "li_6": "富裕層向け資産配分", "li_7": "会社設立・法人構造構築", "li_8": "就労ビザ申請（EP、DP、S Pass）", "li_9": "株主協定・法律アドバイス", "li_10": "ビジネス視察ツアー・企業訪問", "li_11": "クロスボーダー人事・給与管理", "li_12": "海外進出企業向け研修プログラム", "li_13": "海外留学・キャンパス訪問", "li_14": "学業プロフィール向上・GPA管理", "li_15": "キャリアプランニング・プロフェッショナル開発", "li_16": "海外プレミアム不動産投資", "li_17": "エンドツーエンドの不動産管理・賃貸", "li_18": "プレミアムコンシェルジュ・ライフスタイルサービス", "li_19": "企業バックグラウンド調査レポート", "li_20": "企業プロファイリング・リスクラベリング", "li_21": "東南アジアパートナースクリーニング・マッチング", "li_22": "コンプライアンスチェック・デューデリジェンス", "li_23": "サプライヤー・チャネルパートナー審査", "li_24": "単発プロジェクト・リテイナー・年間会員制", "li_25": "月次記帳・ブックキーピング", "li_26": "GST申告（四半期）", "li_27": "財務諸表作成", "li_28": "管理会計・レポーティング", "li_29": "法定監査（ACRA準拠）", "li_30": "特定目的監査", "li_31": "内部監査アドバイス", "li_32": "法人税（ECI・C/CS申告書）", "li_33": "個人所得税申告", "li_34": "税務計画・アドバイス", "li_35": "IR8A・IR21申告", "li_36": "年次AGM・決議・XBRL申告", "li_37": "名目取締役・秘書", "li_38": "登録事務所住所", "li_39": "会社清算・解散", "li_40": "給与処理・CPF拠出", "li_41": "CorpPass・SinPass・MOMアカウント設定", "li_42": "GST登録/登録取消", "li_43": "法人・個人銀行口座開設", "li_44": "採用・人材調達", "li_45": "市場参入・ビジネス戦略", "li_46": "プロセス最適化・コスト管理", "li_47": "プロジェクト計画・実行・モニタリング", "li_48": "クロスボーダー業務アドバイス", "gaia_teaser_desc": "従来の企業サービスを超え、GAIAGenXと連携してインテリジェントなAIエージェント導入と自動化ソリューションを提供します — 専用設計、安全な設定、スケールアップ準備完了。", "gfeat_title_1": "AIエージェント導入", "gfeat_desc_1": "ワークフロー向けカスタムAIエージェントのリモート設定と展開。", "gfeat_title_2": "プロセス自動化", "gfeat_desc_2": "組織全体のボトルネックをインテリジェントな自動化で解消。", "gfeat_title_3": "エンタープライズ統合", "gfeat_desc_3": "既存のERP、CRM、バックオフィスシステムにシームレスにAIを接続。", "gfeat_title_4": "セキュリティ・コンプライアンス", "gfeat_desc_4": "シンガポールPDPAと国際基準に準拠したエンタープライズグレードのセキュリティ。", "gaia_hero_title": "エンタープライズAI、<br><span class='hl'>正確に導入。</span>", "gaia_hero_sub": "AIエージェント · エンタープライズ導入", "gaia_hero_desc": "GAIAGenXはインテリジェントなAIエージェント導入・設定サービスをリモートで提供します。最先端のAI機能をシームレス、安全、スケーラブルに企業ワークフローに組み込みます。", "gaia_back": "← Soon Hoeに戻る", "cta_consult": "相談を申し込む →", "cta_view": "サービスを見る", "g_label_what_we_deliver": "サービス内容", "g_title_ai_enterprise_services": "エンタープライズAIサービス", "gcard_title_1": "AIエージェント導入", "gcard_title_2": "ワークフロー自動化", "gcard_title_3": "AI分析・インサイト", "gcard_title_4": "システム統合", "gcard_title_5": "AIトレーニング・能力開発", "gcard_title_6": "ガバナンス・コンプライアンス", "gcard_desc_1": "ビジネスプロセス専用のカスタムAIエージェントの設定、テスト、導入。", "gcard_desc_2": "大量の反復タスクを特定し自動化して、チームが高付加価値の作業に集中できるように。", "gcard_desc_3": "KPIに合わせた予測分析、異常検出、インテリジェントレポート。", "gcard_desc_4": "既存のERP、CRM、会計、HRプラットフォームにAIを最小限の中断で接続。", "gcard_desc_5": "エグゼクティブ向けブリーフィングから実践的ワークショップまで — AIと自信を持って協働できるチームを育成。", "gcard_desc_6": "シンガポールPDPA、MASガイドライン、国際データガバナンスフレームワークに準拠した責任あるAI導入。", "g_label_get_started": "始めましょう", "g_title_ready_to_deploy_ai": "AI導入の準備はできていますか？", "gaia_cbox_p": "Soon Hoe Managementを通じてお問い合わせいただき、GAIAGenXがどのようにお客様の企業をカスタマイズされたAI導入計画で変革できるかをご検討ください。", "gaia_footer": "GAIAGenX エンタープライズAIソリューション · SOON HOE MANAGEMENT PTE LTDとのパートナーシップ · シンガポール 2026", "contact_cta_p": "一般的なお問い合わせ、パッケージ料金、またはご相談のご予約は、直接ご連絡ください。", "hotline": "ホットライン", "office_sg_city": "シンガポール", "office_sg_city_zh": "新加坡", "office_my_city": "マレーシア", "office_my_city_zh": "马来西亚", "office_cn_city": "中国", "office_cn_city_zh": "中国", "office_jp_city": "日本", "office_jp_city_zh": "日本", "footer_copy": "Copyright &copy; 2026 <span class='footer-gold'>SOON HOE GROUP</span>. 全著作権所有。<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>シンガポール &nbsp;&middot;&nbsp; マレーシア &nbsp;&middot;&nbsp; 中国 &nbsp;&middot;&nbsp; 日本</span>"}, "th": {"nav_about": "เกี่ยวกับ", "nav_services": "บริการ", "nav_contact": "ติดต่อ", "nav_ai": "บริการ AI · GAIAGenX", "hero_badge": "★ ที่ปรึกษาวีซ่านักลงทุน · สิงคโปร์", "hero_tagline": "ความเป็นส่วนตัวของคุณ เราปกป้อง — ผลประโยชน์ของคุณ เราทุ่มเท", "hero_desc": "คำแนะนำจากผู้เชี่ยวชาญด้านการวางแผนอัตลักษณ์และการเริ่มต้นชีวิตใหม่ มุ่งสู่อิสรภาพทางการเงิน อิสรภาพด้านเวลา และความสงบใจ — สำหรับคุณและครอบครัวทั่วเอเชีย", "hero_scroll": "เลื่อน", "sec_about_label": "เกี่ยวกับเรา", "sec_about_title": "แนะนำบริษัท", "sec_why_label": "จุดเด่นของเรา", "sec_why_title": "ทำไมต้องเลือก Soon Hoe", "sec_mod_label": "ขอบเขตบริการ", "sec_mod_title": "เป้าหมายที่เราช่วยให้คุณบรรลุ", "sec_svc_label": "บริการวิชาชีพ", "sec_svc_title": "บริการวิชาชีพ", "sec_contact_label": "ที่ตั้งของเรา", "sec_contact_title": "การดำเนินงานระดับโลก", "sec_contact_sub": "ตั้งอยู่ในสิงคโปร์ ให้บริการทั่วเอเชีย", "lang_label": "TH · ภาษาไทย", "ap_title_1": "อิสรภาพทางการเงิน", "ap_desc_1": "การจัดสรรสินทรัพย์เชิงกลยุทธ์และการจัดการความมั่งคั่งในตลาดโลก", "ap_title_2": "อิสรภาพด้านเวลา", "ap_desc_2": "กระบวนการที่คล่องตัวและการสนับสนุนเฉพาะทาง เพื่อให้คุณมุ่งเน้นสิ่งสำคัญ", "ap_title_3": "ความสงบใจ", "ap_desc_3": "การปฏิบัติตามกฎระเบียบอย่างครบถ้วน การปกป้องความเป็นส่วนตัว และที่ปรึกษาที่เชื่อถือได้", "ap_title_4": "การเติบโตของสินทรัพย์", "ap_desc_4": "รักษาและเพิ่มพูนความมั่งคั่งของคุณผ่านกลยุทธ์ที่รอบคอบและหลากหลาย", "about_body": "<p><strong>Soon Hoe Business Management Group</strong> เป็นบริษัทที่ปรึกษาการจัดการมืออาชีพชั้นนำ ที่มุ่งมั่นให้บริการด้านการเงิน ภาษี การจัดการการดำเนินงาน และเลขานุการบริษัทอย่างครบวงจร ด้วยทีมงานที่มีประสบการณ์และทรัพยากรอุตสาหกรรมที่กว้างขวาง เราจัดหาโซลูชันที่มีประสิทธิภาพและปรับแต่งเฉพาะเพื่อเพิ่มประสิทธิภาพกระบวนการทางธุรกิจ</p><p>ด้วยสิงคโปร์เป็นศูนย์กลางทางการเงินของเรา เราเชี่ยวชาญในการให้บริการชีวิตและการลงทุนในต่างประเทศแบบครบวงจรแก่บุคคลและครอบครัวที่มีมูลค่าสุทธิสูงทั่วเอเชียตะวันออกเฉียงใต้และเกรทเตอร์ไชนา</p>", "about_quote": "คำแนะนำจากผู้เชี่ยวชาญด้านการวางแผนอัตลักษณ์ — สร้างการเริ่มต้นใหม่ในชีวิต", "pc_title_1": "ศูนย์กลางการเงินในสิงคโปร์", "pc_desc_1": "ดำเนินงานในศูนย์กลางการเงินที่น่าเชื่อถือที่สุดในเอเชีย — เข้าถึงระบบธนาคาร กฎหมาย และกฎระเบียบในภูมิภาคโดยตรง", "pc_title_2": "โซลูชันครบวงจรปรับแต่งเฉพาะ", "pc_desc_2": "จากการจัดตั้งบริษัทและการปฏิบัติตามภาษีไปจนถึงการวางแผนถิ่นที่อยู่และการจัดตั้ง Family Office", "pc_title_3": "ความเป็นส่วนตัวและการปฏิบัติตามกฎระเบียบเป็นอันดับแรก", "pc_desc_3": "ทุกการดำเนินงานจัดการด้วยความลับอย่างเคร่งครัด การปฏิบัติตามกฎระเบียบอย่างเต็มรูปแบบ", "pc_title_4": "การดำเนินงานหลายประเทศ", "pc_desc_4": "ด้วยสำนักงานในสิงคโปร์ มาเลเซีย จีน และญี่ปุ่น เราให้การสนับสนุนข้ามพรมแดนอย่างแท้จริง", "pc_title_5": "ทีมงานหลายสาขาวิชาที่ได้รับการรับรอง", "pc_desc_5": "CPA สิงคโปร์ ผู้ตรวจสอบบัญชี ทนายความ และผู้เชี่ยวชาญระดับนานาชาติ", "pc_title_6": "ความเชี่ยวชาญด้านลูกค้ามูลค่าสุทธิสูง", "pc_desc_6": "ประสบการณ์หลายทศวรรษในการให้บริการบุคคลมูลค่าสุทธิสูงและ Family Office จากเกรทเตอร์ไชนาและเอเชียตะวันออกเฉียงใต้", "pc_title_7": "การบัญชีและการรวบรวม", "pc_desc_7": "การทำบัญชีแบบครบวงจร การยื่น GST และการจัดทำงบการเงินเพื่อให้บัญชีของคุณสอดคล้อง", "pc_title_8": "บริการตรวจสอบ", "pc_desc_8": "การตรวจสอบอิสระที่เข้มงวดและสอดคล้องกับมาตรฐานการตรวจสอบสิงคโปร์ (SSA)", "pc_title_9": "ภาษีนิติบุคคลและบุคคลธรรมดา", "pc_desc_9": "การปฏิบัติตามภาษีสิงคโปร์แบบครบวงจรและคำแนะนำเพื่อลดความเสี่ยงในขณะที่ยังคงสอดคล้อง", "pc_title_10": "บริการเลขานุการบริษัท", "pc_desc_10": "รักษาบริษัทของคุณให้สอดคล้องกับข้อกำหนด ACRA ตลอดวงจรชีวิต", "pc_title_11": "HR และการบริหาร", "pc_desc_11": "การสนับสนุน HR และการดำเนินงานด้านการบริหารในแต่ละวันอย่างครบถ้วน", "pc_title_12": "ที่ปรึกษาเชิงกลยุทธ์และการดำเนินงาน", "pc_desc_12": "คำแนะนำด้านกลยุทธ์ธุรกิจ ประสิทธิภาพการดำเนินงาน และการจัดการโครงการ", "mod_title_1": "การย้ายถิ่นฐานเพื่อการลงทุนและถิ่นที่อยู่", "mod_title_2": "การจัดตั้งธุรกิจและการขยายกิจการต่างประเทศ", "mod_title_3": "ไลฟ์สไตล์ การศึกษา และอสังหาริมทรัพย์", "mod_title_4": "บริการข่าวกรองข้อมูลองค์กร", "li_1": "PR สิงคโปร์และโปรแกรมนักลงทุนระดับโลก (GIP)", "li_2": "MM2H — มาเลเซียบ้านหลังที่สอง", "li_3": "คำแนะนำการวางแผนอัตลักษณ์และถิ่นที่อยู่", "li_4": "การจัดโครงสร้างและจัดตั้ง Family Office", "li_5": "การเปิดบัญชีธนาคารในสิงคโปร์", "li_6": "การจัดสรรสินทรัพย์มูลค่าสุทธิสูง", "li_7": "การจดทะเบียนบริษัทและโครงสร้างนิติบุคคล", "li_8": "การขอใบอนุญาตทำงาน (EP, DP, S Pass)", "li_9": "ข้อตกลงผู้ถือหุ้นและคำแนะนำทางกฎหมาย", "li_10": "ทัวร์ตรวจสอบธุรกิจและการเยี่ยมชมองค์กร", "li_11": "การจัดการ HR และเงินเดือนข้ามพรมแดน", "li_12": "โปรแกรมฝึกอบรมการขยายกิจการต่างประเทศ", "li_13": "การจัดที่เรียนต่างประเทศและเยี่ยมชมวิทยาเขต", "li_14": "การยกระดับโปรไฟล์วิชาการและการจัดการ GPA", "li_15": "การวางแผนอาชีพและการพัฒนาวิชาชีพ", "li_16": "การลงทุนอสังหาริมทรัพย์ต่างประเทศระดับพรีเมียม", "li_17": "การจัดการและให้เช่าทรัพย์สินแบบครบวงจร", "li_18": "บริการ Concierge และไลฟ์สไตล์ระดับพรีเมียม", "li_19": "รายงานการตรวจสอบภูมิหลังองค์กร", "li_20": "การสร้างโปรไฟล์องค์กรและการติดฉลากความเสี่ยง", "li_21": "การคัดกรองและจับคู่พาร์ทเนอร์ในเอเชียตะวันออกเฉียงใต้", "li_22": "การตรวจสอบความสอดคล้องและ Due Diligence", "li_23": "การตรวจสอบซัพพลายเออร์และพาร์ทเนอร์ช่องทาง", "li_24": "แผนโครงการเดียว Retainer และสมาชิกรายปี", "li_25": "การทำบัญชีรายเดือน", "li_26": "การยื่น GST (รายไตรมาส)", "li_27": "การจัดทำงบการเงิน", "li_28": "บัญชีและการรายงานเพื่อการจัดการ", "li_29": "การตรวจสอบตามกฎหมาย (สอดคล้อง ACRA)", "li_30": "การตรวจสอบเพื่อวัตถุประสงค์พิเศษ", "li_31": "คำแนะนำการตรวจสอบภายใน", "li_32": "ภาษีเงินได้นิติบุคคล (ECI และแบบฟอร์ม C/CS)", "li_33": "การยื่นภาษีเงินได้บุคคลธรรมดา", "li_34": "การวางแผนและคำแนะนำด้านภาษี", "li_35": "การยื่น IR8A และ IR21", "li_36": "AGM ประจำปี มติ และการยื่น XBRL", "li_37": "กรรมการและเลขานุการตามสัญญา", "li_38": "ที่อยู่สำนักงานจดทะเบียน", "li_39": "การยุบบริษัทและการชำระบัญชี", "li_40": "การประมวลเงินเดือนและเงินสมทบ CPF", "li_41": "การตั้งค่าบัญชี CorpPass, SinPass และ MOM", "li_42": "การลงทะเบียน/ยกเลิกการลงทะเบียน GST", "li_43": "การเปิดบัญชีธนาคารนิติบุคคลและบุคคล", "li_44": "การสรรหาและจัดหาบุคลากร", "li_45": "การเข้าสู่ตลาดและกลยุทธ์ธุรกิจ", "li_46": "การปรับกระบวนการและการจัดการต้นทุน", "li_47": "การวางแผน ดำเนินการ และติดตามโครงการ", "li_48": "คำแนะนำการดำเนินงานข้ามพรมแดน", "gaia_teaser_desc": "นอกเหนือจากบริการนิติบุคคลแบบดั้งเดิม เราร่วมมือกับ GAIAGenX เพื่อนำโซลูชันการใช้งาน AI Agent อัจฉริยะและการทำงานอัตโนมัติมาสู่องค์กรของคุณ", "gfeat_title_1": "การใช้งาน AI Agent", "gfeat_desc_1": "การกำหนดค่าและปรับใช้ AI Agent แบบกำหนดเองสำหรับเวิร์กโฟลว์ของคุณจากระยะไกล", "gfeat_title_2": "ระบบอัตโนมัติของกระบวนการ", "gfeat_desc_2": "กำจัดคอขวดด้วยระบบอัตโนมัติอัจฉริยะทั่วทั้งองค์กร", "gfeat_title_3": "การรวมระบบองค์กร", "gfeat_desc_3": "เชื่อมต่อ AI กับ ERP, CRM และระบบ Back-office ที่มีอยู่ของคุณอย่างราบรื่น", "gfeat_title_4": "ปลอดภัยและสอดคล้อง", "gfeat_desc_4": "ความปลอดภัยระดับองค์กรที่สอดคล้องกับ PDPA สิงคโปร์และมาตรฐานระดับสากล", "gaia_hero_title": "AI องค์กร,<br><span class='hl'>ใช้งานได้อย่างถูกต้อง</span>", "gaia_hero_sub": "AI Agents · การใช้งานระดับองค์กร", "gaia_hero_desc": "GAIAGenX ให้บริการใช้งานและกำหนดค่า AI Agent อัจฉริยะจากระยะไกล เราฝังความสามารถ AI ล้ำสมัยลงในเวิร์กโฟลว์องค์กรของคุณโดยตรง — อย่างราบรื่น ปลอดภัย และปรับขนาดได้", "gaia_back": "← กลับไปที่ Soon Hoe", "cta_consult": "ขอคำปรึกษา →", "cta_view": "ดูบริการ", "g_label_what_we_deliver": "สิ่งที่เราให้บริการ", "g_title_ai_enterprise_services": "บริการ AI ระดับองค์กร", "gcard_title_1": "การใช้งาน AI Agent", "gcard_title_2": "ระบบอัตโนมัติของเวิร์กโฟลว์", "gcard_title_3": "การวิเคราะห์ AI และข้อมูลเชิงลึก", "gcard_title_4": "การรวมระบบ", "gcard_title_5": "การฝึกอบรมและเสริมสร้าง AI", "gcard_title_6": "ธรรมาภิบาลและการปฏิบัติตามกฎระเบียบ", "gcard_desc_1": "การกำหนดค่า ทดสอบ และปรับใช้ AI Agent แบบกำหนดเองสำหรับกระบวนการทางธุรกิจเฉพาะของคุณ", "gcard_desc_2": "ระบุงานที่ซ้ำซากในปริมาณมากและทำให้เป็นอัตโนมัติอย่างชาญฉลาดเพื่อให้ทีมทำงานที่มีคุณค่าสูงขึ้น", "gcard_desc_3": "การวิเคราะห์เชิงคาดการณ์ การตรวจจับความผิดปกติ และการรายงานอัจฉริยะที่ปรับแต่งตาม KPI", "gcard_desc_4": "เชื่อมต่อ AI กับ ERP, CRM บัญชีและแพลตฟอร์ม HR ที่มีอยู่ของคุณด้วยการหยุดชะงักน้อยที่สุด", "gcard_desc_5": "จาก Briefing ระดับผู้บริหารไปจนถึง Workshop แบบ Hands-on — เสริมสร้างทีมให้ทำงานร่วมกับ AI ได้อย่างมั่นใจ", "gcard_desc_6": "การใช้งาน AI อย่างมีความรับผิดชอบที่สอดคล้องกับ PDPA ของสิงคโปร์ แนวทาง MAS และกรอบการกำกับดูแลข้อมูลระดับสากล", "g_label_get_started": "เริ่มต้นเลย", "g_title_ready_to_deploy_ai": "พร้อมที่จะใช้งาน AI แล้วหรือยัง?", "gaia_cbox_p": "ติดต่อเราผ่าน Soon Hoe Management เพื่อสำรวจว่า GAIAGenX สามารถเปลี่ยนแปลงองค์กรของคุณด้วยแผนการใช้งาน AI ที่ปรับแต่งเฉพาะได้อย่างไร", "gaia_footer": "โซลูชัน AI ระดับองค์กร GAIAGenX · ร่วมกับ SOON HOE MANAGEMENT PTE LTD · สิงคโปร์ 2026", "contact_cta_p": "สำหรับการสอบถามทั่วไป ราคาแพ็คเกจ หรือการนัดหมายปรึกษา — ติดต่อเราโดยตรง", "hotline": "สายด่วน", "office_sg_city": "สิงคโปร์", "office_sg_city_zh": "新加坡", "office_my_city": "มาเลเซีย", "office_my_city_zh": "马来西亚", "office_cn_city": "จีน", "office_cn_city_zh": "中国", "office_jp_city": "ญี่ปุ่น", "office_jp_city_zh": "日本", "footer_copy": "ลิขสิทธิ์ &copy; 2026 <span class='footer-gold'>SOON HOE GROUP</span> สงวนลิขสิทธิ์ทั้งหมด<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>สิงคโปร์ &nbsp;&middot;&nbsp; มาเลเซีย &nbsp;&middot;&nbsp; จีน &nbsp;&middot;&nbsp; ญี่ปุ่น</span>"}, "vi": {"nav_about": "Giới thiệu", "nav_services": "Dịch vụ", "nav_contact": "Liên hệ", "nav_ai": "Dịch vụ AI · GAIAGenX", "hero_badge": "★ Tư vấn Visa Đầu tư · Singapore", "hero_tagline": "Quyền riêng tư của bạn, chúng tôi bảo vệ — quyền lợi của bạn, chúng tôi nỗ lực.", "hero_desc": "Tư vấn chuyên nghiệp về lập kế hoạch định danh và khởi đầu cuộc sống mới. Theo đuổi tự do tài chính, tự do thời gian và bình an tâm hồn — cho bạn và gia đình khắp châu Á.", "hero_scroll": "Cuộn", "sec_about_label": "Về Chúng Tôi", "sec_about_title": "Giới Thiệu Công Ty", "sec_why_label": "Ưu Thế Của Chúng Tôi", "sec_why_title": "Tại Sao Chọn Soon Hoe", "sec_mod_label": "Phạm Vi Dịch Vụ", "sec_mod_title": "Mục Tiêu Chúng Tôi Giúp Bạn Đạt Được", "sec_svc_label": "Dịch Vụ Chuyên Nghiệp", "sec_svc_title": "Dịch Vụ Chuyên Nghiệp", "sec_contact_label": "Địa Điểm", "sec_contact_title": "Hiện Diện Toàn Cầu", "sec_contact_sub": "Trụ sở tại Singapore, phục vụ thị trường châu Á", "lang_label": "VI · Tiếng Việt", "ap_title_1": "Tự Do Tài Chính", "ap_desc_1": "Phân bổ tài sản chiến lược và quản lý tài sản trên các thị trường toàn cầu.", "ap_title_2": "Tự Do Thời Gian", "ap_desc_2": "Quy trình hợp lý và hỗ trợ chuyên dụng để bạn tập trung vào điều quan trọng.", "ap_title_3": "Bình An Tâm Hồn", "ap_desc_3": "Tuân thủ đầy đủ, bảo vệ quyền riêng tư và tư vấn đáng tin cậy ở mỗi bước.", "ap_title_4": "Tăng Trưởng Tài Sản", "ap_desc_4": "Bảo tồn và phát triển tài sản của bạn thông qua các chiến lược thận trọng và đa dạng.", "about_body": "<p><strong>Soon Hoe Business Management Group</strong> là công ty tư vấn quản lý chuyên nghiệp hàng đầu, cam kết cung cấp dịch vụ tài chính, thuế, quản lý hoạt động và thư ký doanh nghiệp toàn diện. Được hỗ trợ bởi đội ngũ giàu kinh nghiệm và nguồn lực ngành rộng lớn, chúng tôi cung cấp các giải pháp hiệu quả và tùy chỉnh.</p><p>Với Singapore là trung tâm tài chính, chúng tôi chuyên cung cấp dịch vụ sinh sống và đầu tư ở nước ngoài cho các cá nhân và gia đình có tài sản ròng cao trên khắp Đông Nam Á và Greater China.</p>", "about_quote": "Hướng dẫn chuyên nghiệp về lập kế hoạch định danh — định hình khởi đầu mới trong cuộc sống.", "pc_title_1": "Trung Tâm Tài Chính Singapore", "pc_desc_1": "Hoạt động tại trung tâm tài chính đáng tin cậy nhất châu Á — cung cấp quyền truy cập trực tiếp vào các khuôn khổ ngân hàng, pháp lý và quy định khu vực.", "pc_title_2": "Giải Pháp Trọn Gói Tùy Chỉnh", "pc_desc_2": "Từ thành lập công ty và tuân thủ thuế đến lập kế hoạch cư trú và thành lập văn phòng gia đình — mọi khía cạnh được tùy chỉnh theo mục tiêu của bạn.", "pc_title_3": "Quyền Riêng Tư & Tuân Thủ Là Ưu Tiên", "pc_desc_3": "Mọi cam kết được xử lý với bảo mật nghiêm ngặt, tuân thủ quy định đầy đủ và tiêu chuẩn đạo đức nghề nghiệp cao nhất.", "pc_title_4": "Hiện Diện Đa Quốc Gia", "pc_desc_4": "Với văn phòng tại Singapore, Malaysia, Trung Quốc và Nhật Bản, chúng tôi cung cấp hỗ trợ xuyên biên giới thực sự.", "pc_title_5": "Đội Ngũ Đa Ngành Được Chứng Nhận", "pc_desc_5": "CPA Singapore, kiểm toán viên, luật sư có giấy phép và chuyên gia quốc tế — cung cấp tư vấn tích hợp.", "pc_title_6": "Chuyên Môn Khách Hàng Tài Sản Cao", "pc_desc_6": "Hàng thập kỷ kinh nghiệm phục vụ cá nhân HNW và văn phòng gia đình từ Greater China và Đông Nam Á.", "pc_title_7": "Kế Toán & Lập Báo Cáo", "pc_desc_7": "Kế toán toàn chu kỳ, nộp GST và lập báo cáo tài chính để đảm bảo sổ sách tuân thủ.", "pc_title_8": "Dịch Vụ Kiểm Toán", "pc_desc_8": "Cam kết kiểm toán độc lập, chặt chẽ và tuân thủ đầy đủ Tiêu chuẩn Kiểm toán Singapore (SSA).", "pc_title_9": "Thuế Doanh Nghiệp & Cá Nhân", "pc_desc_9": "Tuân thủ thuế Singapore toàn diện và tư vấn — giảm thiểu rủi ro trong khi vẫn tuân thủ đầy đủ.", "pc_title_10": "Dịch Vụ Thư Ký Doanh Nghiệp", "pc_desc_10": "Đảm bảo công ty của bạn tuân thủ đầy đủ yêu cầu ACRA trong suốt vòng đời.", "pc_title_11": "HR & Hành Chính", "pc_desc_11": "Hỗ trợ hoạt động HR và hành chính hàng ngày toàn diện — để bạn tập trung phát triển kinh doanh.", "pc_title_12": "Tư Vấn Chiến Lược & Vận Hành", "pc_desc_12": "Tư vấn chiến lược kinh doanh, hiệu quả vận hành và quản lý dự án — giúp công ty mở rộng với sự tự tin.", "mod_title_1": "Di Trú Đầu Tư & Cư Trú", "mod_title_2": "Thành Lập Doanh Nghiệp & Mở Rộng Ra Nước Ngoài", "mod_title_3": "Lối Sống, Giáo Dục & Bất Động Sản", "mod_title_4": "Dịch Vụ Tình Báo Dữ Liệu Doanh Nghiệp", "li_1": "PR Singapore & Chương Trình Nhà Đầu Tư Toàn Cầu (GIP)", "li_2": "MM2H — Chương Trình Malaysia Ngôi Nhà Thứ Hai", "li_3": "Tư vấn lập kế hoạch định danh và cư trú", "li_4": "Cấu trúc và thành lập văn phòng gia đình", "li_5": "Mở tài khoản ngân hàng Singapore", "li_6": "Phân bổ tài sản cho người có tài sản ròng cao", "li_7": "Thành lập công ty và cấu trúc doanh nghiệp", "li_8": "Xin giấy phép lao động (EP, DP, S Pass)", "li_9": "Thỏa thuận cổ đông và tư vấn pháp lý", "li_10": "Tour khảo sát kinh doanh và thăm doanh nghiệp", "li_11": "Quản lý HR và bảng lương xuyên biên giới", "li_12": "Chương trình đào tạo mở rộng doanh nghiệp ra nước ngoài", "li_13": "Du học quốc tế và thăm khuôn viên trường", "li_14": "Nâng cao hồ sơ học thuật và quản lý GPA", "li_15": "Lập kế hoạch nghề nghiệp và phát triển chuyên môn", "li_16": "Đầu tư bất động sản nước ngoài cao cấp", "li_17": "Quản lý và cho thuê bất động sản trọn gói", "li_18": "Dịch vụ Concierge và lối sống cao cấp", "li_19": "Báo cáo điều tra lý lịch doanh nghiệp", "li_20": "Lập hồ sơ doanh nghiệp và gán nhãn rủi ro", "li_21": "Sàng lọc và ghép đôi đối tác Đông Nam Á", "li_22": "Kiểm tra tuân thủ và thẩm định", "li_23": "Thẩm định nhà cung cấp và đối tác kênh phân phối", "li_24": "Kế hoạch dự án đơn lẻ, hợp đồng duy trì và thành viên hàng năm", "li_25": "Kế toán và ghi sổ hàng tháng", "li_26": "Nộp GST (hàng quý)", "li_27": "Lập báo cáo tài chính", "li_28": "Tài khoản quản lý và báo cáo", "li_29": "Kiểm toán theo luật định (tuân thủ ACRA)", "li_30": "Kiểm toán mục đích đặc biệt", "li_31": "Tư vấn kiểm toán nội bộ", "li_32": "Thuế thu nhập doanh nghiệp (ECI & Mẫu C/CS)", "li_33": "Khai thuế thu nhập cá nhân", "li_34": "Lập kế hoạch và tư vấn thuế", "li_35": "Nộp IR8A & IR21", "li_36": "AGM hàng năm, nghị quyết và nộp XBRL", "li_37": "Giám đốc và thư ký được ủy nhiệm", "li_38": "Địa chỉ văn phòng đăng ký", "li_39": "Xóa đăng ký và giải thể công ty", "li_40": "Xử lý bảng lương và đóng góp CPF", "li_41": "Thiết lập tài khoản CorpPass, SinPass & MOM", "li_42": "Đăng ký / hủy đăng ký GST", "li_43": "Mở tài khoản ngân hàng doanh nghiệp và cá nhân", "li_44": "Tuyển dụng và tìm kiếm nhân tài", "li_45": "Thâm nhập thị trường và chiến lược kinh doanh", "li_46": "Tối ưu hóa quy trình và quản lý chi phí", "li_47": "Lập kế hoạch, thực hiện và giám sát dự án", "li_48": "Tư vấn hoạt động xuyên biên giới", "gaia_teaser_desc": "Ngoài các dịch vụ doanh nghiệp truyền thống, chúng tôi hợp tác với GAIAGenX để mang đến các giải pháp triển khai AI Agent thông minh và tự động hóa cho doanh nghiệp của bạn.", "gfeat_title_1": "Triển Khai AI Agent", "gfeat_desc_1": "Cấu hình và triển khai từ xa các AI Agent tùy chỉnh cho quy trình làm việc của bạn.", "gfeat_title_2": "Tự Động Hóa Quy Trình", "gfeat_desc_2": "Loại bỏ các điểm nghẽn với tự động hóa thông minh trên toàn tổ chức.", "gfeat_title_3": "Tích Hợp Doanh Nghiệp", "gfeat_desc_3": "Kết nối AI liền mạch vào ERP, CRM và hệ thống back-office hiện có của bạn.", "gfeat_title_4": "An Toàn & Tuân Thủ", "gfeat_desc_4": "Bảo mật cấp doanh nghiệp phù hợp với PDPA Singapore và tiêu chuẩn quốc tế.", "gaia_hero_title": "AI Doanh Nghiệp,<br><span class='hl'>Triển Khai Đúng Cách.</span>", "gaia_hero_sub": "AI Agents · Triển Khai Doanh Nghiệp", "gaia_hero_desc": "GAIAGenX cung cấp dịch vụ triển khai và cấu hình AI Agent thông minh từ xa. Chúng tôi nhúng các khả năng AI tiên tiến trực tiếp vào quy trình doanh nghiệp của bạn — liền mạch, an toàn và có thể mở rộng.", "gaia_back": "← Quay lại Soon Hoe", "cta_consult": "Yêu Cầu Tư Vấn →", "cta_view": "Xem Dịch Vụ", "g_label_what_we_deliver": "Những Gì Chúng Tôi Cung Cấp", "g_title_ai_enterprise_services": "Dịch Vụ AI Doanh Nghiệp", "gcard_title_1": "Triển Khai AI Agent", "gcard_title_2": "Tự Động Hóa Quy Trình", "gcard_title_3": "Phân Tích AI & Thông Tin Chi Tiết", "gcard_title_4": "Tích Hợp Hệ Thống", "gcard_title_5": "Đào Tạo & Phát Triển Năng Lực AI", "gcard_title_6": "Quản Trị & Tuân Thủ", "gcard_desc_1": "Cấu hình, kiểm tra và triển khai AI Agent tùy chỉnh được tạo ra cho các quy trình kinh doanh cụ thể của bạn.", "gcard_desc_2": "Xác định các nhiệm vụ lặp đi lặp lại khối lượng lớn và tự động hóa chúng để giải phóng nhóm của bạn.", "gcard_desc_3": "Phân tích dự đoán, phát hiện bất thường và báo cáo thông minh được tùy chỉnh theo KPI của bạn.", "gcard_desc_4": "Kết nối AI với các nền tảng ERP, CRM, kế toán và HR hiện có của bạn với sự gián đoạn tối thiểu.", "gcard_desc_5": "Từ buổi tóm tắt cho giám đốc điều hành đến hội thảo thực hành — trang bị cho nhóm của bạn làm việc tự tin cùng AI.", "gcard_desc_6": "Triển khai AI có trách nhiệm phù hợp với PDPA Singapore, hướng dẫn MAS và các khuôn khổ quản trị dữ liệu quốc tế.", "g_label_get_started": "Bắt Đầu", "g_title_ready_to_deploy_ai": "Sẵn Sàng Triển Khai AI?", "gaia_cbox_p": "Liên hệ chúng tôi qua Soon Hoe Management để khám phá cách GAIAGenX có thể chuyển đổi doanh nghiệp của bạn với kế hoạch triển khai AI tùy chỉnh.", "gaia_footer": "Giải Pháp AI Doanh Nghiệp GAIAGenX · Đối tác với SOON HOE MANAGEMENT PTE LTD · Singapore 2026", "contact_cta_p": "Để biết thông tin chung, bảng giá gói hoặc đặt lịch tư vấn — liên hệ trực tiếp với chúng tôi.", "hotline": "Đường Dây Nóng", "office_sg_city": "Singapore", "office_sg_city_zh": "新加坡", "office_my_city": "Malaysia", "office_my_city_zh": "马来西亚", "office_cn_city": "Trung Quốc", "office_cn_city_zh": "中国", "office_jp_city": "Nhật Bản", "office_jp_city_zh": "日本", "footer_copy": "Bản Quyền &copy; 2026 <span class='footer-gold'>SOON HOE GROUP</span>. Bảo Lưu Mọi Quyền.<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>Singapore &nbsp;&middot;&nbsp; Malaysia &nbsp;&middot;&nbsp; Trung Quốc &nbsp;&middot;&nbsp; Nhật Bản</span>"}, "fil": {"nav_about": "Tungkol", "nav_services": "Mga Serbisyo", "nav_contact": "Makipag-ugnayan", "nav_ai": "Mga Serbisyo ng AI · GAIAGenX", "hero_badge": "★ Tagapayo sa Investment Visa · Singapore", "hero_tagline": "Ang inyong privacy ay aming poprotektahan — ang inyong interes ay aming itataguyod.", "hero_desc": "Propesyonal na gabay sa pagpaplano ng pagkakakilanlan at bagong simula sa buhay. Ang paghahangad ng kalayaang pinansyal, kalayaan sa oras, at kapayapaan ng isip — para sa inyo at sa inyong pamilya sa buong Asya.", "hero_scroll": "Mag-scroll", "sec_about_label": "Tungkol Sa Amin", "sec_about_title": "Pagpapakilala ng Kumpanya", "sec_why_label": "Aming Kalamangan", "sec_why_title": "Bakit Piliin ang Soon Hoe", "sec_mod_label": "Saklaw ng Serbisyo", "sec_mod_title": "Mga Layuning Tinutulungan Naming Makamit", "sec_svc_label": "Propesyonal na Mga Serbisyo", "sec_svc_title": "Propesyonal na Mga Serbisyo", "sec_contact_label": "Hanapin Kami", "sec_contact_title": "Pandaigdigang Presensya", "sec_contact_sub": "Nakabase sa Singapore, naglilingkod sa Asya", "lang_label": "FIL · Filipino", "ap_title_1": "Kalayaang Pinansyal", "ap_desc_1": "Estratehikong paglaan ng asset at pamamahala ng kayamanan sa mga pandaigdigang merkado.", "ap_title_2": "Kalayaan sa Oras", "ap_desc_2": "Pinasimpleng proseso at dedikadong suporta upang maaari kang magtuon sa mahahalagang bagay.", "ap_title_3": "Kapayapaan ng Isip", "ap_desc_3": "Kumpletong pagsunod, proteksyon ng privacy, at pinagkakatiwalaang payo sa bawat hakbang.", "ap_title_4": "Paglago ng Asset", "ap_desc_4": "Pangalagaan at palaguin ang iyong kayamanan sa pamamagitan ng matalino at sari-saring estratehiya.", "about_body": "<p><strong>Soon Hoe Business Management Group</strong> ay isang nangungunang propesyonal na kumpanya ng pamamahala ng konsultasyon na nakatuon sa pagbibigay ng komprehensibong mga serbisyo sa pananalapi, buwis, pamamahala ng operasyon, at corporate secretarial. Sinusuportahan ng isang karanasang koponan at malawak na mapagkukunan ng industriya, nagbibigay kami ng mahusay na mga solusyon.</p><p>Sa Singapore bilang aming sentro ng pananalapi, espesyalista kami sa pagbibigay ng serbisyo sa pamumuhay at pamumuhunan sa ibang bansa para sa mga indibidwal at pamilyang may mataas na netong halaga sa buong Timog-silangang Asya at Greater China.</p>", "about_quote": "Propesyonal na gabay sa pagpaplano ng pagkakakilanlan — humuhubog ng bagong simula sa buhay.", "pc_title_1": "Sentro ng Pananalapi sa Singapore", "pc_desc_1": "Nag-ooperate sa pinaka-mapagkakatiwalaang sentro ng pananalapi sa Asya — nagbibigay ng direktang access sa mga balangkas ng pagbabangko, legal, at regulasyon ng rehiyon.", "pc_title_2": "Isang-Hinto na Pasadyang Solusyon", "pc_desc_2": "Mula sa pagsasangkot ng kumpanya at pagsunod sa buwis hanggang sa pagpaplano ng tirahan at pag-set up ng family office — ang bawat aspeto ay iniaangkop sa inyong mga layunin.", "pc_title_3": "Privacy at Pagsunod ang Prayoridad", "pc_desc_3": "Lahat ng pakikipag-ugnayan ay pinamamahalaan nang may mahigpit na kumpidensialidad, kumpletong pagsunod sa regulasyon, at pinakamataas na pamantayan ng propesyonal na etika.", "pc_title_4": "Presensya sa Maraming Bansa", "pc_desc_4": "Sa mga opisina sa Singapore, Malaysia, China at Japan, nag-aalok kami ng tunay na cross-border na suporta para sa mga kliyente.", "pc_title_5": "Sertipikadong Multi-Disiplinang Koponan", "pc_desc_5": "Mga CPA ng Singapore, auditor, lisensyadong abogado at mga internasyonal na espesyalista — naghahatid ng pinagsamang payo.", "pc_title_6": "Kaalaman sa Kliyenteng may Mataas na Netong Halaga", "pc_desc_6": "Mga dekada ng karanasan sa paglilingkod sa mga indibidwal na HNW at family office mula sa Greater China at Timog-silangang Asya.", "pc_title_7": "Accounting at Compilation", "pc_desc_7": "Full-cycle na bookkeeping, pagsumite ng GST, at paghahanda ng financial statement upang ang inyong mga libro ay sumusunod.", "pc_title_8": "Mga Serbisyo ng Audit", "pc_desc_8": "Independyente, mahigpit na pakikipag-ugnayan ng audit na ganap na sumusunod sa Singapore Standards on Auditing (SSA).", "pc_title_9": "Buwis ng Korporasyon at Indibidwal", "pc_desc_9": "End-to-end na pagsunod sa buwis ng Singapore at payo — pinipigilan ang pagkakalantad habang nananatiling ganap na sumusunod.", "pc_title_10": "Mga Serbisyo ng Corporate Secretarial", "pc_desc_10": "Tinitiyak na ang inyong kumpanya ay ganap na sumusunod sa mga kinakailangan ng ACRA sa buong ikot ng buhay nito.", "pc_title_11": "HR at Administrasyon", "pc_desc_11": "Komprehensibong pang-araw-araw na suporta sa operasyon ng HR at administrasyon — upang maaari kang magtuon sa paglago ng negosyo.", "pc_title_12": "Estratehikong Konsultasyon at Operasyon", "pc_desc_12": "Payo sa estratehiya ng negosyo, kahusayan sa operasyon, at pamamahala ng proyekto — tinutulungan ang mga kumpanya na lumago nang may kumpiyansa.", "mod_title_1": "Immigration para sa Pamumuhunan at Tirahan", "mod_title_2": "Pagsasangkot ng Negosyo at Pagpapalawak sa Ibang Bansa", "mod_title_3": "Pamumuhay, Edukasyon at Real Estate", "mod_title_4": "Mga Serbisyo ng Intelligence ng Data ng Negosyo", "li_1": "PR ng Singapore at Global Investor Programme (GIP)", "li_2": "MM2H — Malaysia My Second Home", "li_3": "Payo sa pagpaplano ng pagkakakilanlan at tirahan", "li_4": "Pag-istruktura at pag-set up ng family office", "li_5": "Pagbubukas ng account sa bangko ng Singapore", "li_6": "Paglaan ng asset para sa mataas na netong halaga", "li_7": "Pagsasangkot ng kumpanya at pag-istruktura ng korporasyon", "li_8": "Mga aplikasyon ng work pass (EP, DP, S Pass)", "li_9": "Mga kasunduan ng shareholder at legal na payo", "li_10": "Mga tour sa inspeksyon ng negosyo at pagbisita sa negosyo", "li_11": "Cross-border na pamamahala ng HR at payroll", "li_12": "Mga programa ng pagsasanay para sa pagpapalawak ng negosyo sa ibang bansa", "li_13": "Mga internasyonal na pag-aaral at pagbisita sa kampus", "li_14": "Pagpapabuti ng akademikong profile at pamamahala ng GPA", "li_15": "Pagpaplano ng karera at propesyonal na pag-unlad", "li_16": "Premium na pamumuhunan sa real estate sa ibang bansa", "li_17": "End-to-end na pamamahala ng ari-arian at pag-upa", "li_18": "Premium na serbisyo ng concierge at pamumuhay", "li_19": "Mga ulat ng imbestigasyon ng background ng negosyo", "li_20": "Profiling ng negosyo at pag-label ng panganib", "li_21": "Pagsasala at pagtutugma ng kasosyo sa Timog-silangang Asya", "li_22": "Mga pagsusuri sa pagsunod at due diligence", "li_23": "Pagsusuri ng supplier at channel partner", "li_24": "Mga planong single-project, retainer at taunang membership", "li_25": "Buwanang accounting at bookkeeping", "li_26": "Pagsumite ng GST (quarterly)", "li_27": "Paghahanda ng financial statement", "li_28": "Mga account sa pamamahala at pag-uulat", "li_29": "Statutory na audit (sumusunod sa ACRA)", "li_30": "Special purpose na audit", "li_31": "Payo sa internal na audit", "li_32": "Corporate income tax (ECI at Form C/CS)", "li_33": "Pagsumite ng individual income tax", "li_34": "Pagpaplano at payo sa buwis", "li_35": "Mga pagsumite ng IR8A at IR21", "li_36": "Taunang AGM, resolusyon at pagsumite ng XBRL", "li_37": "Nominee director at secretary", "li_38": "Registered na address ng opisina", "li_39": "Strike-off at paglusaw ng kumpanya", "li_40": "Pagpoproseso ng payroll at mga kontribusyon sa CPF", "li_41": "Pag-set up ng account sa CorpPass, SinPass at MOM", "li_42": "Pagpaparehistro / pagkansela ng GST", "li_43": "Pagbubukas ng account sa bangko ng korporasyon at indibidwal", "li_44": "Recruitment at pagkuha ng talento", "li_45": "Pagpasok sa merkado at estratehiya ng negosyo", "li_46": "Pag-optimize ng proseso at pamamahala ng gastos", "li_47": "Pagpaplano, pagpapatupad at pagmamasid ng proyekto", "li_48": "Payo sa cross-border na operasyon", "gaia_teaser_desc": "Higit sa mga tradisyonal na serbisyo ng korporasyon, nakikipagtulungan kami sa GAIAGenX upang magdala ng matalinong solusyon sa pag-deploy ng AI Agent at automation para sa inyong negosyo.", "gfeat_title_1": "Pag-deploy ng AI Agent", "gfeat_desc_1": "Remote na pagsasaayos at paglulunsad ng mga custom na AI Agent para sa inyong mga workflow.", "gfeat_title_2": "Automation ng Proseso", "gfeat_desc_2": "Alisin ang mga bottleneck gamit ang matalinong automation sa buong organisasyon.", "gfeat_title_3": "Integrasyon ng Negosyo", "gfeat_desc_3": "Ikonekta ang AI nang maayos sa inyong kasalukuyang ERP, CRM at back-office na mga sistema.", "gfeat_title_4": "Ligtas at Sumusunod", "gfeat_desc_4": "Seguridad sa antas ng negosyo na naaayon sa PDPA ng Singapore at mga internasyonal na pamantayan.", "gaia_hero_title": "AI para sa Negosyo,<br><span class='hl'>I-deploy nang Tama.</span>", "gaia_hero_sub": "Mga AI Agent · Pag-deploy para sa Negosyo", "gaia_hero_desc": "Naghahatid ang GAIAGenX ng matalinong mga serbisyo sa pag-deploy at pagsasaayos ng AI Agent nang malayo. Isinasangkot namin ang mga makabagong kakayahan ng AI direkta sa mga workflow ng inyong negosyo — maayos, ligtas at nasusukat.", "gaia_back": "← Bumalik sa Soon Hoe", "cta_consult": "Humiling ng Konsultasyon →", "cta_view": "Tingnan ang Mga Serbisyo", "g_label_what_we_deliver": "Ano ang Aming Ibinibigay", "g_title_ai_enterprise_services": "Mga Serbisyo ng AI para sa Negosyo", "gcard_title_1": "Pag-deploy ng AI Agent", "gcard_title_2": "Automation ng Workflow", "gcard_title_3": "Analytics at Insights ng AI", "gcard_title_4": "Integrasyon ng Sistema", "gcard_title_5": "Pagsasanay at Pagpapalakas ng Kakayahan sa AI", "gcard_title_6": "Pamamahala at Pagsunod", "gcard_desc_1": "Pagsasaayos, pagsubok at pag-deploy ng mga custom na AI Agent na binuo para sa inyong mga partikular na proseso ng negosyo.", "gcard_desc_2": "Tukuyin ang mga gawaing paulit-ulit na may malaking dami at i-automate ang mga ito upang malaya ang inyong koponan para sa mas mataas na halaga ng trabaho.", "gcard_desc_3": "Predictive analytics, pagtuklas ng anomalya at matalinong pag-uulat na iniaangkop sa inyong mga KPI.", "gcard_desc_4": "Ikonekta ang AI sa inyong kasalukuyang mga platform ng ERP, CRM, accounting at HR nang may pinakamaliit na abala.", "gcard_desc_5": "Mula sa mga briefing para sa mga executive hanggang sa mga hands-on na workshop — ihanda ang inyong koponan na magtrabaho nang may kumpiyansa kasama ang AI.", "gcard_desc_6": "Responsableng pag-deploy ng AI na naaayon sa PDPA ng Singapore, mga alituntunin ng MAS at mga internasyonal na balangkas ng pamamahala ng data.", "g_label_get_started": "Magsimula", "g_title_ready_to_deploy_ai": "Handa nang Mag-deploy ng AI?", "gaia_cbox_p": "Makipag-ugnayan sa amin sa pamamagitan ng Soon Hoe Management upang tuklasin kung paano mababago ng GAIAGenX ang inyong negosyo gamit ang isang pasadyang plano sa pag-deploy ng AI.", "gaia_footer": "Mga Solusyon ng AI para sa Negosyo ng GAIAGenX · Pakikipagtulungan sa SOON HOE MANAGEMENT PTE LTD · Singapore 2026", "contact_cta_p": "Para sa mga pangkalahatang katanungan, presyo ng pakete, o upang mag-iskedyul ng konsultasyon — makipag-ugnayan sa amin nang direkta.", "hotline": "Hotline", "office_sg_city": "Singapore", "office_sg_city_zh": "新加坡", "office_my_city": "Malaysia", "office_my_city_zh": "马来西亚", "office_cn_city": "China", "office_cn_city_zh": "中国", "office_jp_city": "Japan", "office_jp_city_zh": "日本", "footer_copy": "Copyright &copy; 2026 <span class='footer-gold'>SOON HOE GROUP</span>. Lahat ng Karapatan ay Nakalaan.<br><span style='font-size:11px;opacity:0.6;letter-spacing:1px;'>Singapore &nbsp;&middot;&nbsp; Malaysia &nbsp;&middot;&nbsp; China &nbsp;&middot;&nbsp; Japan</span>"}};
+
+  var currentLang = 'en';
+
+  function applyLang(lang) {
+    var t = T[lang] || T['en'];
+    // Apply data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) {
+        el.innerHTML = t[key];
+      }
+    });
+    // Named elements
+    var named = {
+      'nav-link-about':     t.nav_about,
+      'nav-link-services':  t.nav_services,
+      'nav-link-contact':   t.nav_contact,
+      'hero-badge-text':    t.hero_badge,
+      'hero-tagline-text':  t.hero_tagline,
+      'hero-desc-text':     t.hero_desc,
+      'hero-scroll-text':   t.hero_scroll,
+      'sec-about-label':    t.sec_about_label,
+      'sec-about-title':    t.sec_about_title,
+      'sec-why-label':      t.sec_why_label,
+      'sec-why-title':      t.sec_why_title,
+      'sec-mod-label':      t.sec_mod_label,
+      'sec-mod-title':      t.sec_mod_title,
+      'sec-svc-label':      t.sec_svc_label,
+      'sec-svc-title':      t.sec_svc_title,
+      'sec-contact-label':  t.sec_contact_label,
+      'sec-contact-title':  t.sec_contact_title,
+      'sec-contact-sub':    t.sec_contact_sub,
+      'langCurrent':        t.lang_label,
+      'about-body':         t.about_body,
+      'about-quote':        t.about_quote,
+      'footer-copy':        t.footer_copy,
+    };
+    Object.keys(named).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && named[id] !== undefined) el.innerHTML = named[id];
+    });
+    // Font for CJK vs Latin
+    var isCJK = (lang === 'zh' || lang === 'ja');
+    document.documentElement.lang = lang;
+    // Dropdown active
+    document.querySelectorAll('.lang-option').forEach(function(opt) {
+      opt.classList.toggle('active', opt.dataset.lang === lang);
+    });
+    document.getElementById('langToggle').classList.remove('open');
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    applyLang(lang);
+  }
+
+  function toggleLangDD() {
+    document.getElementById('langToggle').classList.toggle('open');
+  }
+
+  document.addEventListener('click', function(e) {
+    var t = document.getElementById('langToggle');
+    if (t && !t.contains(e.target)) t.classList.remove('open');
+  });
+
+  function openGaia(e) {
+    if (e) e.preventDefault();
+    document.getElementById('gaiaPage').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGaia() {
+    document.getElementById('gaiaPage').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) { if (e.key==='Escape') closeGaia(); });
+</script>
+</body>
+</html>

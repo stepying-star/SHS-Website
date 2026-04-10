@@ -1,0 +1,20 @@
+[Unit]
+Description=Soon Hoe WhatsApp Bot
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/whatsapp_bot
+EnvironmentFile=/home/ubuntu/whatsapp_bot/.env
+ExecStart=/home/ubuntu/whatsapp_bot/venv/bin/gunicorn \
+    --workers 2 \
+    --bind 0.0.0.0:5000 \
+    --timeout 60 \
+    --access-logfile logs/access.log \
+    --error-logfile logs/error.log \
+    wsgi:app
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
