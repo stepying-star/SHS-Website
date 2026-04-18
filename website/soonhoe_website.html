@@ -836,6 +836,52 @@
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════ */
+/*  MOBILE DROPDOWN FIXES — ensure dropdowns are visible   */
+/* ═══════════════════════════════════════════════════════ */
+
+/* Z-index hierarchy — dropdowns above everything */
+.lang-drop, .gaia-lang-drop {
+  z-index: 100001 !important;
+}
+
+/* Mobile: show dropdown properly within viewport */
+@media (max-width:768px){
+  /* Main nav dropdown position — prevent overflow */
+  .lang-toggle{position:relative;z-index:100000}
+  .lang-drop{
+    position:fixed !important;
+    top:60px !important;
+    right:8px !important;
+    max-width:calc(100vw - 16px);
+    max-height:calc(100vh - 80px);
+    overflow-y:auto;
+  }
+  /* GAIA overlay dropdown */
+  .gaia-lang-wrap{position:relative;z-index:100000}
+  .gaia-lang-drop{
+    position:fixed !important;
+    top:52px !important;
+    right:8px !important;
+    max-width:calc(100vw - 16px);
+    max-height:calc(100vh - 80px);
+    overflow-y:auto;
+  }
+}
+
+/* Force dropdowns to appear on touch devices */
+@media (hover:none) and (pointer:coarse){
+  .lang-drop, .gaia-lang-drop {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .lang-option, .gaia-lang-opt {
+    -webkit-tap-highlight-color: rgba(196,160,71,0.15);
+    padding: 10px 12px !important;  /* bigger touch target */
+    font-size: 13px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1310,7 +1356,7 @@
       </a>
       <a class="gaia-nav-pill gaia-nav-pill-ent"
          id="btnEnterpriseAI"
-         href="file:///Users/stephaniehe/Downloads/openclaw-free-setup-poster_1_6_2.html"
+         href="../posters/openclaw-free-setup-poster_1_6_2.html"
          target="_blank">
         <div class="gaia-dot"></div>
         Enterprise AI
