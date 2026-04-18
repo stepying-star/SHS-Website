@@ -841,44 +841,68 @@
 /*  MOBILE DROPDOWN FIXES — ensure dropdowns are visible   */
 /* ═══════════════════════════════════════════════════════ */
 
-/* Z-index hierarchy — dropdowns above everything */
-.lang-drop, .gaia-lang-drop {
-  z-index: 100001 !important;
-}
+/* ── Z-index: dropdowns above everything ── */
+.lang-dropdown, .gaia-lang-drop { z-index: 100001 !important; }
 
-/* Mobile: show dropdown properly within viewport */
+/* ── Force dropdown text visible with proper contrast ── */
+.lang-option, .gaia-lang-opt {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+.lang-option:hover, .gaia-lang-opt:hover {
+  color: #ffffff !important;
+}
+.lang-option.active { color: #c4a047 !important; background: rgba(196,160,71,0.12) !important; }
+.gaia-lang-opt.active { color: #00ff88 !important; background: rgba(0,255,136,0.18) !important; }
+
+/* ── Mobile dropdown positioning ── */
 @media (max-width:768px){
-  /* Main nav dropdown position — prevent overflow */
-  .lang-toggle{position:relative;z-index:100000}
-  .lang-drop{
-    position:fixed !important;
-    top:60px !important;
-    right:8px !important;
-    max-width:calc(100vw - 16px);
-    max-height:calc(100vh - 80px);
-    overflow-y:auto;
+  .lang-toggle { position: relative; z-index: 100000; }
+  .gaia-lang-wrap { position: relative; z-index: 100000; }
+  /* Main nav dropdown: position fixed within viewport */
+  .lang-dropdown {
+    position: fixed !important;
+    top: 60px !important;
+    right: 8px !important;
+    left: auto !important;
+    min-width: 180px !important;
+    max-width: calc(100vw - 16px);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    background: rgba(12,24,48,0.98) !important;
+    border: 1px solid rgba(196,160,71,0.35) !important;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.7) !important;
   }
   /* GAIA overlay dropdown */
-  .gaia-lang-wrap{position:relative;z-index:100000}
-  .gaia-lang-drop{
-    position:fixed !important;
-    top:52px !important;
-    right:8px !important;
-    max-width:calc(100vw - 16px);
-    max-height:calc(100vh - 80px);
-    overflow-y:auto;
+  .gaia-lang-drop {
+    position: fixed !important;
+    top: 56px !important;
+    right: 8px !important;
+    left: auto !important;
+    min-width: 180px !important;
+    max-width: calc(100vw - 16px);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  /* Enlarged options + high-contrast text on mobile */
+  .lang-option, .gaia-lang-opt {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    color: #ffffff !important;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }
 
-/* Force dropdowns to appear on touch devices */
+/* ── Touch behaviour ── */
 @media (hover:none) and (pointer:coarse){
-  .lang-drop, .gaia-lang-drop {
+  .lang-dropdown, .gaia-lang-drop {
     -webkit-tap-highlight-color: transparent;
   }
   .lang-option, .gaia-lang-opt {
-    -webkit-tap-highlight-color: rgba(196,160,71,0.15);
-    padding: 10px 12px !important;  /* bigger touch target */
-    font-size: 13px !important;
+    -webkit-tap-highlight-color: rgba(196,160,71,0.2);
   }
 }
 
