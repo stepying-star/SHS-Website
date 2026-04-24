@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0a0a0a">
 <title data-i18n="page_title">OpenClaw + Hermes Setup For Your Business — From S$79</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -296,29 +295,35 @@ body{min-height:100vh;display:flex;align-items:center;justify-content:center;pad
 }
 
 /* Responsive */
+@media (max-width:880px){
+  .poster{padding:28px 22px}
+  .grid{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .hdr{flex-wrap:wrap}
+  .hero h1{font-size:clamp(28px,7vw,42px)}
+  .stat-num{font-size:32px;min-width:80px}
+}
 
 /* ═══════════════════════════════════════════════════════ */
-/* RESPONSIVE BREAKPOINTS — Desktop/Tablet/iPhone/Android   */
+/* RESPONSIVE BREAKPOINTS — iPhone 13+ / Android / Tablet   */
 /* ═══════════════════════════════════════════════════════ */
 
-/* ── TABLET & SMALL LAPTOP (max-width: 1024px) ── */
+/* Tablet & small laptop */
 @media (max-width:1024px){
   .poster{padding:30px 24px;border-radius:22px}
   .grid{grid-template-columns:1fr;gap:18px}
   .services{grid-template-columns:1fr;gap:14px}
-  .features{grid-template-columns:repeat(4,1fr);gap:12px}
   .hero h1{font-size:clamp(32px,5.6vw,48px)}
   .hero-sub{font-size:15px;line-height:1.6}
-  /* Chat: prevent overflow */
   .chat{padding:16px}
 }
 
-/* ── LARGE PHONE (max-width: 768px) — iPhone Pro Max, tablet portrait ── */
+/* Large phone / Pro Max */
 @media (max-width:768px){
   body{padding:20px 12px}
   .poster{padding:24px 20px;border-radius:18px}
   .hdr{flex-wrap:wrap;gap:14px}
-  .hdr-right{margin-left:auto;gap:8px}
   .brand{gap:12px}
   .brand-logo{width:52px;height:52px;min-width:52px}
   .brand-logo img{width:52px;height:52px}
@@ -326,7 +331,6 @@ body{min-height:100vh;display:flex;align-items:center;justify-content:center;pad
   .brand-sub{font-size:9.5px;letter-spacing:1px}
   .hero h1{font-size:clamp(28px,7vw,40px);line-height:1.1}
   .hero-sub{font-size:14px;line-height:1.55}
-  .hero-sub br{display:none}
   .features{grid-template-columns:repeat(2,1fr);gap:10px}
   .feat{padding:16px 14px}
   .feat-title{font-size:14px}
@@ -343,142 +347,41 @@ body{min-height:100vh;display:flex;align-items:center;justify-content:center;pad
   .svc-tag{font-size:13px;line-height:1.5}
   .svc-meta{gap:6px;flex-wrap:wrap}
   .svc-chip{font-size:10.5px;padding:4px 10px}
-  /* CTA — stack layout on phones */
   .cta{flex-direction:column;gap:14px;padding:22px 20px;text-align:center}
   .cta-wa-icon{width:52px;height:52px}
   .cta-text{order:2;text-align:center}
-  .cta-qr{order:3}
   .cta-phone{font-size:24px}
   .cta-kicker{font-size:11px}
   .cta-sub{font-size:11.5px;line-height:1.5}
-  /* Chat widget */
   .chat{padding:14px}
-  .chat-hdr{padding-bottom:10px;margin-bottom:10px}
   .chat-avatar{width:36px;height:36px;min-width:36px}
   .chat-avatar img{width:36px;height:36px}
   .chat-name{font-size:13px}
   .chat-status{font-size:10.5px}
   .msg{padding:10px 13px;font-size:12.5px;line-height:1.5}
   .msg ol{padding-left:18px}
-  /* Top bar (lang + back) — make smaller */
   .oc-topbar{top:12px;right:12px;gap:6px}
   .oc-lang-btn{padding:7px 12px;font-size:10.5px;letter-spacing:1px}
   .oc-back-btn{padding:7px 14px;font-size:10.5px;letter-spacing:1.4px}
   .oc-lang-drop{min-width:160px}
-  /* Footer */
   .foot{flex-wrap:wrap;gap:12px;padding:14px 16px;font-size:11px}
-  .foot-brand-name{font-size:13px}
 }
 
-/* ── STANDARD PHONE (max-width: 480px) — iPhone 13 Pro, most Androids ── */
 @media (max-width:480px){
-  body{padding:14px 8px}
-  .poster{padding:20px 14px;border-radius:16px}
-  .hdr{gap:10px}
-  .brand{gap:10px}
-  .brand-logo{width:44px;height:44px;min-width:44px}
-  .brand-logo img{width:44px;height:44px}
-  .brand-name{font-size:13.5px}
-  .brand-sub{font-size:8.5px}
-  .badge-free{font-size:11.5px;padding:7px 11px}
-  .badge-slots{font-size:9.5px;padding:7px 9px}
-  .hero{padding:8px 0}
-  .hero h1{font-size:clamp(24px,8vw,34px)}
-  .hero-sub{font-size:13px}
-  /* Services — always 1 column on phone */
-  .services{grid-template-columns:1fr}
-  .svc{padding:16px 14px}
-  .svc-hdr{gap:10px;align-items:center}
-  .svc-icon{width:40px;height:40px;min-width:40px}
-  .svc-icon img{width:40px;height:40px}
-  .svc-name{font-size:13px}
-  .svc-tier{font-size:9px}
-  .svc-tag{font-size:12px;line-height:1.45}
-  .svc-chip{font-size:10px;padding:3.5px 8px}
-  /* Features — 2 cols still work nicely */
-  .features{grid-template-columns:1fr 1fr;gap:8px}
-  .feat{padding:14px 10px}
-  .feat-icon{width:36px;height:36px;margin-bottom:10px}
-  .feat-icon svg{width:18px;height:18px}
-  .feat-title{font-size:13px}
-  .feat-desc{font-size:10.5px}
-  /* Stats */
-  .stat{padding:14px 16px;gap:12px;border-radius:12px}
-  .stat-num{font-size:24px;min-width:60px;font-weight:800}
-  .stat-title{font-size:13px}
-  .stat-desc{font-size:11px;line-height:1.4}
-  /* CTA */
-  .cta{padding:18px 16px;gap:12px}
-  .cta-wa-icon{width:44px;height:44px}
-  .cta-wa-icon svg{width:24px;height:24px}
-  .cta-kicker{font-size:10.5px;letter-spacing:1.5px}
-  .cta-phone{font-size:22px;letter-spacing:0.04em}
-  .cta-sub{font-size:11px;line-height:1.5}
-  .cta-qr{width:60px;height:60px}
-  /* Chat */
-  .chat{padding:12px;border-radius:14px}
-  .chat-avatar{width:32px;height:32px;min-width:32px}
-  .chat-avatar img{width:32px;height:32px}
-  .chat-name{font-size:12.5px}
-  .chat-status{font-size:10px}
-  .msg{padding:9px 12px;font-size:12px;line-height:1.5;border-radius:12px}
-  /* Top bar — minimum viable size */
-  .oc-topbar{top:10px;right:10px;gap:5px}
-  .oc-lang-btn{padding:6px 10px;font-size:10px;letter-spacing:0.8px;border-radius:8px}
-  .oc-lang-btn svg{width:8px;height:8px}
-  .oc-back-btn{padding:6px 12px;font-size:10px;letter-spacing:1.2px;border-radius:8px;gap:6px}
-  .oc-back-btn .oc-dot{width:5px;height:5px}
-  .oc-lang-drop{min-width:150px;padding:4px}
-  .oc-lang-opt{padding:7px 10px;font-size:11px}
-  /* Footer */
-  .foot{padding:12px 14px;gap:8px;border-radius:12px;font-size:10.5px;text-align:center;justify-content:center}
-  .foot-brand{justify-content:center;width:100%}
-  .foot-brand-name{font-size:12px}
-  .foot-sep{display:none}
-}
-
-/* ── SMALL PHONE (max-width: 380px) — iPhone SE, small Androids ── */
-@media (max-width:380px){
-  body{padding:10px 6px}
-  .poster{padding:16px 11px}
-  .brand-name{font-size:12.5px}
-  .brand-sub{font-size:8px}
-  .badge-free{font-size:10.5px;padding:6px 9px}
-  .badge-slots{font-size:9px;padding:6px 8px}
-  .hero h1{font-size:clamp(22px,9vw,30px)}
-  .hero-sub{font-size:12px}
-  .features{grid-template-columns:1fr 1fr;gap:7px}
-  .feat{padding:12px 8px}
-  .stat{padding:12px 13px}
-  .stat-num{font-size:21px;min-width:54px}
-  .cta-phone{font-size:19px}
-  .oc-topbar{gap:4px}
-  .oc-lang-btn{padding:5px 8px;font-size:9.5px}
-  .oc-back-btn{padding:5px 10px;font-size:9.5px}
-  #ocLangCur{max-width:56px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block}
-}
-
-/* ── Safe area for notched phones (iPhone 13/14/15/Pro Max) ── */
-@supports(padding:max(0px)){
-  body{
-    padding-top:max(20px,env(safe-area-inset-top));
-    padding-bottom:max(20px,env(safe-area-inset-bottom));
-    padding-left:max(12px,env(safe-area-inset-left));
-    padding-right:max(12px,env(safe-area-inset-right));
-  }
-  .oc-topbar{
-    top:max(14px,env(safe-area-inset-top));
-    right:max(14px,env(safe-area-inset-right));
-  }
-}
-
-/* ── Touch targets (min 44px per Apple HIG / 48dp per Material) ── */
-@media (hover:none) and (pointer:coarse){
-  .oc-lang-btn,.oc-back-btn,.oc-lang-opt,.svc-chip{
-    min-height:38px;
-    touch-action:manipulation;
-  }
-  .cta{min-height:48px;touch-action:manipulation}
+  .poster{padding:22px 16px;border-radius:16px}
+  .features{grid-template-columns:1fr 1fr}
+  .hdr-right{gap:8px}
+  .badge-free{font-size:12px;padding:8px 12px}
+  .badge-slots{font-size:10px;padding:8px 10px}
+  .brand-name{font-size:15px}
+  .brand-sub{font-size:9px}
+  .brand-logo{width:44px;height:44px}
+  .brand-logo svg{width:28px;height:28px}
+  .stat{padding:14px 16px;gap:14px}
+  .stat-num{font-size:28px;min-width:70px}
+  .stat-title{font-size:13.5px}
+  .stat-desc{font-size:11.5px}
+  .cta{padding:16px 14px;letter-spacing:0.04em}
 }
 
 .brand-logo{padding:2px}
@@ -500,6 +403,29 @@ body{min-height:100vh;display:flex;align-items:center;justify-content:center;pad
 .foot-brand-logo{width:26px;height:26px;border-radius:50%;object-fit:cover;display:block}
 .foot-brand-name{font-weight:900;color:#fff;letter-spacing:0.22em;font-size:11px}
 .foot-sep{color:var(--text-muted);opacity:0.5}
+
+
+/* ── Safe area for notched phones (iPhone 13/14/15) ── */
+@supports(padding:max(0px)){
+  body{
+    padding-top:max(20px,env(safe-area-inset-top));
+    padding-bottom:max(20px,env(safe-area-inset-bottom));
+    padding-left:max(12px,env(safe-area-inset-left));
+    padding-right:max(12px,env(safe-area-inset-right));
+  }
+  .oc-topbar{
+    top:max(14px,env(safe-area-inset-top));
+    right:max(14px,env(safe-area-inset-right));
+  }
+}
+
+/* ── Touch targets (Apple HIG 44px / Material 48dp) ── */
+@media (hover:none) and (pointer:coarse){
+  .oc-lang-btn,.oc-back-btn,.oc-lang-opt{
+    min-height:38px; touch-action:manipulation;
+  }
+  .cta{min-height:48px;touch-action:manipulation}
+}
 
 </style>
 </head>
