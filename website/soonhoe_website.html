@@ -520,7 +520,8 @@
   .lang-option .lang-native { font-weight:500; }
   .lang-option .lang-english { font-size:10px; opacity:0.5; margin-left:auto; }
 
-  /* ── WhatsApp contact button ── */
+
+    /* ── WhatsApp contact button ── */
   .wa-btn {
     display:inline-flex; align-items:center; gap:10px;
     background:#25D366; color:#fff;
@@ -609,6 +610,21 @@
   .lang-drop{min-width:150px}
   .lang-option{padding:7px 10px;font-size:11px}
   /* GAIA overlay page */
+  .gaia-page-nav{padding:12px 16px;flex-wrap:wrap;gap:10px}
+  .gaia-nav-brand{order:-1;margin:0 auto}
+  .gaia-nav-name{font-size:15px}
+  .gaia-nav-sub{font-size:9.5px}
+  .gaia-nav-right{gap:6px}
+  .gaia-lang-btn{padding:5px 10px;font-size:10px}
+  .gaia-back-btn{padding:6px 14px;font-size:10.5px}
+  .gaia-hero{padding:4rem 1.25rem 2rem}
+  .gaia-hero-title{font-size:clamp(1.8rem,6vw,3rem)}
+  .gaia-hero-p{font-size:13px}
+  .g-cards{grid-template-columns:1fr;gap:1rem}
+  .g-card{padding:1.5rem}
+  .g-card-title{font-size:14px}
+  .g-card-desc{font-size:12.5px}
+  .gaia-cbox{padding:1.5rem}
 }
 
 /* ── Standard phone (max 480px) — iPhone 13/14/15 Pro ── */
@@ -635,6 +651,15 @@
   .gaia-t-grid{grid-template-columns:1fr;gap:0.75rem}
   .lang-toggle{padding:4px 8px;font-size:9.5px}
   /* GAIA overlay */
+  .gaia-page-nav{padding:10px 12px}
+  .gaia-back-btn{padding:5px 12px;font-size:10px}
+  .gaia-lang-btn{padding:4px 8px;font-size:9.5px}
+  .gaia-hero{padding:3rem 1rem}
+  .gaia-hero-title{font-size:clamp(1.6rem,7vw,2.4rem)}
+  .gaia-hero-ctas{flex-direction:column;gap:0.75rem;width:100%}
+  .gaia-hero-ctas button{width:100%}
+  .gaia-cbox-p{font-size:13px}
+  .g-card{padding:1.25rem}
 }
 
 /* ── Small phone (max 380px) — small Androids ── */
@@ -650,13 +675,15 @@
 /* ── Safe area (iPhone 13+ notch support) ── */
 @supports(padding:max(0px)){
   nav{padding-top:max(10px,env(safe-area-inset-top))}
+  .gaia-page-nav{padding-top:max(10px,env(safe-area-inset-top))}
   footer{padding-bottom:max(2rem,env(safe-area-inset-bottom))}
 }
 
 /* ── Touch targets (Apple HIG 44px, Material 48dp) ── */
 @media (hover:none) and (pointer:coarse){
-  .nav-cta-ai,.nav-gaia-btn,.wa-btn,.lang-toggle,
-  .btn-ghost,.clink,
+  .nav-cta-ai,.wa-btn,.lang-toggle,
+  .btn-green,.btn-ghost,.clink,
+  .gaia-nav-pill,.gaia-back-btn,
   .lang-option{
     min-height:40px;
     touch-action:manipulation;
@@ -672,19 +699,20 @@
 .lang-dropdown { z-index: 100001 !important; }
 
 /* ── Force dropdown text visible with proper contrast ── */
-.lang-option {
+.lang-option, .gaia-lang-opt {
   color: #ffffff !important;
   font-weight: 500;
 }
-.lang-option:hover {
+.lang-option:hover, .gaia-lang-opt:hover {
   color: #ffffff !important;
 }
 .lang-option.active { color: #c4a047 !important; background: rgba(196,160,71,0.12) !important; }
-
+.gaia-lang-opt.active { color: #00ff88 !important; background: rgba(0,255,136,0.18) !important; }
 
 /* ── Mobile dropdown positioning ── */
 @media (max-width:768px){
   .lang-toggle { position: relative; z-index: 100000; }
+  
   /* Main nav dropdown: position fixed within viewport */
   .lang-dropdown {
     position: fixed !important;
@@ -702,7 +730,7 @@
   /* GAIA overlay dropdown */
   
   /* Enlarged options + high-contrast text on mobile */
-  .lang-option {
+  .lang-option, .gaia-lang-opt {
     padding: 12px 16px !important;
     font-size: 14px !important;
     color: #ffffff !important;
@@ -718,7 +746,7 @@
   .lang-dropdown {
     -webkit-tap-highlight-color: transparent;
   }
-  .lang-option {
+  .lang-option, .gaia-lang-opt {
     -webkit-tap-highlight-color: rgba(196,160,71,0.2);
   }
 }
