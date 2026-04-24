@@ -23,8 +23,6 @@
   /* LANG */
   .zh{display:none;} .en{display:block;}
   span.zh{display:none;} span.en{display:inline;}
-  
-  
 
   /* NAV */
   nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(12,31,63,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,160,71,0.28);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:70px;}
@@ -37,9 +35,7 @@
   .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;transition:color 0.2s;white-space:nowrap;}
   .nav-links a:hover{color:var(--gold-light);}
   .lang-toggle{position:relative;}
-  
-  
-  
+
   .nav-gaia-btn{display:flex;align-items:center;gap:8px;background:rgba(10,22,40,0.8);border:1px solid var(--gold);color:var(--gold)!important;padding:7px 16px;border-radius:50px;font-size:12px!important;font-weight:500!important;cursor:pointer;transition:all 0.25s!important;white-space:nowrap;}
   .nav-gaia-btn:hover{background:var(--gold)!important;color:var(--navy)!important;}
   .gaia-dot{width:6px;height:6px;background:#00ff88;border-radius:50%;animation:pulse-dot 2s infinite;flex-shrink:0;}
@@ -190,50 +186,6 @@
   footer{background:var(--navy);padding:2rem;text-align:center;border-top:1px solid rgba(196,160,71,0.18);}
   .footer-text{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.9;}
   .footer-gold{color:var(--gold-light);}
-
-  /* GAIAGenX OVERLAY */
-  #gaiaPage{display:none;position:fixed;inset:0;z-index:9999;background:#030c18;overflow-y:auto;}
-  #gaiaPage.active{display:block;animation:gfade 0.3s ease;}
-  @keyframes gfade{from{opacity:0;transform:scale(0.98)}to{opacity:1;transform:scale(1)}}
-  .gaia-page-nav{position:sticky;top:0;background:rgba(3,12,24,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,255,136,0.1);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:65px;z-index:1000;}
-  .gaia-nav-brand{display:flex;align-items:center;gap:12px;}
-  .gaia-nav-mark{width:36px;height:36px;background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
-  .gaia-nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;letter-spacing:1px;}
-  .gaia-nav-name span{color:#00ff88;}
-  .gaia-nav-sub{font-size:10px;color:rgba(0,255,136,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:1px;}
-  .gaia-back-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.65);padding:8px 20px;border-radius:50px;font-size:13px;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
-  .gaia-back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
-  .gaia-hero{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
-  .gaia-hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.025) 1px,transparent 1px);background-size:40px 40px;}
-  .gaia-hero-content{position:relative;z-index:1;text-align:center;max-width:780px;}
-  .gaia-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);padding:6px 18px;border-radius:50px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00ff88;margin-bottom:2.5rem;}
-  .gaia-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:0.75rem;}
-  .gaia-hero-title .hl{color:#00ff88;}
-  .gaia-hero-zh{font-family:'Noto Serif SC',serif;font-size:1.1rem;color:rgba(0,255,136,0.4);letter-spacing:5px;margin-bottom:2rem;}
-  .gaia-hero-p{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.9;max-width:580px;margin:0 auto 3rem;}
-  .gaia-hero-ctas{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
-  .btn-green{display:inline-flex;align-items:center;gap:8px;background:#00ff88;color:#030c18;padding:14px 32px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.25s;font-family:'DM Sans',sans-serif;text-decoration:none;}
-  .btn-green:hover{background:#fff;box-shadow:0 0 40px rgba(0,255,136,0.4);transform:translateY(-2px);}
-  .btn-outline-green{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(0,255,136,0.3);color:rgba(255,255,255,0.65);padding:14px 28px;border-radius:50px;font-size:14px;cursor:pointer;transition:all 0.25s;text-decoration:none;}
-  .btn-outline-green:hover{border-color:#00ff88;color:#00ff88;}
-  .gaia-svcs-section{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
-  .g-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00ff88;text-align:center;margin-bottom:1rem;}
-  .g-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:#fff;text-align:center;margin-bottom:0.5rem;}
-  .g-zh{font-family:'Noto Serif SC',serif;font-size:0.95rem;color:rgba(255,255,255,0.28);letter-spacing:3px;text-align:center;margin-bottom:3.5rem;}
-  .g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
-  .g-card{background:rgba(255,255,255,0.03);border:1px solid rgba(0,255,136,0.1);border-radius:var(--radius-lg);padding:2rem;transition:all 0.25s;}
-  .g-card:hover{border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.04);transform:translateY(-4px);}.g-card:hover .g-card-icon{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.35);}
-  .g-card-icon{width:52px;height:52px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all 0.25s;}
-  .g-card-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px;}
-  .g-card-zh{font-family:'Noto Serif SC',serif;font-size:11px;color:rgba(0,255,136,0.4);letter-spacing:1.5px;margin-bottom:1rem;}
-  .g-card-desc{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.75;}
-  .gaia-contact-band{background:rgba(0,255,136,0.03);border-top:1px solid rgba(0,255,136,0.1);padding:5rem 2rem;text-align:center;}
-  .gaia-cbox{background:rgba(255,255,255,0.04);border:1px solid rgba(0,255,136,0.18);border-radius:var(--radius-lg);padding:3rem 2rem;max-width:600px;margin:2rem auto 0;}
-  .gaia-cbox-p{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.9;margin-bottom:2rem;}
-  .gaia-email-link{font-size:16px;color:#00ff88;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,255,136,0.3);padding-bottom:3px;transition:border-color 0.2s;}
-  .gaia-email-link:hover{border-color:#00ff88;}
-  .gaia-page-footer{background:rgba(0,0,0,0.4);border-top:1px solid rgba(0,255,136,0.07);padding:2rem;text-align:center;font-size:12px;color:rgba(255,255,255,0.2);}
-  .gaia-page-footer span{color:rgba(0,255,136,0.45);}
 
   /* ── HORIZONTAL MODULE STRIPS ── */
   .mod-strips { display:flex; flex-direction:column; gap:0; max-width:1100px; margin:0 auto; border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(196,160,71,0.18); }
@@ -607,77 +559,7 @@
   .wa-btn:hover { background:#1ebe5d; box-shadow:0 0 30px rgba(37,211,102,0.4); transform:translateY(-2px); }
   .wa-icon { font-size:18px; }
 
-  /* ── Coming Soon overlay ── */
-  #comingSoonPage {
-    display:none; position:fixed; inset:0; z-index:10000;
-    background:#030c18; align-items:center; justify-content:center;
-    flex-direction:column; text-align:center; padding:2rem;
-  }
-  #comingSoonPage.active { display:flex; animation:gfade 0.3s ease; }
-  .cs-eyebrow {
-    display:inline-flex; align-items:center; gap:8px;
-    background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.2);
-    padding:5px 16px; border-radius:50px; font-size:10px; letter-spacing:3px;
-    text-transform:uppercase; color:#00ff88; margin-bottom:2rem;
-  }
-  .cs-title {
-    font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,8vw,6rem);
-    font-weight:300; color:#fff; line-height:1.1; margin-bottom:1rem;
-  }
-  .cs-title span { color:#00ff88; }
-  .cs-sub {
-    font-size:15px; color:rgba(255,255,255,0.45); margin-bottom:3rem;
-    max-width:480px; line-height:1.8;
-  }
-  .cs-back {
-    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15);
-    color:rgba(255,255,255,0.7); padding:10px 24px; border-radius:50px;
-    font-size:13px; cursor:pointer; font-family:'DM Sans',sans-serif;
-    transition:all 0.2s;
-  }
-  .cs-back:hover { background:rgba(255,255,255,0.12); color:#fff; }
-  .cs-grid {
-    position:absolute; inset:0; pointer-events:none;
-    background-image:linear-gradient(rgba(0,255,136,0.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,255,136,0.025) 1px,transparent 1px);
-    background-size:40px 40px;
-  }
-
-
-  /* ── GAIA overlay language selector ── */
-  .gaia-lang-wrap { position: relative; }
-  .gaia-lang-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(0,255,136,0.06); border: 1px solid rgba(0,255,136,0.28);
-    color: rgba(0,255,136,0.9);
-    padding: 7px 14px; border-radius: 8px;
-    font-size: 11px; font-weight: 500; letter-spacing: 1px;
-    font-family: 'DM Sans', sans-serif; cursor: pointer;
-    transition: all 0.2s; white-space: nowrap;
-  }
-  .gaia-lang-btn:hover { background: rgba(0,255,136,0.12); border-color: rgba(0,255,136,0.5); color: #00ff88; }
-  .gaia-lang-btn svg { transition: transform 0.2s; }
-  .gaia-lang-wrap.open .gaia-lang-btn svg { transform: rotate(180deg); }
-  .gaia-lang-drop {
-    position: absolute; top: calc(100% + 8px); right: 0;
-    min-width: 180px; background: rgba(3,12,24,0.97);
-    border: 1px solid rgba(0,255,136,0.25); border-radius: 8px;
-    padding: 6px; display: none; backdrop-filter: blur(20px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-    z-index: 10001;
-  }
-  .gaia-lang-wrap.open .gaia-lang-drop { display: block; animation: gdd 0.15s ease; }
-  @keyframes gdd { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-  .gaia-lang-opt {
-    padding: 8px 12px; border-radius: 6px; cursor: pointer;
-    font-size: 12px; color: rgba(255,255,255,0.75); font-weight: 500;
-    letter-spacing: 0.3px; transition: all 0.15s; font-family: 'DM Sans', sans-serif;
-  }
-  .gaia-lang-opt:hover { background: rgba(0,255,136,0.12); color: #fff; }
-  .gaia-lang-opt.active { background: rgba(0,255,136,0.2); color: #00ff88; }
-
-
-/* ═══════════════════════════════════════════════════════ */
+    /* ═══════════════════════════════════════════════════════ */
 /*  RESPONSIVE MOBILE OPTIMIZATION                         */
 /*  iPhone 13+ / Android / Tablet / Desktop                */
 /* ═══════════════════════════════════════════════════════ */
@@ -760,7 +642,6 @@
   .gaia-nav-sub{font-size:9.5px}
   .gaia-nav-pill{padding:6px 12px;font-size:10.5px}
   .gaia-nav-right{gap:6px}
-  .gaia-lang-btn{padding:5px 10px;font-size:10px}
   .gaia-back-btn{padding:6px 14px;font-size:10.5px}
   .gaia-hero{padding:4rem 1.25rem 2rem}
   .gaia-hero-title{font-size:clamp(1.8rem,6vw,3rem)}
@@ -799,7 +680,6 @@
   .gaia-page-nav{padding:10px 12px}
   .gaia-nav-pill{padding:5px 10px;font-size:10px;gap:5px}
   .gaia-back-btn{padding:5px 12px;font-size:10px}
-  .gaia-lang-btn{padding:4px 8px;font-size:9.5px}
   .gaia-hero{padding:3rem 1rem}
   .gaia-hero-title{font-size:clamp(1.6rem,7vw,2.4rem)}
   .gaia-hero-ctas{flex-direction:column;gap:0.75rem;width:100%}
@@ -829,7 +709,7 @@
 @media (hover:none) and (pointer:coarse){
   .nav-cta-ai,.wa-btn,.lang-toggle,
   .btn-green,.btn-ghost,.clink,
-  .gaia-nav-pill,.gaia-back-btn,.gaia-lang-btn,.gaia-lang-opt,
+  .gaia-nav-pill,.gaia-back-btn,
   .lang-option{
     min-height:40px;
     touch-action:manipulation;
@@ -842,23 +722,11 @@
 /* ═══════════════════════════════════════════════════════ */
 
 /* ── Z-index: dropdowns above everything ── */
-.lang-dropdown, .gaia-lang-drop { z-index: 100001 !important; }
-
-/* ── Force dropdown text visible with proper contrast ── */
-.lang-option, .gaia-lang-opt {
-  color: #ffffff !important;
-  font-weight: 500;
-}
-.lang-option:hover, .gaia-lang-opt:hover {
-  color: #ffffff !important;
-}
-.lang-option.active { color: #c4a047 !important; background: rgba(196,160,71,0.12) !important; }
-.gaia-lang-opt.active { color: #00ff88 !important; background: rgba(0,255,136,0.18) !important; }
-
+.lang-dropdown, /* ── Force dropdown text visible with proper contrast ── */
+.lang-option, .lang-option:hover, .lang-option.active { color: #c4a047 !important; background: rgba(196,160,71,0.12) !important; }
 /* ── Mobile dropdown positioning ── */
 @media (max-width:768px){
   .lang-toggle { position: relative; z-index: 100000; }
-  .gaia-lang-wrap { position: relative; z-index: 100000; }
   /* Main nav dropdown: position fixed within viewport */
   .lang-dropdown {
     position: fixed !important;
@@ -874,37 +742,12 @@
     box-shadow: 0 16px 48px rgba(0,0,0,0.7) !important;
   }
   /* GAIA overlay dropdown */
-  .gaia-lang-drop {
-    position: fixed !important;
-    top: 56px !important;
-    right: 8px !important;
-    left: auto !important;
-    min-width: 180px !important;
-    max-width: calc(100vw - 16px);
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-  }
   /* Enlarged options + high-contrast text on mobile */
-  .lang-option, .gaia-lang-opt {
-    padding: 12px 16px !important;
-    font-size: 14px !important;
-    color: #ffffff !important;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
+  .lang-option, }
 
 /* ── Touch behaviour ── */
 @media (hover:none) and (pointer:coarse){
-  .lang-dropdown, .gaia-lang-drop {
-    -webkit-tap-highlight-color: transparent;
-  }
-  .lang-option, .gaia-lang-opt {
-    -webkit-tap-highlight-color: rgba(196,160,71,0.2);
-  }
-}
+  .lang-dropdown, .lang-option, }
 
 </style>
 </head>
@@ -1370,110 +1213,13 @@
   <div class="footer-text" id="footer-copy" data-i18n="footer_copy">Copyright &copy; 2026 <span class="footer-gold">SOON HOE GROUP</span>. All Rights Reserved.<br><span style="font-size:11px;opacity:0.6;letter-spacing:1px;">Singapore &nbsp;&middot;&nbsp; Malaysia &nbsp;&middot;&nbsp; China &nbsp;&middot;&nbsp; Japan</span></div>
 </footer>
 
-<div id="gaiaPage">
-  <nav class="gaia-page-nav">
-    <div class="gaia-nav-links">
-      <a class="gaia-nav-pill gaia-nav-pill-api" onclick="openComingSoon()">
-        <div class="gaia-dot" style="background:#030c18;"></div>
-        GAIA API
-      </a>
-      <a class="gaia-nav-pill gaia-nav-pill-ent"
-         id="btnEnterpriseAI"
-         href="https://stepying-star.github.io/SHS-Website/posters/openclaw-free-setup-poster_1_6_2.html"
-         target="_blank">
-        <div class="gaia-dot"></div>
-        Enterprise AI
-      </a>
-    </div>
-    <div class="gaia-nav-brand"><div class="gaia-nav-mark" style="background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.25);padding:4px;"><img src="data:image/png;base64,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" alt="GAIAGenX" style="width:28px;height:28px;object-fit:contain;display:block;filter:brightness(0) invert(1);"></div><div><div class="gaia-nav-name">GAIA<span>Gen</span>X</div><div class="gaia-nav-sub"><span class="en">AI Enterprise Solutions</span><span class="zh">企业AI落地服务</span></div></div></div>
-    <div class="gaia-nav-right" style="display:flex;align-items:center;gap:10px;">
-      <div class="gaia-lang-wrap" id="gaiaLangWrap">
-        <button class="gaia-lang-btn" onclick="toggleGaiaLang(event)">
-          <span id="gaiaLangCur">EN · English</span>
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="gaia-lang-drop">
-          <div class="gaia-lang-opt" data-lang="en" onclick="setLang('en')">🇸🇬 English</div>
-          <div class="gaia-lang-opt" data-lang="zh" onclick="setLang('zh')">🇨🇳 中文</div>
-          <div class="gaia-lang-opt" data-lang="ms" onclick="setLang('ms')">🇲🇾 Melayu</div>
-          <div class="gaia-lang-opt" data-lang="ja" onclick="setLang('ja')">🇯🇵 日本語</div>
-          <div class="gaia-lang-opt" data-lang="th" onclick="setLang('th')">🇹🇭 ภาษาไทย</div>
-          <div class="gaia-lang-opt" data-lang="vi" onclick="setLang('vi')">🇻🇳 Tiếng Việt</div>
-          <div class="gaia-lang-opt" data-lang="fil" onclick="setLang('fil')">🇵🇭 Filipino</div>
-        </div>
-      </div>
-      <button class="gaia-back-btn" onclick="closeGaia()"><span data-i18n="gaia_back">← Back to Soon Hoe</span></button>
-    </div>
-  </nav>
-  <div class="gaia-hero">
-    <div class="gaia-hero-bg"></div>
-    <div class="gaia-hero-content">
-      <div class="gaia-hero-badge"><div class="gaia-dot"></div><span class="en">Now Available in Singapore</span><span class="zh">现已在新加坡提供服务</span></div>
-      <h1 class="gaia-hero-title" data-i18n="gaia_hero_title">Enterprise AI,<br><span class="hl">Deployed Right.</span></h1>
-      <p class="gaia-hero-zh" data-i18n="gaia_hero_sub">AI Agents · Enterprise Deployment</p>
-      <p class="gaia-hero-p" data-i18n="gaia_hero_desc">GAIAGenX delivers intelligent AI Agent deployment and configuration services remotely — embedding cutting-edge AI capabilities directly into your enterprise workflows, seamlessly, securely, and at scale.</p>
-      <div class="gaia-hero-ctas">
-        <button class="btn-green" id="gaia-consult-btn" onclick="document.getElementById('gaia-contact-band').scrollIntoView({behavior:'smooth',block:'start'});return false;"><span data-i18n="cta_consult">Request a Consultation →</span></button>
-        <a href="#gaia-svcs" class="btn-outline-green"><span data-i18n="cta_view">View Services</span></a>
-      </div>
-    </div>
-  </div>
-  <div class="gaia-svcs-section" id="gaia-svcs">
-    <div class="g-label" data-i18n="g_label_what_we_deliver">What We Deliver</div>
-    <h2 class="g-title" data-i18n="g_title_ai_enterprise_services">AI Enterprise Services</h2>
-    
-    <div class="g-grid">
-      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="3" stroke="#00ff88" stroke-width="1.4"/><circle cx="13" cy="13" r="2.5" stroke="#00ff88" stroke-width="1.2"/><path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M4.5 4.5l2.5 2.5M19 19l2.5 2.5M4.5 21.5l2.5-2.5M19 7l2.5-2.5" stroke="#00ff88" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_1">AI Agent Deployment</div><div class="g-card-zh zh">AI 智能体部署</div><div class="g-card-desc en">Remote configuration, testing, and deployment of custom AI agents purpose-built for your business processes.</div>
-        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">远程配置、测试并部署专为您业务流程定制的 AI 智能体。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">远程配置、测试并部署专为您业务流程定制的 AI 智能体。</div></div>
-      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 13h6M16 13h6" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><rect x="7" y="7" width="12" height="12" rx="3" stroke="#00ff88" stroke-width="1.4"/><path d="M10 13l2 2 4-4" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_2">Workflow Automation</div><div class="g-card-zh zh">工作流自动化</div><div class="g-card-desc en">Identify high-volume repetitive tasks and automate them to free your team for higher-value work.</div>
-        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">识别高频重复任务并智能自动化，让团队专注于更高价值的工作。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">识别高频重复任务并智能自动化，让团队专注于更高价值的工作。</div></div>
-      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 20h20" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M3 20l5-6 5 3 5-7 5-4" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="14" r="1.5" fill="#00ff88"/><circle cx="13" cy="17" r="1.5" fill="#00ff88"/><circle cx="18" cy="10" r="1.5" fill="#00ff88"/><circle cx="23" cy="6" r="1.5" fill="#00ff88"/></svg></div><div class="g-card-title" data-i18n="gcard_title_3">AI Analytics &amp; Insights</div><div class="g-card-zh zh">AI 数据分析与洞察</div><div class="g-card-desc en">Predictive analytics, anomaly detection, and intelligent reporting tailored to your KPIs.</div>
-        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">预测分析、异常检测及针对您KPI定制的智能报告。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">预测分析、异常检测及针对您 KPI 定制的智能报告。</div></div>
-      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="1.5" y="8" width="8" height="10" rx="2" stroke="#00ff88" stroke-width="1.4"/><rect x="16.5" y="8" width="8" height="10" rx="2" stroke="#00ff88" stroke-width="1.4"/><path d="M9.5 13h7" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M13 10.5v5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1.5 2"/></svg></div><div class="g-card-title" data-i18n="gcard_title_4">System Integration</div><div class="g-card-zh zh">企业系统集成</div><div class="g-card-desc en">Connect AI to your existing ERP, CRM, accounting, and HR platforms with minimal disruption.</div>
-        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">将 AI 接入现有 ERP、CRM 及后台系统，最大限度减少运营干扰。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">将 AI 接入现有系统，最大限度减少运营干扰。</div></div>
-      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="8" r="3.5" stroke="#00ff88" stroke-width="1.4"/><path d="M6 21c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/><path d="M17 13l2 1.5-2 1.5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 14.5h3.5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_5">AI Training &amp; Enablement</div><div class="g-card-zh zh">AI 培训与人员赋能</div><div class="g-card-desc en">From executive briefings to hands-on workshops — equip your team to work confidently alongside AI.</div>
-        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">从高管简报到实操工作坊，为您的团队赋能，自信与 AI 协作。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">从高管简报到实操工作坊，为您的团队赋能。</div></div>
-      <div class="g-card"><div class="g-card-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 2L3 6.5v8c0 5.5 4.5 10 10 10.5 5.5-.5 10-5 10-10.5v-8L13 2z" stroke="#00ff88" stroke-width="1.4" stroke-linejoin="round"/><rect x="9.5" y="12" width="7" height="5.5" rx="1.5" stroke="#00ff88" stroke-width="1.3"/><path d="M11 12V9.5a2 2 0 0 1 4 0V12" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round"/></svg></div><div class="g-card-title" data-i18n="gcard_title_6">Governance &amp; Compliance</div><div class="g-card-zh zh">AI 治理与合规</div><div class="g-card-desc en">Responsible AI aligned with Singapore's PDPA, MAS guidelines, and international data governance frameworks.</div>
-        <div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">遵循新加坡 PDPA、MAS 指引及国际数据治理框架的负责任 AI 部署。</div><div class="g-card-desc zh" style="font-family:'Noto Serif SC',serif;font-size:12px;">遵循新加坡 PDPA、MAS 指引及国际数据治理框架的负责任 AI 部署。</div></div>
-    </div>
-  </div>
-  <div class="gaia-contact-band" id="gaia-contact-band">
-    <div class="g-label" data-i18n="g_label_get_started">Get Started</div>
-    <h2 class="g-title" data-i18n="g_title_ready_to_deploy_ai">Ready to Deploy AI?</h2>
-    
-    <div class="gaia-cbox">
-      <p class="gaia-cbox-p" data-i18n="gaia_cbox_p">Connect with us through Soon Hoe Management to explore how GAIAGenX can transform your enterprise with a tailored AI deployment plan.</p>
-      <p class="gaia-cbox-p zh" style="font-family:'Noto Serif SC',serif;font-size:13px;">通过顺和管理与我们联系，探索 GAIAGenX 如何为您的企业制定专属 AI 部署方案。</p>
-      <span id="gaia-email-display" class="gaia-email-link"></span>
-      <br><br>
-      <a class="wa-btn" href="https://wa.me/6590359666" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
-        <span>WhatsApp: +65 9035 9666</span>
-      </a>
-    </div>
-  </div>
-  <div class="gaia-page-footer"><span class="en">GAIAGenX AI Enterprise Solutions · In partnership with <span>Soon Hoe Business Management Co., Ltd.</span> · Singapore 2026</span><span class="zh" style="font-family:'Noto Serif SC',serif;">GAIAGenX 企业AI落地服务 · 顺和集团 · 新加坡 2026</span></div>
-</div>
-
-
-
-
-<!-- Coming Soon Page (GAIA API) -->
-<div id="comingSoonPage">
-  <div class="cs-grid"></div>
-  <div class="cs-eyebrow"><div class="gaia-dot"></div> GAIA API</div>
-  <h1 class="cs-title">Coming<br><span>Soon.</span></h1>
-  <p class="cs-sub">We're building something powerful.<br>The GAIA API will unlock programmatic access to our full AI enterprise platform.<br>Stay tuned.</p>
-  <button class="cs-back" onclick="closeComingSoon()">← Back to GAIAGenX</button>
-</div>
-
 <script>
   // ── Email render ──
   (function(){
     var u='admin',d='soonhoe'+'.'+'com'+'.'+'sg',e=u+'@'+d,ml='mailto:'+e;
     var els=[
       ['contact-email-display','<a href="'+ml+'" class="clink" onclick="window.location.href=this.href;return true;">'+e+'</a>'],
-      ['gaia-email-display','<a href="'+ml+'" class="gaia-email-link" onclick="window.location.href=this.href;return true;">'+e+'</a>'],
+      
       ['hero-email-display','<a href="'+ml+'" style="color:inherit;text-decoration:underline;" onclick="window.location.href=this.href;return true;">'+e+'</a>'],
       ['contact-email-display2','<a href="'+ml+'" class="clink" onclick="window.location.href=this.href;return true;">'+e+'</a>'],
     ];
@@ -1538,19 +1284,8 @@
   function setLang(lang) {
     currentLang = lang;
     applyLang(lang);
-    // Update GAIA overlay lang button too
-    var gaiaCur = document.getElementById('gaiaLangCur');
-    if (gaiaCur && T[lang] && T[lang].lang_label) gaiaCur.textContent = T[lang].lang_label;
-    document.querySelectorAll('.gaia-lang-opt').forEach(function(o) {
-      o.classList.toggle('active', o.dataset.lang === lang);
-    });
-    var gw = document.getElementById('gaiaLangWrap');
-    if (gw) gw.classList.remove('open');
-  }
 
-  function toggleGaiaLang(e) {
-    e.stopPropagation();
-    document.getElementById('gaiaLangWrap').classList.toggle('open');
+
   }
 
   function toggleLangDD() {
@@ -1560,28 +1295,9 @@
   document.addEventListener('click', function(e) {
     var t = document.getElementById('langToggle');
     if (t && !t.contains(e.target)) t.classList.remove('open');
-    var gw = document.getElementById('gaiaLangWrap');
-    if (gw && !gw.contains(e.target)) gw.classList.remove('open');
+
   });
 
-  function openComingSoon() {
-    document.getElementById('comingSoonPage').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeComingSoon() {
-    document.getElementById('comingSoonPage').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  function openGaia(e) {
-    if (e) e.preventDefault();
-    document.getElementById('gaiaPage').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeGaia() {
-    document.getElementById('gaiaPage').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', function(e) { if (e.key==='Escape') closeGaia(); });
 </script>
 </body>
 </html>
