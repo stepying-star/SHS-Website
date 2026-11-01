@@ -136,19 +136,27 @@ ul{list-style:none}
 
 /* contact */
 .contact{background:var(--paper);border-top:1px solid var(--line)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.contact-lines{margin-top:34px;display:grid;gap:12px}
-.c-line{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border:1px solid var(--line);border-radius:14px;text-decoration:none;background:var(--bg);transition:border-color .2s}
-.c-line:hover{border-color:var(--ink)}
-.c-line small{display:block;font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.c-line strong{font-size:16px;font-weight:600}
-.c-line a{text-decoration:none}
-.locs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.loc{border-radius:var(--r);padding:30px 26px;background:var(--bg);border:1px solid var(--line);min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
-.loc-flag{font-size:26px}
-.loc h3{font-size:22px;font-weight:700;margin-top:28px}
-.loc p{font-size:14px;color:var(--muted)}
-.contact-p{color:var(--ink-2);font-size:17px;margin-top:16px;max-width:460px}
+.ct{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:var(--bg);box-shadow:0 30px 60px rgba(17,24,39,.06)}
+.ct-info{background:var(--dark);color:#c9d3ce;padding:56px 48px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.ct-info:after{content:"";position:absolute;left:-120px;bottom:-140px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(127,176,155,.18),transparent 70%);pointer-events:none}
+.ct-info .eyebrow{color:#9cc5b1}.ct-info .eyebrow:before{background:#9cc5b1}
+.ct-info h2.title{color:#fff}
+.contact-p{color:#c9d3ce;font-size:16.5px;margin-top:14px;max-width:400px}
+.ct-lines{margin-top:34px;display:grid;gap:4px}
+.ct-line{display:flex;align-items:center;gap:16px;padding:14px 0;text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.09)}
+.ct-line:last-child{border-bottom:0}
+.ct-ic{width:42px;height:42px;flex:0 0 42px;border-radius:12px;background:rgba(156,197,177,.12);color:#9cc5b1;display:flex;align-items:center;justify-content:center;transition:background .2s}
+a.ct-line:hover .ct-ic{background:rgba(156,197,177,.25)}
+.ct-line small,.ct-loc small{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fa39a}
+.ct-line strong{font-size:16.5px;font-weight:600;color:#fff}
+.ct-line a{color:#fff;text-decoration:none}
+.ct-locs{margin-top:auto;padding-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:1}
+.ct-loc{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.ct-flag{font-size:22px;line-height:1}
+.ct-loc strong{display:block;color:#fff;font-size:15px;font-weight:600}
+.ct-loc small{text-transform:none;letter-spacing:0;font-size:12.5px;margin-top:2px}
+.ct-sub{margin-top:14px;font-size:12.5px;color:#7f948b;letter-spacing:.04em;position:relative;z-index:1}
+.ct-form{background:var(--paper);padding:48px}
 
 footer{background:var(--dark);color:#9aa8a2;padding:40px 0;font-size:13px}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
@@ -184,21 +192,22 @@ footer{background:var(--dark);color:#9aa8a2;padding:40px 0;font-size:13px}
 .faq-list details[open] summary:after{transform:rotate(45deg)}
 .faq-list details p{padding:0 0 24px;color:var(--ink-2);font-size:15.5px;max-width:680px}
 /* form */
-.enq{margin-top:28px;padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg)}
-.enq h3{font-size:19px;font-weight:700;margin-bottom:18px}
-.enq label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin:14px 0 6px}
-.enq input[type=text],.enq textarea{width:100%;font:15px var(--sans);padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
-.enq input[type=text]:focus,.enq textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
-.enq textarea{min-height:90px;resize:vertical}
+.enq h3{font-size:24px;font-weight:700;margin-bottom:6px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f-lb{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin:20px 0 8px}
+.enq input[type=text],.enq textarea{width:100%;font:15px var(--sans);padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);transition:border-color .15s,background .15s}
+.enq input[type=text]:focus,.enq textarea:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px var(--accent-soft)}
+.enq textarea{min-height:110px;resize:vertical;display:block}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{position:relative}
+.chip{position:relative;display:inline-flex;margin:0}
 .chip input{position:absolute;opacity:0;pointer-events:none}
-.chip span{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;background:#fff;cursor:pointer;transition:all .15s}
+.chip span{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;font-weight:500;background:var(--bg);color:var(--ink-2);cursor:pointer;transition:all .15s}
+.chip span:hover{border-color:var(--ink-2)}
 .chip input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink)}
-.consent{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;font-size:13px!important;color:var(--muted)!important;margin-top:18px!important}
-.consent input{margin-top:3px;accent-color:var(--accent)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:20px;line-height:1.5}
+.consent input{margin-top:3px;accent-color:var(--accent);flex:0 0 auto}
 .consent a{color:var(--accent)}
-.enq-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.enq-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .enq-err{display:none;color:#b42318;font-size:13px;margin-top:10px}
 /* privacy modal */
 .pp{position:fixed;inset:0;z-index:100;background:rgba(15,26,23,.55);display:none;align-items:center;justify-content:center;padding:20px}
@@ -211,7 +220,7 @@ footer{background:var(--dark);color:#9aa8a2;padding:40px 0;font-size:13px}
 .pp-box a{color:var(--accent)}
 .foot-links a{margin-left:16px;text-decoration:underline;cursor:pointer}
 @media(max-width:980px){.proc-grid{grid-template-columns:1fr 1fr}.proc:after{display:none}.faq-wrap{grid-template-columns:1fr;gap:28px}}
-@media(max-width:760px){.proc-grid{grid-template-columns:1fr}.enq{padding:22px}.pp-box{padding:26px 22px}}
+@media(max-width:760px){.proc-grid{grid-template-columns:1fr}.f-row{grid-template-columns:1fr;gap:0}.pp-box{padding:26px 22px}}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
@@ -222,13 +231,14 @@ html[lang=zh] h2,html[lang=zh] h3{letter-spacing:0}
 
 @media(max-width:980px){
   section{padding:84px 0}
-  .hero-grid,.about-grid,.contact-grid,.gaia-panel{grid-template-columns:1fr;gap:40px}
+  .ct,.hero-grid,.about-grid,.gaia-panel{grid-template-columns:1fr;gap:40px}
   .hero-img{aspect-ratio:16/11}
   .hero-card{left:16px;bottom:16px}
   .why-grid,.mod-grid,.svc-grid{grid-template-columns:1fr 1fr}
   .why-item,.why-item:not(:nth-child(3n+1)){padding:30px 24px 32px 0;border-right:0!important}
   .why-item:nth-child(2n){padding-left:24px;border-left:1px solid var(--line)}
   .gaia-panel{padding:52px 36px}
+  .ct{gap:0}
 }
 @media(max-width:760px){
   .menu-btn{display:inline-flex}
@@ -244,6 +254,7 @@ html[lang=zh] h2,html[lang=zh] h3{letter-spacing:0}
   .why-grid,.mod-grid,.svc-grid,.locs{grid-template-columns:1fr}
   .why-item,.why-item:nth-child(2n){padding:28px 0;border-left:0}
   .gaia-panel{border-radius:24px;padding:40px 24px}
+  .ct{border-radius:22px}.ct-info{padding:40px 24px}.ct-form{padding:28px 20px}.ct-locs{grid-template-columns:1fr}
   .head-row{margin-bottom:36px}
   .hero-card{position:relative;left:auto;bottom:auto;margin:-36px 14px 0;}
   .about-logo{width:110px;margin-top:28px}
@@ -420,28 +431,31 @@ html[lang=zh] h2,html[lang=zh] h3{letter-spacing:0}
 </section>
 
 <section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div class="rv">
-      <span class="eyebrow" id="sec-contact-label">Contact</span>
-      <h2 class="title" id="sec-contact-title">Get in Touch</h2>
-      <p class="contact-p" data-i18n="contact_cta_p">For enquiries or to schedule a consultation — reach out directly.</p>
-      <div class="contact-lines">
-        <a class="c-line" href="https://wa.me/6590359666" target="_blank" rel="noopener"><div><small data-i18n="contact_wa_label">WhatsApp</small><strong>+65 9035 9666</strong></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="c-line"><div><small data-i18n="contact_email_label">Email</small><strong id="contact-email-display">admin@soonhoe.com.sg</strong></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="wrap">
+    <div class="ct rv">
+      <div class="ct-info">
+        <span class="eyebrow" id="sec-contact-label">Contact</span>
+        <h2 class="title" id="sec-contact-title">Get in Touch</h2>
+        <p class="contact-p" data-i18n="contact_cta_p">For enquiries or to schedule a consultation — reach out directly.</p>
+        <div class="ct-lines">
+          <a class="ct-line" href="https://wa.me/6590359666" target="_blank" rel="noopener"><span class="ct-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.44 9.44 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.46-9.47 9.46zm8.06-17.53A11.32 11.32 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2.01.52 3.97 1.52 5.7L.55 23.62l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg></span><span><small data-i18n="contact_wa_label">WhatsApp</small><strong>+65 9035 9666</strong></span></a>
+          <div class="ct-line"><span class="ct-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small data-i18n="contact_email_label">Email</small><strong id="contact-email-display">admin@soonhoe.com.sg</strong></span></div>
+        </div>
+        <div class="ct-locs">
+          <div class="ct-loc"><span class="ct-flag">🇸🇬</span><span><strong data-i18n="loc_sg">Singapore</strong><small data-i18n="loc_sg_area">Jurong, West Singapore</small></span></div>
+          <div class="ct-loc"><span class="ct-flag">🇲🇾</span><span><strong data-i18n="loc_my">Malaysia</strong><small data-i18n="loc_my_area">Cross-border support</small></span></div>
+        </div>
+        <p class="ct-sub" id="sec-contact-sub">Based in Singapore, serving Asia</p>
       </div>
-    </div>
-    <div class="rv">
-      <p class="lead" id="sec-contact-sub" style="margin:0 0 20px;font-size:15px;color:var(--muted)">Based in Singapore, serving Asia</p>
-      <div class="locs">
-        <div class="loc"><div class="loc-flag">🇸🇬</div><div><h3 data-i18n="loc_sg">Singapore</h3><p data-i18n="loc_sg_area">Jurong, West Singapore</p></div></div>
-        <div class="loc"><div class="loc-flag">🇲🇾</div><div><h3 data-i18n="loc_my">Malaysia</h3><p data-i18n="loc_my_area">Cross-border support</p></div></div>
-      </div>
+      <div class="ct-form">
       <form class="enq" id="enq" onsubmit="return false" novalidate>
         <h3 data-i18n="form_title">Send us an enquiry</h3>
-        <label for="f-name" data-i18n="form_name">Name</label><input type="text" id="f-name" autocomplete="name">
-        <label for="f-contact" data-i18n="form_contact">Email or phone</label><input type="text" id="f-contact" autocomplete="email">
-        <label data-i18n="form_interest">I'm interested in</label><div class="chips"><label class="chip"><input type="checkbox" name="interest" value="form_i1"><span data-i18n="form_i1">Company setup</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i2"><span data-i18n="form_i2">Accounting &amp; tax</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i3"><span data-i18n="form_i3">Corporate secretarial</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i4"><span data-i18n="form_i4">Work passes</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i5"><span data-i18n="form_i5">Residency &amp; family</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i6"><span data-i18n="form_i6">AI services</span></label></div>
-        <label for="f-msg" data-i18n="form_msg">Message (optional)</label><textarea id="f-msg"></textarea>
+        <div class="f-row">
+          <div><label class="f-lb" for="f-name" data-i18n="form_name">Name</label><input type="text" id="f-name" autocomplete="name"></div>
+          <div><label class="f-lb" for="f-contact" data-i18n="form_contact">Email or phone</label><input type="text" id="f-contact" autocomplete="email"></div>
+        </div>
+        <div class="f-lb" data-i18n="form_interest">I'm interested in</div><div class="chips"><label class="chip"><input type="checkbox" name="interest" value="form_i1"><span data-i18n="form_i1">Company setup</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i2"><span data-i18n="form_i2">Accounting &amp; tax</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i3"><span data-i18n="form_i3">Corporate secretarial</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i4"><span data-i18n="form_i4">Work passes</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i5"><span data-i18n="form_i5">Residency &amp; family</span></label><label class="chip"><input type="checkbox" name="interest" value="form_i6"><span data-i18n="form_i6">AI services</span></label></div>
+        <label class="f-lb" for="f-msg" data-i18n="form_msg">Message (optional)</label><textarea id="f-msg"></textarea>
         <label class="consent"><input type="checkbox" id="f-consent"><span data-i18n="form_consent">I agree that Soon Hoe may use these details to respond to my enquiry, as set out in the <a href="#" onclick="openPrivacy(event)">Privacy Policy</a>.</span></label>
         <div class="enq-actions">
           <button type="button" class="btn btn-dark" onclick="sendEnq('wa')"><span data-i18n="form_send_wa">Send via WhatsApp</span></button>
@@ -449,6 +463,7 @@ html[lang=zh] h2,html[lang=zh] h3{letter-spacing:0}
         </div>
         <div class="enq-err" id="enq-err" data-i18n="form_err">Please fill in your name and contact, and tick the consent box.</div>
       </form>
+      </div>
     </div>
   </div>
 </section>
